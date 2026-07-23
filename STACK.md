@@ -1,0 +1,8 @@
+- **Tailwind CSS** — utility-first CSS framework used for all layout and styling
+- **Iconify** — web component icon library used for rendering UI icons
+- **Unicorn Studio** — WebGL graphics and interactive animation library used for visual effects
+- **Three.js** — 3D JavaScript library used for the interactive Hero Spark canvas animation
+- **Google Tag Manager** — tag management system for tracking user analytics
+- **Meta Pixel** — web analytics and conversion tracking tool for Facebook/Meta
+- **Hotmart Launcher** — checkout launcher widget for digital course enrolment
+- **Hyros** — ad tracking and attribution platform script

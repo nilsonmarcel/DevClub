@@ -1,0 +1,42 @@
+html {
+        background-color: #050505;
+      }
+      iconify-icon {
+        display: inline-block;
+        vertical-align: -0.125em;
+      }
+
+/* Ícones: esconde até o CE existir; evita caixa vazia no 1º paint (modo head) */
+        iconify-icon:not(:defined) {
+          visibility: hidden;
+          display: inline-block;
+          width: 1.25em;
+          height: 1.25em;
+          vertical-align: -0.125em;
+        }
+        /* Depois de definido, só mostra quando o SVG carregou (ou teto 1,5s) */
+        iconify-icon:defined:not(.iconify-ready) {
+          visibility: hidden;
+        }
+        iconify-icon.iconify-ready {
+          visibility: visible;
+        }
+
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: url("assets/8909904ab6c872eb_inter-latin-400-normal.C38fXH4.woff2") format('woff2');
+}
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 600;
+  src: url("assets/f9a06e79cd3a2a20_inter-latin-600-normal.LgqL8mu.woff2") format('woff2');
+}
+
+/* offline: ensure content is visible regardless of JS init state */
+html,body{opacity:1!important;visibility:visible!important}
+.page-loader,.site-loader,[class*='loading-screen'],[id*='loading-screen']{display:none!important}

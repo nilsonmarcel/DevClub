@@ -1,0 +1,390 @@
+<!DOCTYPE html><html lang="pt-BR"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><!-- Anti-FOUC: fundo no html (não no body — body cobria o Cadence com z negativo) --><style>
+      html {
+        background-color: #050505;
+      }
+      iconify-icon {
+        display: inline-block;
+        vertical-align: -0.125em;
+      }
+    </style><style>
+        /* Ícones: esconde até o CE existir; evita caixa vazia no 1º paint (modo head) */
+        iconify-icon:not(:defined) {
+          visibility: hidden;
+          display: inline-block;
+          width: 1.25em;
+          height: 1.25em;
+          vertical-align: -0.125em;
+        }
+        /* Depois de definido, só mostra quando o SVG carregou (ou teto 1,5s) */
+        iconify-icon:defined:not(.iconify-ready) {
+          visibility: hidden;
+        }
+        iconify-icon.iconify-ready {
+          visibility: visible;
+        }
+      </style><style>@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: url('/_astro/inter-latin-400-normal.C38fXH4l.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 600;
+  src: url('/_astro/inter-latin-600-normal.LgqL8muc.woff2') format('woff2');
+}</style><!-- Orgânico + /lp/ de campanha nas formações/trilhas; páginas internas podem passar noindex --><meta name="robots" content="index, follow"><title>Contatos Oficiais | Verificador de Números | Asimov Academy</title><meta name="description" content="Verifique se um número de telefone faz parte da equipe oficial da Asimov Academy. Ferramenta de segurança para confirmar contatos oficiais."><link rel="canonical" href="https://www.asimov.academy/misc/contatos-oficiais/"><link rel="icon" href="/favicon.png" type="image/png"><link rel="dns-prefetch" href="https://www.googletagmanager.com"><link rel="dns-prefetch" href="https://connect.facebook.net"><script>
+        window.dataLayer = window.dataLayer || [];
+        (function () {
+          if (window.fbq) return;
+          var n = function () {
+            n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments);
+          };
+          n.push = n;
+          n.loaded = false;
+          n.version = '2.0';
+          n.queue = [];
+          window.fbq = n;
+          if (!window._fbq) window._fbq = n;
+        })();
+      </script><script>(function(){const deferTracking = false;
+const deferUntilLoad = false;
+const deferUntilInteraction = false;
+const deferUntilInteractionStaggered = false;
+
+        window.__aaTrackWhenReady = (function () {
+          function runIdle(fn) {
+            if ('requestIdleCallback' in window) {
+              requestIdleCallback(fn, { timeout: 2500 });
+            } else {
+              setTimeout(fn, 1200);
+            }
+          }
+          function afterDomReady(fn) {
+            if (document.readyState !== 'loading') {
+              runIdle(fn);
+            } else {
+              document.addEventListener('DOMContentLoaded', function () {
+                runIdle(fn);
+              });
+            }
+          }
+          function afterWindowLoad(fn) {
+            function start() {
+              runIdle(fn);
+            }
+            if (document.readyState === 'complete') {
+              start();
+            } else {
+              window.addEventListener('load', start);
+            }
+          }
+          function yieldThen(fn) {
+            var run = function () {
+              if (
+                window.scheduler &&
+                typeof window.scheduler.postTask === 'function'
+              ) {
+                window.scheduler.postTask(fn, { priority: 'background' });
+                return;
+              }
+              setTimeout(fn, 0);
+            };
+            if (typeof requestAnimationFrame === 'function') {
+              requestAnimationFrame(function () {
+                run();
+              });
+            } else {
+              run();
+            }
+          }
+          var interactionQueue = [];
+          var interactionArmed = false;
+          var trackingStarted = false;
+          var fallbackTimer = null;
+          var scrollOpts = { capture: true, passive: true };
+          function cleanupTrackingTriggers() {
+            window.removeEventListener('pointerdown', onInteract, true);
+            window.removeEventListener('keydown', onInteract, true);
+            window.removeEventListener('scroll', onScroll, scrollOpts);
+            if (fallbackTimer != null) {
+              clearTimeout(fallbackTimer);
+              fallbackTimer = null;
+            }
+          }
+          function onInteract() {
+            startTracking();
+          }
+          function onScroll() {
+            if (window.scrollY > 100) startTracking();
+          }
+          function flushQueueSync(q) {
+            for (var i = 0; i < q.length; i++) q[i]();
+          }
+          function flushQueueStaggered(q) {
+            var i = 0;
+            function next() {
+              if (i >= q.length) return;
+              var fn = q[i++];
+              try {
+                fn();
+              } catch (e) {}
+              if (i < q.length) yieldThen(next);
+            }
+            // Resposta visual primeiro: só inicia tracking na próxima frame/task.
+            yieldThen(next);
+          }
+          function startTracking() {
+            if (trackingStarted) return;
+            trackingStarted = true;
+            cleanupTrackingTriggers();
+            var q = interactionQueue.splice(0, interactionQueue.length);
+            if (deferUntilInteractionStaggered) {
+              flushQueueStaggered(q);
+            } else {
+              flushQueueSync(q);
+            }
+          }
+          function afterInteraction(fn) {
+            if (trackingStarted) {
+              fn();
+              return;
+            }
+            interactionQueue.push(fn);
+            if (interactionArmed) return;
+            interactionArmed = true;
+            window.addEventListener('pointerdown', onInteract, true);
+            window.addEventListener('keydown', onInteract, true);
+            window.addEventListener('scroll', onScroll, scrollOpts);
+            if (window.scrollY > 100) {
+              startTracking();
+              return;
+            }
+            // Legado `interaction`: fallback ~9s.
+            // Staggered: fallback conservador (idle + página visível + 30s) —
+            // PageView first-party já cobriu attribution; browser tags só se o
+            // usuário permanecer sem interagir.
+            if (!deferUntilInteractionStaggered) {
+              fallbackTimer = setTimeout(startTracking, 9000);
+            } else {
+              fallbackTimer = setTimeout(function () {
+                if (document.visibilityState !== 'visible') return;
+                if (trackingStarted) return;
+                function kick() {
+                  startTracking();
+                }
+                if ('requestIdleCallback' in window) {
+                  requestIdleCallback(kick, { timeout: 4000 });
+                } else {
+                  setTimeout(kick, 500);
+                }
+              }, 30000);
+            }
+          }
+          return function (fn) {
+            if (!deferTracking) {
+              fn();
+              return;
+            }
+            if (deferUntilInteraction) {
+              afterInteraction(fn);
+            } else if (deferUntilLoad) {
+              afterWindowLoad(fn);
+            } else {
+              afterDomReady(fn);
+            }
+          };
+        })();
+      })();</script><script>(function(){const gtmContainerId = "GTM-5Q23F862";
+
+        window.__aaTrackWhenReady(function () {
+          if (window.__aaGtmStarted) return;
+          window.__aaGtmStarted = true;
+          (function (w, d, s, l, i) {
+            w[l] = w[l] || [];
+            w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
+            var f = d.getElementsByTagName(s)[0],
+              j = d.createElement(s),
+              dl = l != 'dataLayer' ? '&l=' + l : '';
+            j.async = true;
+            j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+            f.parentNode.insertBefore(j, f);
+          })(window, document, 'script', 'dataLayer', gtmContainerId);
+        });
+      })();</script><script>(function(){const metaPixelId = "359954309019613";
+const metaCapiEndpoint = "/api/meta-capi";
+const deferUntilInteractionStaggered = false;
+
+        window.__aaTrackWhenReady(function () {
+          if (window.__aaMetaStarted) return;
+          window.__aaMetaStarted = true;
+
+          var PIXEL_ID = metaPixelId;
+          var CAPI_ENDPOINT = metaCapiEndpoint;
+
+          if (!window.fbq) {
+            var n = function () {
+              n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments);
+            };
+            n.push = n;
+            n.loaded = false;
+            n.version = '2.0';
+            n.queue = [];
+            window.fbq = n;
+            if (!window._fbq) window._fbq = n;
+          }
+
+          if (!document.querySelector('script[src*="fbevents.js"]')) {
+            var t = document.createElement('script');
+            t.async = true;
+            t.src = 'https://connect.facebook.net/en_US/fbevents.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(t, s);
+          }
+
+          fbq('init', PIXEL_ID);
+
+          function getCookie(name) {
+            var m = document.cookie.match(
+              new RegExp('(?:^|; )' + name.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + '=([^;]*)')
+            );
+            return m ? decodeURIComponent(m[1]) : null;
+          }
+
+          function setCookie(name, value, maxAge) {
+            document.cookie = name + '=' + value + '; path=/; max-age=' + maxAge + '; SameSite=Lax';
+          }
+
+          function randStr() {
+            return Math.random().toString(36).slice(2, 11);
+          }
+
+          var fbclid = new URLSearchParams(window.location.search).get('fbclid');
+          if (fbclid && !getCookie('_fbc')) {
+            setCookie('_fbc', 'fb.1.' + Date.now() + '.' + fbclid, 7776000);
+          }
+
+          if (!getCookie('_fbp')) {
+            setCookie('_fbp', 'fb.1.' + Date.now() + '.' + Math.floor(Math.random() * 1e10), 7776000);
+          }
+
+          var externalId = null;
+          try {
+            externalId = localStorage.getItem('aa_uid');
+            if (!externalId) {
+              externalId = 'u_' + Date.now() + '_' + randStr() + randStr();
+              localStorage.setItem('aa_uid', externalId);
+            }
+          } catch (e) {}
+
+          var eventId = window.__aaPageViewEventId || 'evt_' + Date.now() + '_' + randStr();
+          window.__aaPageViewEventId = eventId;
+          var eventTime = Math.floor(Date.now() / 1000);
+
+          fbq('track', 'PageView', {}, { eventID: eventId });
+
+          if (!CAPI_ENDPOINT) return;
+          if (deferUntilInteractionStaggered && window.__aaCapiPageViewSent) return;
+
+          window.__aaCapiPageViewSent = true;
+          setTimeout(function () {
+            fetch(CAPI_ENDPOINT, {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              keepalive: true,
+              body: JSON.stringify({
+                event_name: 'PageView',
+                event_id: eventId,
+                event_time: eventTime,
+                event_source_url: window.location.href,
+                user_agent: navigator.userAgent,
+                fbp: getCookie('_fbp') || undefined,
+                fbc: getCookie('_fbc') || undefined,
+                external_id: externalId || undefined,
+              }),
+            }).catch(function (e) {
+              console.warn('[CAPI] fail', e);
+            });
+          }, 300);
+        });
+      })();</script><noscript><img height="1" width="1" style="display:none" alt="" src="https://www.facebook.com/tr?id=359954309019613&amp;ev=PageView&amp;noscript=1"></noscript><script src="/scripts/meta-tracking.js" defer></script><!-- Inter: só latin 400/600 no preload — latin-ext fica no CSS sem competir com o LCP --><link rel="preload" href="/_astro/inter-latin-400-normal.C38fXH4l.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="/_astro/inter-latin-600-normal.LgqL8muc.woff2" as="font" type="font/woff2" crossorigin><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Voltaire&display=swap" onload="this.onload=null;this.rel='stylesheet'"><noscript><link href="https://fonts.googleapis.com/css2?family=Voltaire&display=swap" rel="stylesheet"></noscript><script>
+      /* Libera animações de entrada após fontes (ou teto 1,2s) — evita morph system→webfont */
+      (function () {
+        function mark() {
+          document.documentElement.classList.add('fonts-ready');
+        }
+        if (document.fonts && document.fonts.ready) {
+          document.fonts.ready.then(mark);
+          setTimeout(mark, 1200);
+        } else {
+          mark();
+        }
+      })();
+    </script><link rel="stylesheet" href="/_astro/global-legacy.CsNa82T-.css"><link rel="stylesheet" href="/_astro/pricing-cadence.BDjBFW3Z.css"><link rel="preload" href="/vendor/unicornstudio/unicornStudio.umd.js" as="script"><link rel="preconnect" href="https://code.iconify.design" crossorigin><link rel="dns-prefetch" href="https://api.iconify.design"><link rel="preload" href="https://code.iconify.design/iconify-icon/2.3.0/iconify-icon.min.js" as="script"><script defer src="https://code.iconify.design/iconify-icon/2.3.0/iconify-icon.min.js"></script><script>
+          /* Marca ícones prontos — sem flash vazio→SVG; teto 1,5s evita ícone eternamente oculto */
+          (function () {
+            function arm(el) {
+              if (!el || el.classList.contains('iconify-ready')) return;
+              var done = function () {
+                el.classList.add('iconify-ready');
+              };
+              el.addEventListener('load', done, { once: true });
+              setTimeout(done, 1500);
+            }
+            function scan(root) {
+              (root || document).querySelectorAll('iconify-icon').forEach(arm);
+            }
+            function start() {
+              if (!window.customElements || !customElements.whenDefined) {
+                scan();
+                return;
+              }
+              customElements.whenDefined('iconify-icon').then(function () {
+                scan();
+                if (!document.body) return;
+                new MutationObserver(function (muts) {
+                  muts.forEach(function (m) {
+                    m.addedNodes.forEach(function (n) {
+                      if (n.nodeType !== 1) return;
+                      if (n.tagName === 'ICONIFY-ICON') arm(n);
+                      else if (n.querySelectorAll) scan(n);
+                    });
+                  });
+                }).observe(document.body, { childList: true, subtree: true });
+              });
+            }
+            if (document.readyState === 'loading') {
+              document.addEventListener('DOMContentLoaded', start);
+            } else {
+              start();
+            }
+          })();
+        </script><link rel="stylesheet" href="/_astro/header-cadence.DtYTGWXh.css">
+<link rel="stylesheet" href="/_astro/LPLayout.BrLNWExk.css">
+<style>.verificador-section[data-astro-cid-ss5c3ddk]{min-height:100dvh;display:flex;align-items:center;justify-content:center;padding:100px 20px 80px}.verificador-page-container[data-astro-cid-ss5c3ddk]{width:100%;max-width:880px;margin:0 auto;display:flex;flex-direction:column;align-items:center;gap:52px}.verificador-page-header[data-astro-cid-ss5c3ddk]{display:flex;flex-direction:column;align-items:center;gap:1rem}.verificador-widget[data-astro-cid-ss5c3ddk]{width:100%;max-width:900px;display:flex;flex-direction:column;align-items:center;gap:32px}.verificador-input-row[data-astro-cid-ss5c3ddk]{width:100%;display:flex;flex-direction:column;align-items:center;gap:16px}.verificador-input[data-astro-cid-ss5c3ddk]{width:100%;max-width:440px;padding:16px 22px;font-size:1rem;font-family:var(--font-sans, "Inter", system-ui, sans-serif);border:1px solid rgb(255 255 255 / .12);border-radius:9999px;background:#ffffff0a;backdrop-filter:blur(12px);color:#fff;box-sizing:border-box;transition:border-color .2s ease,box-shadow .2s ease;letter-spacing:-.01em}.verificador-input[data-astro-cid-ss5c3ddk]::placeholder{color:#ffffff59}.verificador-input[data-astro-cid-ss5c3ddk]:focus{outline:none;border-color:color-mix(in srgb,var(--ui-accent) 70%,transparent);box-shadow:0 0 0 3px color-mix(in srgb,var(--ui-accent) 18%,transparent)}.verificador-btn-glow[data-astro-cid-ss5c3ddk]{width:auto}.verificador-result[data-astro-cid-ss5c3ddk]{font-family:var(--font-sans, "Inter", system-ui, sans-serif);width:100%;max-width:620px;margin-top:1.5rem;padding:24px 28px;border-radius:1.25rem;border:1px solid rgb(255 255 255 / .08);background:#ffffff08;backdrop-filter:blur(16px) saturate(140%);box-shadow:inset 0 1px #ffffff14,0 20px 48px -20px #000000b3;animation:resultFadeIn .4s cubic-bezier(.2,.8,.2,1)}.verificador-result[data-astro-cid-ss5c3ddk].sucesso{border-color:color-mix(in srgb,var(--ui-accent) 40%,transparent);background:color-mix(in srgb,var(--ui-accent) 6%,rgb(8 8 18 / .7))}.verificador-result[data-astro-cid-ss5c3ddk].erro{border-color:#ef444459;background:#ef44440f}.verificador-result__header[data-astro-cid-ss5c3ddk]{display:flex;align-items:center;gap:12px;margin-bottom:12px}.verificador-result__icon[data-astro-cid-ss5c3ddk] svg{width:26px;height:26px;flex-shrink:0}.verificador-result__title[data-astro-cid-ss5c3ddk]{font-size:1.125rem;font-weight:600;letter-spacing:-.02em;margin:0;line-height:1.3}.verificador-result[data-astro-cid-ss5c3ddk].sucesso .verificador-result__title[data-astro-cid-ss5c3ddk]{color:var(--ui-accent-light)}.verificador-result[data-astro-cid-ss5c3ddk].erro .verificador-result__title[data-astro-cid-ss5c3ddk]{color:#fca5a5}.verificador-result__text[data-astro-cid-ss5c3ddk]{font-size:.9375rem;line-height:1.65;margin:0;color:var(--color-text-copy, rgb(255 255 255 / .6))}@keyframes resultFadeIn{0%{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}.button-glow[data-astro-cid-ss5c3ddk]{box-shadow:0 0 25px color-mix(in srgb,var(--ui-accent-glow) 30%,transparent),0 8px 40px color-mix(in srgb,var(--ui-accent-glow) 15%,transparent)}.button-glow[data-astro-cid-ss5c3ddk]:hover{box-shadow:0 0 50px 10px color-mix(in srgb,var(--ui-accent-glow) 45%,transparent)}.button-glow__border-spin[data-astro-cid-ss5c3ddk]{position:absolute;width:300%;height:300%;inset:-100%;background:conic-gradient(from 0deg,transparent 0deg,transparent 80deg,color-mix(in srgb,var(--ui-accent-glow) 80%,transparent) 180deg,transparent 280deg,transparent 360deg);animation:button-glow-spin 3s linear infinite}@keyframes button-glow-spin{to{transform:rotate(360deg)}}.button-glow__icon[data-astro-cid-ss5c3ddk]{background:linear-gradient(to bottom,var(--ui-accent-light),var(--ui-accent-dark));box-shadow:0 10px 15px -3px color-mix(in srgb,var(--ui-accent-glow) 30%,transparent)}@media(prefers-reduced-motion:reduce){.button-glow__border-spin[data-astro-cid-ss5c3ddk]{animation:none}}@media(max-width:480px){.verificador-result[data-astro-cid-ss5c3ddk]{padding:18px 20px}}
+</style></head> <body class="lp-contatos-oficiais" style="--ui-accent-dark:#0d9488;--ui-accent:#14b8a6;--ui-accent-light:#2dd4bf;--ui-accent-glow:#5eead4;--ui-accent-rgb-space:20 184 166;--ui-accent-rgb-comma:20, 184, 166;--platform-cyan:#14b8a6;--instructors-cyan:#14b8a6;--instructors-cyan-deep:#0d9488;--pricing-cyan:#14b8a6;--pricing-cyan-deep:#0d9488;--gt-cyan:#14b8a6;--gt-cyan-rgb:20 184 166;--faq-cyan:#14b8a6;--faq-cyan-rgb:20 184 166;--footer-cyan:#14b8a6;--footer-cyan-rgb:20 184 166;--color-cyan-300:#5eead4;--color-cyan-400:#2dd4bf;--color-cyan-500:#14b8a6;--color-cyan-600:#0d9488;--color-cyan-700:#0d9488;--color-cyan-900:#0d9488"> <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5Q23F862" height="0" width="0" style="display:none;visibility:hidden" title="Google Tag Manager"></iframe></noscript> <a href="#conteudo" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2 focus:bg-cyan-500 focus:text-black focus:rounded-lg">
+Ir para o conteúdo
+</a> <div class="aura-background-component fixed top-0 w-full h-screen -z-10 pointer-events-none" style="--aura-darken:0;--aura-gradient:0;--aura-accent-hsl:transparent;--accent-overlay-glow-mid-1:26vh;--accent-overlay-glow-mid-2:49vh;--accent-overlay-glow-fade-end:70vh" data-astro-cid-tthlriik> <div class="aura-background-component top-0 w-full -z-10 absolute h-full saturate-50 mix-blend-screen" data-alpha-mask="100" style="filter: hue-rotate(-102deg) saturate(93%) brightness(0.96); mask-image: linear-gradient(to bottom, black 0%, black 100%); -webkit-mask-image: linear-gradient(to bottom, black 0%, black 100%);" data-astro-cid-tthlriik> <div class="absolute w-full h-full left-0 top-0 -z-10" data-us-project="ILgOO23w4wEyPQOKyLO4" data-astro-cid-tthlriik></div> <script>
+      !function(){if(!window.UnicornStudio){window.UnicornStudio={isInitialized:!1};var i=document.createElement("script");i.src="/vendor/unicornstudio/unicornStudio.umd.js",i.onload=function(){window.UnicornStudio.isInitialized||(UnicornStudio.init(),window.UnicornStudio.isInitialized=!0)},(document.head || document.body).appendChild(i)}}();
+    </script> </div>    </div>  <div class="fixed inset-0 z-0 pointer-events-none" aria-hidden="true"> <img src="/_astro/landscape.DxcUOhQ9_ZDXTxP.webp" alt loading="eager" fetchpriority="high" decoding="async" width="1344" height="756" class="w-full h-full object-cover opacity-30"> <div class="absolute inset-0 bg-gradient-to-b from-[#050505]/90 via-[#050505]/60 to-[#050505]"></div> <div class="absolute inset-0" style="background: radial-gradient(ellipse at center, color-mix(in srgb, var(--ui-accent-dark) 16%, transparent), transparent 72%)"></div> </div>   <header class="cadence-header"> <nav class="cadence-header__nav" aria-label="Principal"> <div class="cadence-header__start"> <button type="button" class="cadence-header__hamburger" id="cadenceHeaderHamburger" aria-label="Menu" aria-expanded="false" aria-controls="cadenceHeaderMobile"> <span></span> <span></span> <span></span> </button> <a href="/" class="cadence-header__logo" aria-label="Asimov Academy"> <svg class="h-6 w-auto text-white" width="79" height="24" viewBox="0 0 79 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"> <path d="M6.52462 0.169113L13.0492 23.3095H10.2308L9.24438 19.5749H3.79076L2.81841 23.3095H0L6.52462 0.169113ZM8.59615 17.0945L7.0883 11.3024L6.51052 8.62478L5.96093 11.3024L4.43899 17.0945H8.59615Z" fill="currentColor"></path> <path d="M15.7972 19.9413C16.2575 20.2137 16.7367 20.458 17.2346 20.6741C17.7419 20.8902 18.2962 20.9982 18.8974 20.9982C19.2638 20.9982 19.6161 20.9466 19.9543 20.8432C20.2925 20.7399 20.5885 20.5802 20.8421 20.3641C21.0958 20.148 21.2978 19.8755 21.4481 19.5467C21.5984 19.2085 21.6736 18.8092 21.6736 18.3488C21.6736 18.0388 21.6313 17.7193 21.5467 17.3905C21.4716 17.0617 21.3401 16.7093 21.1522 16.3335C20.9737 15.9483 20.7341 15.5302 20.4335 15.0793C20.1422 14.6283 19.7758 14.1257 19.3343 13.5713L17.5164 11.2742C17.0655 10.7011 16.6803 10.1562 16.3609 9.63946C16.0508 9.12272 15.7972 8.62948 15.5999 8.15972C15.4026 7.68056 15.257 7.2249 15.163 6.79272C15.0785 6.35115 15.0362 5.91897 15.0362 5.49618C15.0362 4.79154 15.1489 4.14328 15.3744 3.55138C15.5999 2.95009 15.9287 2.43335 16.3609 2.00117C16.793 1.5596 17.3144 1.21668 17.9251 0.972402C18.5451 0.728127 19.245 0.605989 20.0248 0.605989C20.6448 0.605989 21.2696 0.690546 21.899 0.859659C22.5285 1.01938 23.1438 1.27775 23.7451 1.63476L22.6177 3.81914C22.2889 3.62184 21.9319 3.45273 21.5467 3.3118C21.1709 3.16148 20.7529 3.08632 20.2925 3.08632C19.5222 3.08632 18.9068 3.30711 18.4465 3.74868C17.9861 4.18086 17.756 4.79624 17.756 5.59483C17.756 5.81092 17.7795 6.03641 17.8264 6.27129C17.8734 6.49677 17.9533 6.74574 18.066 7.0182C18.1881 7.29066 18.3478 7.59131 18.5451 7.92014C18.7518 8.24897 19.0102 8.62008 19.3202 9.03347L21.9554 12.5003C22.2936 12.9513 22.613 13.3928 22.9137 13.825C23.2143 14.2478 23.4726 14.6847 23.6887 15.1356C23.9048 15.5772 24.0739 16.047 24.196 16.5449C24.3276 17.0335 24.3933 17.5643 24.3933 18.1374C24.3933 18.983 24.2571 19.744 23.9847 20.4204C23.7122 21.0875 23.3317 21.6559 22.8432 22.1257C22.3547 22.5954 21.7722 22.9571 21.0958 23.2108C20.4288 23.4551 19.696 23.5772 18.8974 23.5772C18.0707 23.5772 17.2815 23.4551 16.53 23.2108C15.7784 22.9665 15.1302 22.6565 14.5853 22.2807L15.7972 19.9413Z" fill="currentColor"></path> <path d="M27.9163 0.859659H30.5375V23.3095H27.9163V0.859659Z" fill="currentColor"></path> <path d="M35.3288 0L41.8111 11.8943L48.3075 0V23.3095H45.6864V12.7681L45.7569 9.93541L44.2631 12.7962L41.8252 17.2355V17.2637L41.8111 17.2496V17.2355L39.3591 12.7821L37.8653 9.93541L37.9499 12.7399V23.3095H35.3288V0Z" fill="currentColor"></path> <path d="M58.1015 23.5772C57.6506 23.5772 57.1855 23.5068 56.7064 23.3658C56.2367 23.2343 55.7763 23.0041 55.3254 22.6753C54.8744 22.3371 54.447 21.8908 54.043 21.3365C53.639 20.7728 53.282 20.0681 52.972 19.2225C52.6714 18.3676 52.4318 17.3529 52.2533 16.1785C52.0748 15.0041 51.9856 13.6418 51.9856 12.0916C51.9856 10.5414 52.0748 9.1791 52.2533 8.0047C52.4318 6.8303 52.6714 5.82032 52.972 4.97475C53.282 4.11979 53.639 3.41515 54.043 2.86083C54.447 2.29712 54.8744 1.85085 55.3254 1.52202C55.7763 1.18379 56.2367 0.948914 56.7064 0.817381C57.1855 0.676453 57.6506 0.605989 58.1015 0.605989C58.543 0.605989 59.0034 0.676453 59.4825 0.817381C59.9616 0.948914 60.4267 1.18379 60.8776 1.52202C61.3286 1.85085 61.756 2.29712 62.16 2.86083C62.564 3.41515 62.9163 4.11979 63.2169 4.97475C63.5269 5.82032 63.7712 6.8303 63.9497 8.0047C64.1282 9.1791 64.2174 10.5414 64.2174 12.0916C64.2174 13.6418 64.1282 15.0041 63.9497 16.1785C63.7712 17.3529 63.5269 18.3676 63.2169 19.2225C62.9163 20.0681 62.564 20.7728 62.16 21.3365C61.756 21.8908 61.3286 22.3371 60.8776 22.6753C60.4267 23.0041 59.9616 23.2343 59.4825 23.3658C59.0034 23.5068 58.543 23.5772 58.1015 23.5772ZM58.1015 20.9841C58.4961 20.9841 58.8953 20.8432 59.2993 20.5614C59.7033 20.2701 60.065 19.7863 60.3844 19.1098C60.7132 18.424 60.981 17.5126 61.1877 16.3758C61.3943 15.2296 61.4977 13.8015 61.4977 12.0916C61.4977 10.3817 61.3943 8.95831 61.1877 7.82149C60.981 6.67528 60.7132 5.76395 60.3844 5.08749C60.065 4.40164 59.7033 3.91779 59.2993 3.63594C58.8953 3.34469 58.4961 3.19906 58.1015 3.19906C57.7069 3.19906 57.3076 3.34469 56.9037 3.63594C56.4997 3.91779 56.1333 4.40164 55.8045 5.08749C55.4851 5.76395 55.222 6.67528 55.0153 7.82149C54.8087 8.95831 54.7053 10.3817 54.7053 12.0916C54.7053 13.8015 54.8087 15.2296 55.0153 16.3758C55.222 17.5126 55.4851 18.424 55.8045 19.1098C56.1333 19.7863 56.4997 20.2701 56.9037 20.5614C57.3076 20.8432 57.7069 20.9841 58.1015 20.9841Z" fill="currentColor"></path> <path d="M65.9508 0.859659H68.7692L71.8694 12.8667L72.4613 15.5584L73.0813 12.8667L76.1816 0.859659H79L72.4754 24L65.9508 0.859659Z" fill="currentColor"></path> </svg> </a> </div> <ul class="cadence-header__links"> <li class="cadence-header__dropdown"> <a href="/formacoes/engenheiro-de-ia/" class="cadence-header__dropdown-trigger" aria-haspopup="true"> Formações <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="cadence-header__dropdown-chevron" aria-hidden="true"><path d="m9 18 6-6-6-6"></path></svg> </a> <ul class="cadence-header__dropdown-menu"> <li> <a href="/formacoes/engenheiro-de-ia/"> Formação Engenheiro de Agentes de IA </a> </li><li> <a href="/formacoes/analista-de-dados/"> Formação Analista de Dados </a> </li><li> <a href="/formacoes/ai-designer/"> Formação AI Designer </a> </li> </ul> </li><li class="cadence-header__dropdown"> <a href="/trilhas/automatizando-tudo-com-n8n/" class="cadence-header__dropdown-trigger" aria-haspopup="true"> Trilhas <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="cadence-header__dropdown-chevron" aria-hidden="true"><path d="m9 18 6-6-6-6"></path></svg> </a> <ul class="cadence-header__dropdown-menu"> <li> <a href="/trilhas/automatizando-tudo-com-n8n/"> Trilha Automações com n8n </a> </li><li> <a href="/trilhas/openclaw/"> Trilha Dominando OpenClaw </a> </li><li> <a href="/trilhas/engenharia-de-dados/"> Trilha Engenharia de Dados </a> </li><li> <a href="/trilhas/dashboards-interativos-com-python/"> Trilha Dashboards com Python </a> </li><li> <a href="/trilhas/visao-computacional/"> Trilha Visão Computacional </a> </li><li> <a href="/trilhas/python-para-web/"> Trilha Python para Web </a> </li><li> <a href="/trilhas/data-science-e-machine-learning/"> Trilha Data Science e Machine Learning </a> </li> </ul> </li><li> <a href="/cursos/">Cursos</a> </li><li> <a href="/projetos/">Projetos</a> </li><li class="cadence-header__dropdown"> <a href="https://hub.asimov.academy/blog/" class="cadence-header__dropdown-trigger" aria-haspopup="true"> Conteúdos gratuitos <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="cadence-header__dropdown-chevron" aria-hidden="true"><path d="m9 18 6-6-6-6"></path></svg> </a> <ul class="cadence-header__dropdown-menu"> <li> <a href="/misc/materiais/"> Materiais </a> </li><li> <a href="https://hub.asimov.academy/blog/" target="_blank" rel="noopener noreferrer"> Blog </a> </li><li> <a href="https://hub.asimov.academy/tutoriais/" target="_blank" rel="noopener noreferrer"> Tutoriais </a> </li> </ul> </li> </ul> <div class="cadence-header__actions"> <a href="https://hub.asimov.academy/login/" class="cadence-header__btn cadence-header__btn--ghost">Entrar</a> <a href="#assine" class="cadence-header__btn cadence-header__btn--solid">Matricule-se</a> </div> <div class="cadence-header__mobile-bar"> <a href="https://hub.asimov.academy/login/" class="cadence-header__mobile-login">Entrar</a> <a href="#assine" class="cadence-header__btn cadence-header__btn--solid cadence-header__btn--compact">Matricule-se</a> </div> </nav> <div class="cadence-header__mobile" id="cadenceHeaderMobile"> <ul> <li class="cadence-header__mobile-group"> <button type="button" class="cadence-header__mobile-parent" aria-expanded="false"> Formações <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="cadence-header__mobile-chevron" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg> </button> <ul class="cadence-header__mobile-submenu"> <li> <a href="/formacoes/engenheiro-de-ia/" class="cadence-header__mobile-child"> Formação Engenheiro de Agentes de IA </a> </li><li> <a href="/formacoes/analista-de-dados/" class="cadence-header__mobile-child"> Formação Analista de Dados </a> </li><li> <a href="/formacoes/ai-designer/" class="cadence-header__mobile-child"> Formação AI Designer </a> </li> </ul> </li><li class="cadence-header__mobile-group"> <button type="button" class="cadence-header__mobile-parent" aria-expanded="false"> Trilhas <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="cadence-header__mobile-chevron" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg> </button> <ul class="cadence-header__mobile-submenu"> <li> <a href="/trilhas/automatizando-tudo-com-n8n/" class="cadence-header__mobile-child"> Trilha Automações com n8n </a> </li><li> <a href="/trilhas/openclaw/" class="cadence-header__mobile-child"> Trilha Dominando OpenClaw </a> </li><li> <a href="/trilhas/engenharia-de-dados/" class="cadence-header__mobile-child"> Trilha Engenharia de Dados </a> </li><li> <a href="/trilhas/dashboards-interativos-com-python/" class="cadence-header__mobile-child"> Trilha Dashboards com Python </a> </li><li> <a href="/trilhas/visao-computacional/" class="cadence-header__mobile-child"> Trilha Visão Computacional </a> </li><li> <a href="/trilhas/python-para-web/" class="cadence-header__mobile-child"> Trilha Python para Web </a> </li><li> <a href="/trilhas/data-science-e-machine-learning/" class="cadence-header__mobile-child"> Trilha Data Science e Machine Learning </a> </li> </ul> </li><li> <a href="/cursos/">Cursos</a> </li><li> <a href="/projetos/">Projetos</a> </li><li class="cadence-header__mobile-group"> <button type="button" class="cadence-header__mobile-parent" aria-expanded="false"> Conteúdos gratuitos <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="cadence-header__mobile-chevron" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg> </button> <ul class="cadence-header__mobile-submenu"> <li> <a href="/misc/materiais/" class="cadence-header__mobile-child"> Materiais </a> </li><li> <a href="https://hub.asimov.academy/blog/" class="cadence-header__mobile-child" target="_blank" rel="noopener noreferrer"> Blog </a> </li><li> <a href="https://hub.asimov.academy/tutoriais/" class="cadence-header__mobile-child" target="_blank" rel="noopener noreferrer"> Tutoriais </a> </li> </ul> </li> </ul> </div> </header> <div class="cadence-header-spacer" aria-hidden="true"></div> <script type="module">function c(){const t=document.getElementById("cadenceHeaderHamburger"),a=document.getElementById("cadenceHeaderMobile");if(!t||!a||t.dataset.bound==="true")return;t.dataset.bound="true";const s=a.querySelectorAll(".cadence-header__mobile-group"),r=()=>{s.forEach(e=>{e.classList.remove("is-open"),e.querySelector(".cadence-header__mobile-parent")?.setAttribute("aria-expanded","false")})};t.addEventListener("click",()=>{const e=t.classList.toggle("is-open");a.classList.toggle("is-open",e),t.setAttribute("aria-expanded",e?"true":"false"),e||r()}),s.forEach(e=>{const n=e.querySelector(".cadence-header__mobile-parent");n&&n.addEventListener("click",()=>{const d=!e.classList.contains("is-open");r(),d&&(e.classList.add("is-open"),n.setAttribute("aria-expanded","true"))})})}c();document.addEventListener("astro:page-load",c);</script>  <div class="relative z-10 flex flex-col min-h-screen"> <main id="conteudo" class="flex-1 w-full max-w-full relative overflow-x-clip"> <section class="verificador-section" aria-labelledby="verificador-title" data-astro-cid-ss5c3ddk> <div class="verificador-page-container" data-astro-cid-ss5c3ddk> <header class="verificador-page-header" data-astro-cid-ss5c3ddk> <!-- Eyebrow padrão Lumina ajustado --> <p class="section-badge !border !border-white/10 !bg-white/5 !px-4 !py-1.5 !rounded-full animate-fade-slide-in anim-delay-100 !mb-0" data-astro-cid-ss5c3ddk> <span class="section-badge__dot" aria-hidden="true" data-astro-cid-ss5c3ddk></span>
+print ("Contatos Oficiais")
+</p> <!-- H1 — tipografia idêntica à home --> <h1 id="verificador-title" class="text-[2.25rem] sm:text-[2.5rem] md:text-[3.25rem] leading-[0.95] tracking-tighter text-white font-medium w-full max-w-full text-center animate-fade-slide-in anim-delay-200" data-astro-cid-ss5c3ddk>
+Verifique se um número faz parte da <span class="text-gradient-silver" data-astro-cid-ss5c3ddk>equipe oficial da Asimov</span> </h1> <p class="text-copy text-lg md:text-xl text-center animate-fade-slide-in anim-delay-300 mt-1" data-astro-cid-ss5c3ddk>
+Preencha abaixo o número:
+</p> </header> <!-- Widget --> <div class="verificador-widget animate-fade-slide-in anim-delay-450" data-astro-cid-ss5c3ddk> <div class="verificador-input-row order-1" data-astro-cid-ss5c3ddk> <input type="text" id="phoneInputDark" class="verificador-input" placeholder="(XX) XXXXX-XXXX" aria-label="Digite o número de telefone para verificar" autocomplete="tel" data-astro-cid-ss5c3ddk> <!-- Botão padrão glass — mesmo markup do ButtonGlow, com id para o JS --> <button id="verifyBtnDark" type="button" class="button-glow verificador-btn-glow group isolate relative inline-flex cursor-pointer overflow-hidden transition-all duration-300 hover:scale-105 rounded-full bg-gradient-to-b from-white/20 via-white/0 to-white/5" data-astro-cid-ss5c3ddk> <div class="button-glow__border absolute inset-0 overflow-hidden rounded-full" aria-hidden="true" data-astro-cid-ss5c3ddk> <div class="button-glow__border-spin" data-astro-cid-ss5c3ddk></div> </div> <div class="button-glow__inner absolute inset-[1px] rounded-full backdrop-blur-xl z-0 bg-neutral-950/90" aria-hidden="true" data-astro-cid-ss5c3ddk></div> <div class="z-10 flex w-auto gap-3 overflow-hidden text-sm font-medium text-white rounded-full pt-3 pr-5 pb-3 pl-4 relative items-center" data-astro-cid-ss5c3ddk> <div class="button-glow__icon relative z-20 w-7 h-7 rounded-full flex items-center justify-center shadow-lg ring-1 ring-white/20 group-hover:scale-110 transition-transform duration-300" data-astro-cid-ss5c3ddk> <iconify-icon icon="solar:shield-check-bold" width="14" height="14" style="color:white" data-astro-cid-ss5c3ddk="true"></iconify-icon> </div> <span class="whitespace-nowrap relative z-10 font-medium tracking-tight text-base text-white/95 group-hover:text-white transition-colors" data-astro-cid-ss5c3ddk>
+Verificar número
+</span> <span class="inline-flex items-center justify-center z-10 bg-white/10 w-6 h-6 rounded-full ml-1 relative group-hover:translate-x-0.5 transition-transform text-white/80 group-hover:text-white" data-astro-cid-ss5c3ddk> <iconify-icon icon="solar:arrow-right-linear" width="12" height="12" data-astro-cid-ss5c3ddk="true"></iconify-icon> </span> </div> </button> </div> <p class="text-copy max-w-[900px] mx-auto text-center text-[18px] md:text-[20px] leading-relaxed px-4 order-3 md:order-2" data-astro-cid-ss5c3ddk>
+Para garantir que você está conversando apenas com números da equipe oficial da Asimov,
+          criamos o <strong class="text-white font-medium" data-astro-cid-ss5c3ddk>Verificador de Números</strong>.
+          Com essa ferramenta, você pode digitar qualquer número que entrou em contato com você e
+          confirmar se ele faz parte dos nossos números oficiais.
+</p> <!-- Resultado — glassmorphism Lumina --> <div id="resultBoxDark" class="verificador-result order-2 md:order-3" style="display: none;" aria-live="polite" role="status" data-astro-cid-ss5c3ddk> <div class="verificador-result__header" data-astro-cid-ss5c3ddk> <span id="resultadoIconDark" class="verificador-result__icon" aria-hidden="true" data-astro-cid-ss5c3ddk></span> <h2 id="resultadoTitleDark" class="verificador-result__title" data-astro-cid-ss5c3ddk></h2> </div> <p id="resultadoTextDark" class="verificador-result__text" data-astro-cid-ss5c3ddk></p> </div> </div> </div> </section>  </main> <footer class="site-footer" aria-labelledby="site-footer-title"> <div class="site-footer__watermark" aria-hidden="true">ASIMOV</div> <div class="site-footer__inner"> <div class="site-footer__grid"> <div class="site-footer__brand"> <h2 id="site-footer-title" class="sr-only">Rodapé ASIMOV</h2> <a href="https://asimov.academy/" class="site-footer__logo"> ASIMOV </a> <p class="text-copy site-footer__tagline">A maior escola de programação em Python.</p> <nav class="site-footer__social" aria-label="Redes sociais"> <ul class="site-footer__social-list"> <li> <a href="https://www.linkedin.com/company/asimov-academy/" class="site-footer__social-link" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"> <iconify-icon icon="mdi:linkedin" width="22" height="22"></iconify-icon> </a> </li><li> <a href="https://www.instagram.com/asimov.academy/" class="site-footer__social-link" target="_blank" rel="noopener noreferrer" aria-label="Instagram"> <iconify-icon icon="mdi:instagram" width="22" height="22"></iconify-icon> </a> </li><li> <a href="https://github.com/asimov-academy" class="site-footer__social-link" target="_blank" rel="noopener noreferrer" aria-label="GitHub"> <iconify-icon icon="mdi:github" width="22" height="22"></iconify-icon> </a> </li><li> <a href="https://www.tiktok.com/@asimov.academy" class="site-footer__social-link" target="_blank" rel="noopener noreferrer" aria-label="TikTok"> <iconify-icon icon="simple-icons:tiktok" width="22" height="22"></iconify-icon> </a> </li><li> <a href="https://twitter.com/asimovacademy" class="site-footer__social-link" target="_blank" rel="noopener noreferrer" aria-label="X"> <iconify-icon icon="simple-icons:x" width="22" height="22"></iconify-icon> </a> </li><li> <a href="https://www.youtube.com/c/AsimovAcademy" class="site-footer__social-link" target="_blank" rel="noopener noreferrer" aria-label="YouTube"> <iconify-icon icon="mdi:youtube" width="22" height="22"></iconify-icon> </a> </li> </ul> </nav> </div> <nav class="site-footer__col" aria-label="A plataforma"> <h3 class="site-footer__col-title">A plataforma</h3> <ul class="site-footer__links"> <li> <a href="/cursos/" class="site-footer__link">  <span>Lista de cursos</span> </a> </li><li> <a href="https://hub.asimov.academy/blog/" class="site-footer__link" target="_blank" rel="noopener noreferrer">  <span>Blog</span> </a> </li><li> <a href="https://hub.asimov.academy/tutoriais/" class="site-footer__link" target="_blank" rel="noopener noreferrer">  <span>Tutoriais</span> </a> </li> </ul> </nav><nav class="site-footer__col" aria-label="Sobre"> <h3 class="site-footer__col-title">Sobre</h3> <ul class="site-footer__links"> <li> <a href="https://hub.asimov.academy/sobre/" class="site-footer__link" target="_blank" rel="noopener noreferrer"> <span class="site-footer__link-check" aria-hidden="true"> <iconify-icon icon="mdi:check" width="14" height="14"></iconify-icon> </span> <span>Sobre nós</span> </a> </li><li> <a href="https://asimov.academy/manifesto-programacao-para-nao-programadores/" class="site-footer__link"> <span class="site-footer__link-check" aria-hidden="true"> <iconify-icon icon="mdi:check" width="14" height="14"></iconify-icon> </span> <span>Manifesto Asimov</span> </a> </li><li> <a href="https://www.linkedin.com/jobs/search/?currentJobId=4412035664&amp;geoId=106057199&amp;keywords=Asimov%20Academy&amp;location=Brazil&amp;src=v3_3895f27b-1055-402c-81bb-d82ec37b94fb_68cb003f2372e2ed854d14ac_0_s-1&amp;trk=public_jobs_jobs-search-bar_search-submit" class="site-footer__link"> <span class="site-footer__link-check" aria-hidden="true"> <iconify-icon icon="mdi:check" width="14" height="14"></iconify-icon> </span> <span>Trabalhe Conosco</span> </a> </li><li> <a href="/misc/empresas/" class="site-footer__link"> <span class="site-footer__link-check" aria-hidden="true"> <iconify-icon icon="mdi:check" width="14" height="14"></iconify-icon> </span> <span>Para empresas</span> </a> </li><li> <a href="https://hub.asimov.academy/politica-de-privacidade" class="site-footer__link" target="_blank" rel="noopener noreferrer"> <span class="site-footer__link-check" aria-hidden="true"> <iconify-icon icon="mdi:check" width="14" height="14"></iconify-icon> </span> <span>Política de privacidade</span> </a> </li><li> <a href="https://hub.asimov.academy/termos-de-uso/" class="site-footer__link" target="_blank" rel="noopener noreferrer"> <span class="site-footer__link-check" aria-hidden="true"> <iconify-icon icon="mdi:check" width="14" height="14"></iconify-icon> </span> <span>Termos de uso</span> </a> </li><li> <a href="https://asimov.academy/misc/work/empresas/" class="site-footer__link"> <span class="site-footer__link-check" aria-hidden="true"> <iconify-icon icon="mdi:check" width="14" height="14"></iconify-icon> </span> <span>Contrate nossos alunos</span> </a> </li> </ul> </nav><nav class="site-footer__col" aria-label="Suporte"> <h3 class="site-footer__col-title">Suporte</h3> <ul class="site-footer__links"> <li> <a href="https://api.whatsapp.com/send?phone=555196253887&amp;text=Ol%C3%A1%2C%20gostaria%20de%20saber%20mais%20sobre%20a%20Asimov" class="site-footer__link">  <span>Contato</span> </a> </li><li> <a href="/misc/contatos-oficiais/" class="site-footer__link"> <span class="site-footer__link-check" aria-hidden="true"> <iconify-icon icon="mdi:check" width="14" height="14"></iconify-icon> </span> <span>Números Oficiais</span> </a> </li> </ul> </nav> </div> <div class="site-footer__bar"> <p class="site-footer__legal">
+© 2026 Asimov. Todos os direitos reservados. CNPJ: 41.075.192/0001-82 </p> </div> </div> </footer> </div> <a href="https://api.whatsapp.com/send/?phone=555196253887&amp;text=Ol%C3%A1%2C%20gostaria%20de%20saber%20mais%20sobre%20a%20Asimov" class="whatsapp-fab" target="_blank" rel="noopener noreferrer" aria-label="Falar com a Asimov no WhatsApp">  <svg class="whatsapp-fab__icon" width="28" height="28" viewBox="0 0 24 24" aria-hidden="true" focusable="false"> <path fill="currentColor" d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21c5.46 0 9.91-4.45 9.91-9.91c0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2m.01 1.67c2.2 0 4.26.86 5.82 2.42a8.23 8.23 0 0 1 2.41 5.83c0 4.54-3.7 8.23-8.24 8.23c-1.48 0-2.93-.39-4.19-1.15l-.3-.17l-3.12.82l.83-3.04l-.2-.32a8.2 8.2 0 0 1-1.26-4.38c.01-4.54 3.7-8.24 8.25-8.24M8.53 7.33c-.16 0-.43.06-.66.31c-.22.25-.87.86-.87 2.07c0 1.22.89 2.39 1 2.56c.12.17 1.76 2.67 4.25 3.73c.59.27 1.05.42 1.41.53c.59.19 1.13.16 1.56.1c.48-.07 1.46-.6 1.67-1.18c.21-.58.21-1.07.15-1.18c-.07-.1-.23-.16-.48-.28c-.25-.11-1.47-.72-1.69-.82c-.23-.08-.37-.12-.53.13c-.16.25-.64.81-.78.98c-.15.17-.29.19-.53.07c-.25-.13-1.05-.39-1.99-1.23c-.74-.66-1.23-1.47-1.38-1.72c-.14-.25-.02-.38.11-.51c.11-.11.25-.29.37-.43c.13-.14.17-.25.25-.41c.08-.17.04-.31-.02-.43c-.06-.11-.53-1.28-.73-1.75c-.19-.44-.39-.38-.53-.39c-.14 0-.3-.01-.46-.01"></path> </svg> </a> <div id="pre-checkout-modal" class="pco-backdrop" role="dialog" aria-modal="true" aria-labelledby="pco-title" hidden data-astro-cid-suf2zmrn> <div class="index4-cadence pco-shell" data-astro-cid-suf2zmrn> <article class="index4-pricing-card pco-dialog" data-astro-cid-suf2zmrn> <button id="pre-checkout-close" class="pco-close" type="button" aria-label="Fechar modal" data-astro-cid-suf2zmrn> <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" data-astro-cid-suf2zmrn> <line x1="18" y1="6" x2="6" y2="18" data-astro-cid-suf2zmrn></line> <line x1="6" y1="6" x2="18" y2="18" data-astro-cid-suf2zmrn></line> </svg> </button> <h2 id="pco-title" class="index4-pricing-card__name pco-title" data-astro-cid-suf2zmrn>Você está quase lá!</h2> <p class="pco-subtitle" data-astro-cid-suf2zmrn>Falta mais um passo para acessar a página de inscrição.</p> <form id="pre-checkout-form" class="pco-form" novalidate data-astro-cid-suf2zmrn> <input type="hidden" id="pre-checkout-plan-id" name="plan_id" value="" data-astro-cid-suf2zmrn> <label class="pco-field" data-astro-cid-suf2zmrn> <span class="pco-label" data-astro-cid-suf2zmrn>Nome</span> <input type="text" name="name" placeholder="Seu nome completo" required autocomplete="name" data-astro-cid-suf2zmrn> </label> <label class="pco-field" data-astro-cid-suf2zmrn> <span class="pco-label" data-astro-cid-suf2zmrn>WhatsApp</span> <input type="tel" name="phone" placeholder="(11) 99999-9999" required autocomplete="tel" data-astro-cid-suf2zmrn> </label> <label class="pco-field" data-astro-cid-suf2zmrn> <span class="pco-label" data-astro-cid-suf2zmrn>E-mail</span> <input type="email" name="email" placeholder="voce@email.com" required autocomplete="email" data-astro-cid-suf2zmrn> </label> <p id="pre-checkout-error" class="pco-error" role="alert" hidden data-astro-cid-suf2zmrn>
+Não foi possível enviar — você será redirecionado mesmo assim.
+</p> <div class="index4-pricing-card__footer pco-footer" data-astro-cid-suf2zmrn> <button type="submit" class="index4-pricing-card__cta index4-pricing-card__cta--primary" data-astro-cid-suf2zmrn>
+Continuar para inscrição
+</button> <p class="index4-pricing-card__guarantee pco-privacy" data-astro-cid-suf2zmrn> <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" data-astro-cid-suf2zmrn> <rect x="3" y="11" width="18" height="11" rx="2" data-astro-cid-suf2zmrn></rect> <path d="M7 11V7a5 5 0 0 1 10 0v4" data-astro-cid-suf2zmrn></path> </svg>
+Seus dados estão protegidos. Não enviamos spam.
+</p> </div> </form> </article> </div> </div> <script id="pre-checkout-catalog" type="application/json">{"byCheckoutPath":{"/S88776596X":{"planId":"lifetime","productName":"Acesso Vitalício"},"/W86376714E":{"planId":"annual","productName":"Assinatura Anual"},"/P104283823A":{"planId":"formacao_ai_designer","productName":"Formação AI Designer"},"/G90302516D":{"planId":"formacao_analista_dados","productName":"Formação Analista de Dados"},"/X102265782X":{"planId":"trilha_engenheiro_ia","productName":"Formação Engenheiro de Agentes de IA"},"/T101062424J":{"planId":"trilha_automacoes_n8n","productName":"Trilha Automações com n8n"},"/Q106151350R":{"planId":"trilha_openclaw","productName":"Trilha Dominando OpenClaw"},"/V103457766X":{"planId":"ebooks_home","productName":"ebooks_home"},"/V103849841F":{"planId":"ebooks_analista_dados","productName":"ebooks_analista_dados"},"/I103847986P":{"planId":"cursos_analista_dados","productName":"cursos_analista_dados"},"/T103456910J":{"planId":"ebooks_engenheiro_ia","productName":"ebooks_engenheiro_ia"},"/O103848053V":{"planId":"cursos_engenheiro_ia","productName":"cursos_engenheiro_ia"},"/M103457467D":{"planId":"ebooks_n8n","productName":"ebooks_n8n"},"/V103848776Y":{"planId":"cursos_n8n","productName":"cursos_n8n"}}}</script> <script type="module" src="/_astro/LPLayout.astro_astro_type_script_index_0_lang.BbUaeGQ4.js"></script> </body> </html>  <script type="module">(function(){const a=document.getElementById("phoneInputDark");if(!a)return;const m=["+55 51 9756-6618","+55 51 9827-2972","+55 51 9569-3870","+55 51 9583-3105","+55 51 9962-4653","+55 51 9833-5351","+55 51 8053-3837","+55 51 9580-9101","+55 51 9710-0833","+55 51 9625-3887","+55 51 9765-3489","+55 48 9678-7860","+55 48 99678-7860","+55 51 9900-3773","+55 51 9383-0314","+55 51 99351-1764","+55 51 8937-7084","+55 51 8934-8176","+55 51 8912-9197","+55 51 8916-5941","+55 81 8400-5485","+55 31 9550-6347"].map(e=>(e||"").toString().replace(/\D+/g,"")),d=document.getElementById("verifyBtnDark"),s=document.getElementById("resultBoxDark"),c=document.getElementById("resultadoIconDark"),l=document.getElementById("resultadoTitleDark"),i=document.getElementById("resultadoTextDark"),f='<svg viewBox="0 0 24 24" fill="var(--ui-accent-light, #2dd4bf)"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"></path></svg>',b='<svg viewBox="0 0 24 24" fill="rgb(252 165 165)"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"></path></svg>';function h(e){if(!e)return!1;const o=new Set;if(o.add(e),e.length>=11){const t=e.slice(-11);o.add(t);const n=t.substring(2);if(n.length===9&&n.startsWith("9")){const r=t.substring(0,2);o.add(r+n.substring(1))}}if(e.length>=10){const t=e.slice(-10);o.add(t);const n=t.substring(0,2),r=t.substring(2);r.length===8&&o.add(n+"9"+r)}if(e.length>=9){const t=e.slice(-9);o.add(t),t.startsWith("9")&&o.add(t.substring(1))}if(e.length>=8){const t=e.slice(-8);o.add(t),o.add("9"+t)}for(const t of m)for(const n of o)if(t.endsWith(n))return!0;return!1}function v(e,o){s.classList.remove("sucesso","erro"),e?(s.classList.add("sucesso"),c.innerHTML=f,l.textContent="Número verificado!",i.innerHTML=`O número <b>${o}</b> faz parte da equipe da ASIMOV!<br><br>Pode ficar tranquilo, esse contato é um dos nossos números oficiais.🤩`):(s.classList.add("erro"),c.innerHTML=b,l.textContent="Número não verificado!",i.innerHTML=`O número <b>${o}</b> <b style="color:#ff8a8a;">NÃO</b> faz parte da equipe da ASIMOV!<br><br>Por gentileza, <b>NÃO CONFIE</b> em nenhum dos links ou informações divulgados por esse contato. Bloqueie e o denuncie para o nosso número oficial: <b>+55 51 9756-6618</b> ou enviando um e-mail para contato@asimov.academy.`),s.style.display="block"}function u(){const e=a.value.trim();if(!e){s.style.display="none";return}const o=e.replace(/\D+/g,""),t=h(o);v(t,e),d.blur()}d.addEventListener("click",e=>{e.preventDefault(),u()}),a.addEventListener("keydown",function(e){e.key==="Enter"&&(e.preventDefault(),u())})})();</script>

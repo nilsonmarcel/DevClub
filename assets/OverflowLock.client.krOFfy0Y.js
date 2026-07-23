@@ -1,0 +1,1 @@
+import{r as e}from"./ScrollReveal.client.aZGqK-Zn.js";function o(){const l=document.documentElement,n=document.body;l.style.overflowX="clip",n.style.overflowX="clip",window.scrollX!==0&&window.scrollTo(0,window.scrollY)}function t(){e("overflowLock",o)}function c(){o(),requestAnimationFrame(o)}export{c as a,t as l};

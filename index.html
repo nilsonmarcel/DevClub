@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DevClub AI - Formação em Tecnologia, IA e Programação</title>
+  <meta name="description" content="Aprenda Tecnologia, IA e Programação com quem forma os profissionais mais disputados do mercado. Mais de 25.000 alunos formados.">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              green: '#22C55E',
+              hover: '#16A34A',
+              neon: '#4ADE80',
+              dark: '#050505',
+              card: '#0B0B0B',
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            display: ['Outfit', 'sans-serif'],
+            mono: ['Fira Code', 'monospace'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Lucide Icons & Iconify -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
+  
+  <!-- Custom Design System CSS -->
+  <link rel="stylesheet" href="index.css">
+</head>
+<body class="bg-[#050505] text-[#FFFFFF] antialiased selection:bg-[#22C55E] selection:text-black">
+
+  <!-- Ambient Light & Grid Layer -->
+  <div class="ambient-glow"></div>
+  <div class="ambient-light-right"></div>
+  <div class="grid-layer"></div>
+  <div class="noise-layer"></div>
+
+  <!-- Custom Cursor Glow Ring & Trailing Dots -->
+  <div id="cursor-ring" class="hidden md:block"></div>
+  <div id="cursor-dot" class="hidden md:block"></div>
+  <div class="cursor-trail-dot hidden md:block"></div>
+  <div class="cursor-trail-dot hidden md:block"></div>
+  <div class="cursor-trail-dot hidden md:block"></div>
+  <div class="cursor-trail-dot hidden md:block"></div>
+  <div class="cursor-trail-dot hidden md:block"></div>
+  <div class="cursor-trail-dot hidden md:block"></div>
+
+  <!-- HEADER / NAVBAR -->
+  <header class="relative z-50 max-w-7xl mx-auto px-6 py-6 flex items-center justify-between">
+    <!-- Brand Logo -->
+    <a href="#" class="flex items-center gap-3 group">
+      <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-[#22C55E] to-[#16A34A] p-[1.5px] shadow-[0_0_20px_rgba(34,197,94,0.35)] transition-transform duration-300 group-hover:scale-105">
+        <div class="w-full h-full bg-[#0B0B0B] rounded-[10.5px] flex items-center justify-center">
+          <i data-lucide="cpu" class="w-5 h-5 text-[#4ADE80]"></i>
+        </div>
+      </div>
+      <div class="flex flex-col">
+        <span class="font-display font-extrabold text-xl tracking-tight text-white flex items-center gap-1.5">
+          DevClub <span class="text-[#4ADE80] font-mono text-sm tracking-widest bg-[#22C55E]/10 border border-[#22C55E]/30 px-1.5 py-0.5 rounded">AI</span>
+        </span>
+        <span class="text-[10px] font-mono uppercase tracking-widest text-[#9CA3AF]">Academy & Research</span>
+      </div>
+    </a>
+
+    <!-- Nav Menu -->
+    <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-[#D1D5DB]">
+      <a href="#" class="hover:text-[#4ADE80] transition-colors relative py-1 group">
+        Formações
+        <span class="absolute bottom-0 left-0 w-0 h-[2px] bg-[#22C55E] transition-all duration-300 group-hover:w-full shadow-[0_0_8px_#22C55E]"></span>
+      </a>
+      <a href="#" class="hover:text-[#4ADE80] transition-colors relative py-1 group">
+        Inteligência Artificial
+        <span class="absolute bottom-0 left-0 w-0 h-[2px] bg-[#22C55E] transition-all duration-300 group-hover:w-full shadow-[0_0_8px_#22C55E]"></span>
+      </a>
+      <a href="#" class="hover:text-[#4ADE80] transition-colors relative py-1 group">
+        Metodologia
+        <span class="absolute bottom-0 left-0 w-0 h-[2px] bg-[#22C55E] transition-all duration-300 group-hover:w-full shadow-[0_0_8px_#22C55E]"></span>
+      </a>
+      <a href="#" class="hover:text-[#4ADE80] transition-colors relative py-1 group">
+        Comunidade
+        <span class="absolute bottom-0 left-0 w-0 h-[2px] bg-[#22C55E] transition-all duration-300 group-hover:w-full shadow-[0_0_8px_#22C55E]"></span>
+      </a>
+    </nav>
+
+    <!-- Header Actions -->
+    <div class="flex items-center gap-4">
+      <div class="hidden sm:flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#22C55E]/10 border border-[#22C55E]/30 backdrop-blur-md">
+        <span class="w-2 h-2 rounded-full bg-[#22C55E] animate-pulse"></span>
+        <span class="text-xs font-mono text-[#4ADE80]">Turmas Abertas 2026</span>
+      </div>
+      <a href="#hero" class="btn-primary-glow text-sm py-2.5 px-6">
+        Área do Aluno
+      </a>
+    </div>
+  </header>
+
+  <!-- MAIN HERO SECTION (Primeira Dobra) -->
+  <section id="hero" class="relative z-10 max-w-7xl mx-auto px-6 pt-8 pb-20 md:pt-12 md:pb-28 overflow-visible">
+    
+    <!-- Diagonal Cyber Rain & Occasional Lightning Canvas Layer -->
+    <canvas id="rain-lightning-canvas" class="rain-lightning-canvas"></canvas>
+    
+    <!-- Protocol HUD System Header Indicator -->
+    <div class="flex items-center justify-between mb-8 pb-3 border-b border-white/[0.06] text-xs font-mono tracking-widest text-[#9CA3AF]">
+      <div class="flex items-center gap-3">
+        <span class="text-[#4ADE80]">SYSTEM ///</span>
+        <span>INITIALIZE DEV_AI_ACADEMY</span>
+        <span class="hidden sm:inline-block px-2 py-0.5 rounded bg-white/5 border border-white/10 text-[10px]">V4.8_STABLE</span>
+      </div>
+      <div class="flex items-center gap-2">
+        <span class="inline-block w-1.5 h-1.5 rounded-full bg-[#22C55E] animate-ping"></span>
+        <span class="text-[#D1D5DB]">LIVE ADMISSIONS</span>
+      </div>
+    </div>
+
+    <!-- Main Grid: Left Column Text & CTAs, Right Column Free-Floating Unconstrained Visual -->
+    <div class="grid lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+      
+      <!-- LEFT COLUMN: Headline, Subtitle, CTAs & Fast Stats -->
+      <div class="lg:col-span-7 space-y-8">
+        
+        <!-- Tagline Pill Badge -->
+        <div class="tagline-badge">
+          <div class="tagline-pulse-dot"></div>
+          <span>A Maior Escola de IA e Programação do Brasil</span>
+        </div>
+
+        <!-- Headline -->
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-display font-extrabold tracking-tight leading-[1.1] text-white">
+          Aprenda Tecnologia, IA e Programação com quem forma os profissionais mais <span class="text-gradient">disputados</span> do mercado.
+        </h1>
+
+        <!-- Subtítulo -->
+        <p class="text-lg sm:text-xl text-[#D1D5DB] font-normal leading-relaxed max-w-2xl">
+          Mais de <strong class="text-white font-semibold underline decoration-[#22C55E]/50 underline-offset-4">25.000 alunos</strong> já aceleraram suas carreiras conosco e hoje trabalham nas maiores empresas do Brasil e do mundo.
+        </p>
+
+        <!-- CTA Buttons -->
+        <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-2">
+          <!-- CTA Principal -->
+          <a href="#inscreva-se" class="btn-primary-glow group">
+            <span class="flex items-center gap-3">
+              Quero ser aluno
+              <i data-lucide="arrow-right" class="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1"></i>
+            </span>
+          </a>
+
+          <!-- CTA Secundário -->
+          <a href="#formacoes" class="btn-secondary-glass group">
+            <span class="flex items-center gap-3">
+              <i data-lucide="play-circle" class="w-5 h-5 text-[#4ADE80] transition-transform duration-300 group-hover:scale-110"></i>
+              Conhecer as Formações
+            </span>
+          </a>
+        </div>
+
+        <!-- Inline Floating Student Avatars & Social Proof -->
+        <div class="pt-4 flex flex-wrap items-center gap-6 border-t border-white/[0.08]">
+          <div class="flex items-center -space-x-3">
+            <img class="w-10 h-10 rounded-full border-2 border-[#050505] object-cover" src="assets/4618335d5d96ab2c_avatar-1.KTpp4UFb_sg2gE.webp" alt="Aluno 1">
+            <img class="w-10 h-10 rounded-full border-2 border-[#050505] object-cover" src="assets/41bc85c4bca30b64_avatar-2.iccIjlt__Z27PNAE.webp" alt="Aluno 2">
+            <img class="w-10 h-10 rounded-full border-2 border-[#050505] object-cover" src="assets/bf6c58051d28f049_avatar-3.Bhsq7Bqi_Z14IKFY.webp" alt="Aluno 3">
+            <img class="w-10 h-10 rounded-full border-2 border-[#050505] object-cover" src="assets/c6876a38d8409812_avatar-4.DCVN9A7f_2aJWHI.webp" alt="Aluno 4">
+            <div class="w-10 h-10 rounded-full border-2 border-[#050505] bg-[#0B0B0B] border-[#22C55E]/30 text-[#4ADE80] font-bold text-xs flex items-center justify-center font-mono">
+              +25K
+            </div>
+          </div>
+          <div>
+            <div class="flex items-center gap-1 text-amber-400 text-sm">
+              <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+              <span class="text-white font-bold ml-1">4.9 / 5.0</span>
+            </div>
+            <p class="text-xs text-[#9CA3AF] font-mono mt-0.5">Avaliado por milhares de desenvolvedores</p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- RIGHT COLUMN: Fully Unconstrained 3D Neural Globe Visual (Design System Intelligence Style) -->
+      <div class="lg:col-span-5 relative flex items-center justify-center">
+        
+        <!-- Free-Floating Unconstrained Visual Wrapper (No Borders, No Card Box) -->
+        <div class="hero-visual-unconstrained group">
+          
+          <!-- Radial Ambient Glow Filter Floating Behind Canvas -->
+          <div class="hero-visual-glow"></div>
+
+          <!-- Futuristic Background Hologram Render Texture -->
+          <img src="assets/ai_neural_core_3d.png" alt="Quantum AI Neural Sphere" class="quantum-bg-image" />
+
+          <!-- Rotating Holographic Orbit Rings -->
+          <div class="orbit-ring orbit-ring-1"></div>
+          <div class="orbit-ring orbit-ring-2"></div>
+
+          <!-- 3D Interactive Canvas -->
+          <canvas id="neural-canvas" class="quantum-canvas"></canvas>
+
+          <!-- Floating Glass Badge: Mentoria Ativa (Clean & Uncluttered) -->
+          <div class="absolute -bottom-2 right-0 sm:-right-2 glass-card p-3.5 rounded-2xl animate-float-slow flex items-center gap-3 max-w-[230px] shadow-2xl z-30 border border-[#22C55E]/40">
+            <div class="w-9 h-9 rounded-xl bg-gradient-to-br from-[#22C55E]/30 to-[#16A34A]/30 border border-[#22C55E]/50 flex items-center justify-center shrink-0 shadow-[0_0_15px_rgba(34,197,94,0.4)]">
+              <i data-lucide="sparkles" class="w-4.5 h-4.5 text-[#4ADE80]"></i>
+            </div>
+            <div>
+              <p class="text-xs font-bold text-white leading-tight">IA & Agentes Autónomos</p>
+              <p class="text-[10px] text-[#4ADE80] font-mono mt-0.5">● Interatividade 3D Ativa</p>
+            </div>
+          </div>
+
+          <!-- Floating Live Telemetry Badge (Top Left) -->
+          <div class="absolute -top-2 left-0 z-30 px-3 py-1.5 rounded-full bg-[#0B0B0B]/80 backdrop-blur-md border border-[#22C55E]/40 text-[11px] font-mono text-white flex items-center gap-2 shadow-xl">
+            <span class="w-2 h-2 rounded-full bg-[#4ADE80] animate-pulse"></span>
+            <span class="text-[#4ADE80]">NEURAL_CORE:</span>
+            <span>60 FPS</span>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- METRICS & STATISTICS GRID -->
+    <div class="mt-16 sm:mt-24 grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
+      
+      <!-- Metric 1: 25.000+ Alunos -->
+      <div class="stat-card group">
+        <div class="hud-corner hud-corner-tl opacity-0 group-hover:opacity-100 transition-opacity"></div>
+        <div class="hud-corner hud-corner-br opacity-0 group-hover:opacity-100 transition-opacity"></div>
+        <div class="flex items-center justify-between mb-2">
+          <span class="text-xs font-mono uppercase tracking-widest text-[#9CA3AF]">Comunidade</span>
+          <i data-lucide="users" class="w-5 h-5 text-[#4ADE80] transition-transform group-hover:scale-110"></i>
+        </div>
+        <div class="text-3xl sm:text-4xl font-display font-extrabold text-white tracking-tight group-hover:text-[#4ADE80] transition-colors">
+          25.000+
+        </div>
+        <p class="text-xs text-[#9CA3AF] font-medium mt-1">Alunos Formados</p>
+      </div>
+
+      <!-- Metric 2: 500+ Empresas -->
+      <div class="stat-card group">
+        <div class="hud-corner hud-corner-tl opacity-0 group-hover:opacity-100 transition-opacity"></div>
+        <div class="hud-corner hud-corner-br opacity-0 group-hover:opacity-100 transition-opacity"></div>
+        <div class="flex items-center justify-between mb-2">
+          <span class="text-xs font-mono uppercase tracking-widest text-[#9CA3AF]">Empregabilidade</span>
+          <i data-lucide="building-2" class="w-5 h-5 text-[#22C55E] transition-transform group-hover:scale-110"></i>
+        </div>
+        <div class="text-3xl sm:text-4xl font-display font-extrabold text-white tracking-tight group-hover:text-[#22C55E] transition-colors">
+          500+
+        </div>
+        <p class="text-xs text-[#9CA3AF] font-medium mt-1">Empresas Contratantes</p>
+      </div>
+
+      <!-- Metric 3: 98% Satisfação -->
+      <div class="stat-card group">
+        <div class="hud-corner hud-corner-tl opacity-0 group-hover:opacity-100 transition-opacity"></div>
+        <div class="hud-corner hud-corner-br opacity-0 group-hover:opacity-100 transition-opacity"></div>
+        <div class="flex items-center justify-between mb-2">
+          <span class="text-xs font-mono uppercase tracking-widest text-[#9CA3AF]">Aprovação</span>
+          <i data-lucide="award" class="w-5 h-5 text-[#4ADE80] transition-transform group-hover:scale-110"></i>
+        </div>
+        <div class="text-3xl sm:text-4xl font-display font-extrabold text-white tracking-tight group-hover:text-[#4ADE80] transition-colors">
+          98%
+        </div>
+        <p class="text-xs text-[#9CA3AF] font-medium mt-1">Taxa de Satisfação</p>
+      </div>
+
+      <!-- Metric 4: 100+ Especialistas -->
+      <div class="stat-card group">
+        <div class="hud-corner hud-corner-tl opacity-0 group-hover:opacity-100 transition-opacity"></div>
+        <div class="hud-corner hud-corner-br opacity-0 group-hover:opacity-100 transition-opacity"></div>
+        <div class="flex items-center justify-between mb-2">
+          <span class="text-xs font-mono uppercase tracking-widest text-[#9CA3AF]">Corpo Docente</span>
+          <i data-lucide="brain-circuit" class="w-5 h-5 text-[#22C55E] transition-transform group-hover:scale-110"></i>
+        </div>
+        <div class="text-3xl sm:text-4xl font-display font-extrabold text-white tracking-tight group-hover:text-[#22C55E] transition-colors">
+          100+
+        </div>
+        <p class="text-xs text-[#9CA3AF] font-medium mt-1">Especialistas e Mentores</p>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- Interactive Scripts (Lucide, Cursor Glow & 3D Neural Sphere Canvas Engine) -->
+  <script>
+    // Initialize Lucide Icons
+    lucide.createIcons();
+
+    // Interactive Custom Glow Cursor Ring & Multi-Dot Trailing Physics
+    const ring = document.getElementById('cursor-ring');
+    const dot = document.getElementById('cursor-dot');
+    const trailDots = Array.from(document.querySelectorAll('.cursor-trail-dot'));
+
+    if (ring && dot && window.innerWidth >= 768) {
+      let mouseX = 0, mouseY = 0;
+      const trail = trailDots.map((el, i) => ({
+        el,
+        x: 0,
+        y: 0,
+        size: Math.max(2, 6 - i * 0.7),
+        speed: 0.35 - i * 0.045,
+        color: i % 2 === 0 ? '#4ADE80' : '#FDE68A',
+        opacity: 0.85 - i * 0.12
+      }));
+
+      trail.forEach(t => {
+        t.el.style.width = t.size + 'px';
+        t.el.style.height = t.size + 'px';
+        t.el.style.backgroundColor = t.color;
+        t.el.style.boxShadow = `0 0 8px ${t.color}`;
+        t.el.style.opacity = t.opacity;
+      });
+
+      window.addEventListener('mousemove', (e) => {
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+        ring.style.transform = `translate(${mouseX}px, ${mouseY}px)`;
+        dot.style.transform = `translate(${mouseX}px, ${mouseY}px)`;
+      });
+
+      function animateTrail() {
+        let prevX = mouseX;
+        let prevY = mouseY;
+
+        trail.forEach((t) => {
+          t.x += (prevX - t.x) * t.speed;
+          t.y += (prevY - t.y) * t.speed;
+          t.el.style.transform = `translate(${t.x}px, ${t.y}px)`;
+          prevX = t.x;
+          prevY = t.y;
+        });
+
+        requestAnimationFrame(animateTrail);
+      }
+      animateTrail();
+
+      document.querySelectorAll('a, button, .stat-card, .glass-card, .hero-visual-unconstrained').forEach(el => {
+        el.addEventListener('mouseenter', () => {
+          ring.style.width = '50px';
+          ring.style.height = '50px';
+          ring.style.borderColor = 'rgba(74, 222, 128, 0.9)';
+          ring.style.boxShadow = '0 0 30px rgba(34, 197, 94, 0.6)';
+        });
+        el.addEventListener('mouseleave', () => {
+          ring.style.width = '32px';
+          ring.style.height = '32px';
+          ring.style.borderColor = 'rgba(34, 197, 94, 0.6)';
+          ring.style.boxShadow = '0 0 20px rgba(34, 197, 94, 0.35)';
+        });
+      });
+    }
+
+    // -------------------------------------------------------------
+    // 3D Quantum AI Neural Particle Sphere (HTML5 Canvas Engine)
+    // -------------------------------------------------------------
+    const canvas = document.getElementById('neural-canvas');
+    if (canvas) {
+      const ctx = canvas.getContext('2d');
+      let width, height;
+      let mouseX = 0, mouseY = 0;
+      let targetRotX = 0, targetRotY = 0;
+      let rotX = 0, rotY = 0;
+
+      function resize() {
+        const rect = canvas.getBoundingClientRect();
+        width = canvas.width = rect.width * (window.devicePixelRatio || 1);
+        height = canvas.height = rect.height * (window.devicePixelRatio || 1);
+      }
+      window.addEventListener('resize', resize);
+      resize();
+
+      // Create 3D Nodes on a sphere
+      const NODE_COUNT = 140;
+      const RADIUS = 145;
+      const nodes = [];
+
+      for (let i = 0; i < NODE_COUNT; i++) {
+        const phi = Math.acos(-1 + (2 * i) / NODE_COUNT);
+        const theta = Math.sqrt(NODE_COUNT * Math.PI) * phi;
+        nodes.push({
+          x: RADIUS * Math.cos(theta) * Math.sin(phi),
+          y: RADIUS * Math.sin(theta) * Math.sin(phi),
+          z: RADIUS * Math.cos(phi),
+          baseSize: 2 + Math.random() * 2.5
+        });
+      }
+
+      // Mouse tracking on container
+      const container = canvas.parentElement;
+      container.addEventListener('mousemove', (e) => {
+        const rect = container.getBoundingClientRect();
+        mouseX = (e.clientX - rect.left - rect.width / 2) / (rect.width / 2);
+        mouseY = (e.clientY - rect.top - rect.height / 2) / (rect.height / 2);
+        targetRotY = mouseX * 0.8;
+        targetRotX = -mouseY * 0.8;
+      });
+
+      container.addEventListener('mouseleave', () => {
+        targetRotX = 0;
+        targetRotY = 0;
+      });
+
+      let angleY = 0;
+      let angleX = 0;
+
+      function render() {
+        ctx.clearRect(0, 0, width, height);
+
+        // Smooth rotation interpolation
+        rotX += (targetRotX - rotX) * 0.05;
+        rotY += (targetRotY - rotY) * 0.05;
+
+        angleY += 0.008 + rotY * 0.02;
+        angleX += 0.004 + rotX * 0.02;
+
+        const cosY = Math.cos(angleY), sinY = Math.sin(angleY);
+        const cosX = Math.cos(angleX), sinX = Math.sin(angleX);
+
+        const projected = [];
+        const scaleFactor = Math.min(width, height) / 380;
+        const centerX = width / 2;
+        const centerY = height / 2;
+
+        for (let i = 0; i < nodes.length; i++) {
+          let { x, y, z, baseSize } = nodes[i];
+
+          // Y rotation
+          let x1 = x * cosY - z * sinY;
+          let z1 = z * cosY + x * sinY;
+
+          // X rotation
+          let y2 = y * cosX - z1 * sinX;
+          let z2 = z1 * cosX + y * sinX;
+
+          // Perspective projection
+          const fov = 300;
+          const pScale = fov / (fov + z2);
+          const px = centerX + x1 * pScale * scaleFactor;
+          const py = centerY + y2 * pScale * scaleFactor;
+
+          projected.push({
+            x: px,
+            y: py,
+            z: z2,
+            scale: pScale,
+            size: baseSize * pScale * scaleFactor
+          });
+        }
+
+        // Draw connecting laser lines
+        for (let i = 0; i < projected.length; i++) {
+          for (let j = i + 1; j < projected.length; j++) {
+            const p1 = projected[i];
+            const p2 = projected[j];
+            const dx = p1.x - p2.x;
+            const dy = p1.y - p2.y;
+            const dist = Math.sqrt(dx * dx + dy * dy);
+
+            const maxDist = 70 * scaleFactor;
+            if (dist < maxDist) {
+              const alpha = (1 - dist / maxDist) * 0.45 * Math.max(0, (p1.scale + p2.scale) / 2 - 0.4);
+              ctx.beginPath();
+              ctx.moveTo(p1.x, p1.y);
+              ctx.lineTo(p2.x, p2.y);
+              ctx.strokeStyle = `rgba(74, 222, 128, ${alpha})`;
+              ctx.lineWidth = 1 * scaleFactor;
+              ctx.stroke();
+            }
+          }
+        }
+
+        // Draw Nodes
+        for (let i = 0; i < projected.length; i++) {
+          const p = projected[i];
+          const alpha = Math.max(0.1, (p.z + RADIUS) / (2 * RADIUS));
+
+          // Node Glow
+          ctx.beginPath();
+          ctx.arc(p.x, p.y, p.size * 2, 0, Math.PI * 2);
+          ctx.fillStyle = `rgba(34, 197, 94, ${alpha * 0.25})`;
+          ctx.fill();
+
+          // Node Core
+          ctx.beginPath();
+          ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+          ctx.fillStyle = p.z > 0 ? `rgba(255, 255, 255, ${alpha})` : `rgba(74, 222, 128, ${alpha})`;
+          ctx.fill();
+        }
+
+        requestAnimationFrame(render);
+      }
+
+      render();
+    }
+
+    // -------------------------------------------------------------
+    // Diagonal Cyber Rain & Occasional Lightning Engine
+    // -------------------------------------------------------------
+    const rainCanvas = document.getElementById('rain-lightning-canvas');
+    if (rainCanvas) {
+      const ctx = rainCanvas.getContext('2d');
+      let width, height;
+
+      function resizeRain() {
+        width = rainCanvas.width = rainCanvas.parentElement.offsetWidth || window.innerWidth;
+        height = rainCanvas.height = rainCanvas.parentElement.offsetHeight || window.innerHeight;
+      }
+      window.addEventListener('resize', resizeRain);
+      resizeRain();
+
+      // 180 Diagonal Rain Drops
+      const DROP_COUNT = 180;
+      const drops = [];
+
+      for (let i = 0; i < DROP_COUNT; i++) {
+        drops.push({
+          x: Math.random() * (width + 400) - 200,
+          y: Math.random() * height,
+          length: 25 + Math.random() * 35,
+          speed: 7 + Math.random() * 11,
+          opacity: 0.2 + Math.random() * 0.65,
+          isGold: Math.random() < 0.2 // 20% gold rain drops
+        });
+      }
+
+      // Lightning Bolt & Flash System
+      let activeBolts = [];
+      let flashOpacity = 0;
+
+      function createLightning() {
+        const startX = Math.random() * width;
+        const startY = 0;
+        const segments = [];
+        let currX = startX;
+        let currY = startY;
+
+        for (let i = 0; i < 7; i++) {
+          const nextX = currX + (Math.random() - 0.5) * 110;
+          const nextY = currY + (height / 7) + (Math.random() - 0.3) * 25;
+          segments.push({ x1: currX, y1: currY, x2: nextX, y2: nextY });
+
+          if (Math.random() < 0.4) {
+            segments.push({
+              x1: nextX,
+              y1: nextY,
+              x2: nextX + (Math.random() - 0.5) * 70,
+              y2: nextY + 30 + Math.random() * 25,
+              isBranch: true
+            });
+          }
+
+          currX = nextX;
+          currY = nextY;
+        }
+
+        activeBolts.push({
+          segments,
+          life: 1.0,
+          decay: 0.07 + Math.random() * 0.04
+        });
+
+        flashOpacity = 0.35; // Trigger screen atmospheric flash
+      }
+
+      function scheduleLightning() {
+        const delay = 3500 + Math.random() * 4500;
+        setTimeout(() => {
+          createLightning();
+          if (Math.random() < 0.35) {
+            setTimeout(createLightning, 110);
+          }
+          scheduleLightning();
+        }, delay);
+      }
+      scheduleLightning();
+
+      function animateRain() {
+        ctx.clearRect(0, 0, width, height);
+
+        // Flash Overlay
+        if (flashOpacity > 0) {
+          ctx.fillStyle = `rgba(74, 222, 128, ${flashOpacity * 0.12})`;
+          ctx.fillRect(0, 0, width, height);
+          flashOpacity -= 0.02;
+        }
+
+        // Draw Diagonal Rain (-25deg slope)
+        for (let i = 0; i < drops.length; i++) {
+          const drop = drops[i];
+
+          drop.x += drop.speed * 0.45;
+          drop.y += drop.speed;
+
+          if (drop.y > height || drop.x > width + 200) {
+            drop.y = -drop.length;
+            drop.x = Math.random() * (width + 400) - 200;
+          }
+
+          const tailX = drop.x - drop.length * 0.45;
+          const tailY = drop.y - drop.length;
+
+          const grad = ctx.createLinearGradient(drop.x, drop.y, tailX, tailY);
+          if (drop.isGold) {
+            grad.addColorStop(0, `rgba(253, 230, 138, ${drop.opacity})`);
+            grad.addColorStop(1, 'rgba(253, 230, 138, 0)');
+          } else {
+            grad.addColorStop(0, `rgba(74, 222, 128, ${drop.opacity})`);
+            grad.addColorStop(1, 'rgba(34, 197, 94, 0)');
+          }
+
+          ctx.beginPath();
+          ctx.moveTo(drop.x, drop.y);
+          ctx.lineTo(tailX, tailY);
+          ctx.strokeStyle = grad;
+          ctx.lineWidth = drop.isGold ? 1.5 : 1.2;
+          ctx.stroke();
+        }
+
+        // Draw Lightning Bolts
+        for (let b = activeBolts.length - 1; b >= 0; b--) {
+          const bolt = activeBolts[b];
+          ctx.save();
+          ctx.shadowBlur = 18;
+          ctx.shadowColor = '#4ADE80';
+
+          for (let s = 0; s < bolt.segments.length; s++) {
+            const seg = bolt.segments[s];
+            ctx.beginPath();
+            ctx.moveTo(seg.x1, seg.y1);
+            ctx.lineTo(seg.x2, seg.y2);
+            ctx.strokeStyle = seg.isBranch 
+              ? `rgba(74, 222, 128, ${bolt.life * 0.6})` 
+              : `rgba(255, 255, 255, ${bolt.life})`;
+            ctx.lineWidth = seg.isBranch ? 1 : 2.5;
+            ctx.stroke();
+          }
+
+          ctx.restore();
+          bolt.life -= bolt.decay;
+          if (bolt.life <= 0) {
+            activeBolts.splice(b, 1);
+          }
+        }
+
+        requestAnimationFrame(animateRain);
+      }
+
+      animateRain();
+    }
+  </script>
+</body>
+</html>

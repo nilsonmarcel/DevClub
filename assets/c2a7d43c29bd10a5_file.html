@@ -1,0 +1,463 @@
+<!DOCTYPE html><html lang="pt-BR"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><!-- Anti-FOUC: fundo no html (não no body — body cobria o Cadence com z negativo) --><style>
+      html {
+        background-color: #050505;
+      }
+      iconify-icon {
+        display: inline-block;
+        vertical-align: -0.125em;
+      }
+    </style><style>
+        /* Ícones: esconde até o CE existir; evita caixa vazia no 1º paint (modo head) */
+        iconify-icon:not(:defined) {
+          visibility: hidden;
+          display: inline-block;
+          width: 1.25em;
+          height: 1.25em;
+          vertical-align: -0.125em;
+        }
+        /* Depois de definido, só mostra quando o SVG carregou (ou teto 1,5s) */
+        iconify-icon:defined:not(.iconify-ready) {
+          visibility: hidden;
+        }
+        iconify-icon.iconify-ready {
+          visibility: visible;
+        }
+      </style><style>@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: url('/_astro/inter-latin-400-normal.C38fXH4l.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 600;
+  src: url('/_astro/inter-latin-600-normal.LgqL8muc.woff2') format('woff2');
+}</style><!-- Orgânico + /lp/ de campanha nas formações/trilhas; páginas internas podem passar noindex --><meta name="robots" content="index, follow"><title>Planos corporativos Asimov Academy | Python e IA para empresas</title><meta name="description" content="Capacite seu time em Python, automações e IA com condições exclusivas para grupos corporativos. Fale com um especialista e receba uma proposta personalizada."><link rel="canonical" href="https://www.asimov.academy/misc/empresas/"><link rel="icon" href="/favicon.png" type="image/png"><link rel="dns-prefetch" href="https://www.googletagmanager.com"><link rel="dns-prefetch" href="https://connect.facebook.net"><script>
+        window.dataLayer = window.dataLayer || [];
+        (function () {
+          if (window.fbq) return;
+          var n = function () {
+            n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments);
+          };
+          n.push = n;
+          n.loaded = false;
+          n.version = '2.0';
+          n.queue = [];
+          window.fbq = n;
+          if (!window._fbq) window._fbq = n;
+        })();
+      </script><script>(function(){const deferTracking = false;
+const deferUntilLoad = false;
+const deferUntilInteraction = false;
+const deferUntilInteractionStaggered = false;
+
+        window.__aaTrackWhenReady = (function () {
+          function runIdle(fn) {
+            if ('requestIdleCallback' in window) {
+              requestIdleCallback(fn, { timeout: 2500 });
+            } else {
+              setTimeout(fn, 1200);
+            }
+          }
+          function afterDomReady(fn) {
+            if (document.readyState !== 'loading') {
+              runIdle(fn);
+            } else {
+              document.addEventListener('DOMContentLoaded', function () {
+                runIdle(fn);
+              });
+            }
+          }
+          function afterWindowLoad(fn) {
+            function start() {
+              runIdle(fn);
+            }
+            if (document.readyState === 'complete') {
+              start();
+            } else {
+              window.addEventListener('load', start);
+            }
+          }
+          function yieldThen(fn) {
+            var run = function () {
+              if (
+                window.scheduler &&
+                typeof window.scheduler.postTask === 'function'
+              ) {
+                window.scheduler.postTask(fn, { priority: 'background' });
+                return;
+              }
+              setTimeout(fn, 0);
+            };
+            if (typeof requestAnimationFrame === 'function') {
+              requestAnimationFrame(function () {
+                run();
+              });
+            } else {
+              run();
+            }
+          }
+          var interactionQueue = [];
+          var interactionArmed = false;
+          var trackingStarted = false;
+          var fallbackTimer = null;
+          var scrollOpts = { capture: true, passive: true };
+          function cleanupTrackingTriggers() {
+            window.removeEventListener('pointerdown', onInteract, true);
+            window.removeEventListener('keydown', onInteract, true);
+            window.removeEventListener('scroll', onScroll, scrollOpts);
+            if (fallbackTimer != null) {
+              clearTimeout(fallbackTimer);
+              fallbackTimer = null;
+            }
+          }
+          function onInteract() {
+            startTracking();
+          }
+          function onScroll() {
+            if (window.scrollY > 100) startTracking();
+          }
+          function flushQueueSync(q) {
+            for (var i = 0; i < q.length; i++) q[i]();
+          }
+          function flushQueueStaggered(q) {
+            var i = 0;
+            function next() {
+              if (i >= q.length) return;
+              var fn = q[i++];
+              try {
+                fn();
+              } catch (e) {}
+              if (i < q.length) yieldThen(next);
+            }
+            // Resposta visual primeiro: só inicia tracking na próxima frame/task.
+            yieldThen(next);
+          }
+          function startTracking() {
+            if (trackingStarted) return;
+            trackingStarted = true;
+            cleanupTrackingTriggers();
+            var q = interactionQueue.splice(0, interactionQueue.length);
+            if (deferUntilInteractionStaggered) {
+              flushQueueStaggered(q);
+            } else {
+              flushQueueSync(q);
+            }
+          }
+          function afterInteraction(fn) {
+            if (trackingStarted) {
+              fn();
+              return;
+            }
+            interactionQueue.push(fn);
+            if (interactionArmed) return;
+            interactionArmed = true;
+            window.addEventListener('pointerdown', onInteract, true);
+            window.addEventListener('keydown', onInteract, true);
+            window.addEventListener('scroll', onScroll, scrollOpts);
+            if (window.scrollY > 100) {
+              startTracking();
+              return;
+            }
+            // Legado `interaction`: fallback ~9s.
+            // Staggered: fallback conservador (idle + página visível + 30s) —
+            // PageView first-party já cobriu attribution; browser tags só se o
+            // usuário permanecer sem interagir.
+            if (!deferUntilInteractionStaggered) {
+              fallbackTimer = setTimeout(startTracking, 9000);
+            } else {
+              fallbackTimer = setTimeout(function () {
+                if (document.visibilityState !== 'visible') return;
+                if (trackingStarted) return;
+                function kick() {
+                  startTracking();
+                }
+                if ('requestIdleCallback' in window) {
+                  requestIdleCallback(kick, { timeout: 4000 });
+                } else {
+                  setTimeout(kick, 500);
+                }
+              }, 30000);
+            }
+          }
+          return function (fn) {
+            if (!deferTracking) {
+              fn();
+              return;
+            }
+            if (deferUntilInteraction) {
+              afterInteraction(fn);
+            } else if (deferUntilLoad) {
+              afterWindowLoad(fn);
+            } else {
+              afterDomReady(fn);
+            }
+          };
+        })();
+      })();</script><script>(function(){const gtmContainerId = "GTM-5Q23F862";
+
+        window.__aaTrackWhenReady(function () {
+          if (window.__aaGtmStarted) return;
+          window.__aaGtmStarted = true;
+          (function (w, d, s, l, i) {
+            w[l] = w[l] || [];
+            w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
+            var f = d.getElementsByTagName(s)[0],
+              j = d.createElement(s),
+              dl = l != 'dataLayer' ? '&l=' + l : '';
+            j.async = true;
+            j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+            f.parentNode.insertBefore(j, f);
+          })(window, document, 'script', 'dataLayer', gtmContainerId);
+        });
+      })();</script><script>(function(){const metaPixelId = "359954309019613";
+const metaCapiEndpoint = "/api/meta-capi";
+const deferUntilInteractionStaggered = false;
+
+        window.__aaTrackWhenReady(function () {
+          if (window.__aaMetaStarted) return;
+          window.__aaMetaStarted = true;
+
+          var PIXEL_ID = metaPixelId;
+          var CAPI_ENDPOINT = metaCapiEndpoint;
+
+          if (!window.fbq) {
+            var n = function () {
+              n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments);
+            };
+            n.push = n;
+            n.loaded = false;
+            n.version = '2.0';
+            n.queue = [];
+            window.fbq = n;
+            if (!window._fbq) window._fbq = n;
+          }
+
+          if (!document.querySelector('script[src*="fbevents.js"]')) {
+            var t = document.createElement('script');
+            t.async = true;
+            t.src = 'https://connect.facebook.net/en_US/fbevents.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(t, s);
+          }
+
+          fbq('init', PIXEL_ID);
+
+          function getCookie(name) {
+            var m = document.cookie.match(
+              new RegExp('(?:^|; )' + name.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + '=([^;]*)')
+            );
+            return m ? decodeURIComponent(m[1]) : null;
+          }
+
+          function setCookie(name, value, maxAge) {
+            document.cookie = name + '=' + value + '; path=/; max-age=' + maxAge + '; SameSite=Lax';
+          }
+
+          function randStr() {
+            return Math.random().toString(36).slice(2, 11);
+          }
+
+          var fbclid = new URLSearchParams(window.location.search).get('fbclid');
+          if (fbclid && !getCookie('_fbc')) {
+            setCookie('_fbc', 'fb.1.' + Date.now() + '.' + fbclid, 7776000);
+          }
+
+          if (!getCookie('_fbp')) {
+            setCookie('_fbp', 'fb.1.' + Date.now() + '.' + Math.floor(Math.random() * 1e10), 7776000);
+          }
+
+          var externalId = null;
+          try {
+            externalId = localStorage.getItem('aa_uid');
+            if (!externalId) {
+              externalId = 'u_' + Date.now() + '_' + randStr() + randStr();
+              localStorage.setItem('aa_uid', externalId);
+            }
+          } catch (e) {}
+
+          var eventId = window.__aaPageViewEventId || 'evt_' + Date.now() + '_' + randStr();
+          window.__aaPageViewEventId = eventId;
+          var eventTime = Math.floor(Date.now() / 1000);
+
+          fbq('track', 'PageView', {}, { eventID: eventId });
+
+          if (!CAPI_ENDPOINT) return;
+          if (deferUntilInteractionStaggered && window.__aaCapiPageViewSent) return;
+
+          window.__aaCapiPageViewSent = true;
+          setTimeout(function () {
+            fetch(CAPI_ENDPOINT, {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              keepalive: true,
+              body: JSON.stringify({
+                event_name: 'PageView',
+                event_id: eventId,
+                event_time: eventTime,
+                event_source_url: window.location.href,
+                user_agent: navigator.userAgent,
+                fbp: getCookie('_fbp') || undefined,
+                fbc: getCookie('_fbc') || undefined,
+                external_id: externalId || undefined,
+              }),
+            }).catch(function (e) {
+              console.warn('[CAPI] fail', e);
+            });
+          }, 300);
+        });
+      })();</script><noscript><img height="1" width="1" style="display:none" alt="" src="https://www.facebook.com/tr?id=359954309019613&amp;ev=PageView&amp;noscript=1"></noscript><script src="/scripts/meta-tracking.js" defer></script><!-- Inter: só latin 400/600 no preload — latin-ext fica no CSS sem competir com o LCP --><link rel="preload" href="/_astro/inter-latin-400-normal.C38fXH4l.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="/_astro/inter-latin-600-normal.LgqL8muc.woff2" as="font" type="font/woff2" crossorigin><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Voltaire&display=swap" onload="this.onload=null;this.rel='stylesheet'"><noscript><link href="https://fonts.googleapis.com/css2?family=Voltaire&display=swap" rel="stylesheet"></noscript><script>
+      /* Libera animações de entrada após fontes (ou teto 1,2s) — evita morph system→webfont */
+      (function () {
+        function mark() {
+          document.documentElement.classList.add('fonts-ready');
+        }
+        if (document.fonts && document.fonts.ready) {
+          document.fonts.ready.then(mark);
+          setTimeout(mark, 1200);
+        } else {
+          mark();
+        }
+      })();
+    </script> <meta property="og:title" content="Planos corporativos Asimov Academy | Python e IA para empresas"> <meta property="og:description" content="Capacite seu time em Python, automações e IA com condições exclusivas para grupos corporativos. Fale com um especialista e receba uma proposta personalizada."> <meta property="og:url" content="https://www.asimov.academy/misc/empresas/"> <meta property="og:type" content="website"> <meta name="twitter:card" content="summary_large_image"> <meta name="twitter:title" content="Planos corporativos Asimov Academy | Python e IA para empresas"> <meta name="twitter:description" content="Capacite seu time em Python, automações e IA com condições exclusivas para grupos corporativos. Fale com um especialista e receba uma proposta personalizada."> <link rel="stylesheet" href="/_astro/global-legacy.CsNa82T-.css"><link rel="stylesheet" href="/_astro/pricing-cadence.BDjBFW3Z.css"><link rel="preconnect" href="https://code.iconify.design" crossorigin><link rel="dns-prefetch" href="https://api.iconify.design"><link rel="preload" href="https://code.iconify.design/iconify-icon/2.3.0/iconify-icon.min.js" as="script"><script defer src="https://code.iconify.design/iconify-icon/2.3.0/iconify-icon.min.js"></script><script>
+          /* Marca ícones prontos — sem flash vazio→SVG; teto 1,5s evita ícone eternamente oculto */
+          (function () {
+            function arm(el) {
+              if (!el || el.classList.contains('iconify-ready')) return;
+              var done = function () {
+                el.classList.add('iconify-ready');
+              };
+              el.addEventListener('load', done, { once: true });
+              setTimeout(done, 1500);
+            }
+            function scan(root) {
+              (root || document).querySelectorAll('iconify-icon').forEach(arm);
+            }
+            function start() {
+              if (!window.customElements || !customElements.whenDefined) {
+                scan();
+                return;
+              }
+              customElements.whenDefined('iconify-icon').then(function () {
+                scan();
+                if (!document.body) return;
+                new MutationObserver(function (muts) {
+                  muts.forEach(function (m) {
+                    m.addedNodes.forEach(function (n) {
+                      if (n.nodeType !== 1) return;
+                      if (n.tagName === 'ICONIFY-ICON') arm(n);
+                      else if (n.querySelectorAll) scan(n);
+                    });
+                  });
+                }).observe(document.body, { childList: true, subtree: true });
+              });
+            }
+            if (document.readyState === 'loading') {
+              document.addEventListener('DOMContentLoaded', start);
+            } else {
+              start();
+            }
+          })();
+        </script><link rel="stylesheet" href="/_astro/header-cadence.DtYTGWXh.css">
+<link rel="stylesheet" href="/_astro/pricing-cadence.BDjBFW3Z.css">
+<link rel="stylesheet" href="/_astro/index.BFeS6oZ6.css">
+<link rel="stylesheet" href="/_astro/LPLayout.BrLNWExk.css"></head> <body class="misc-empresas misc-empresas-v2 lp-formacao" style="--ui-accent-dark:#0891b2;--ui-accent:#06b6d4;--ui-accent-light:#22d3ee;--ui-accent-glow:#67e8f9;--ui-accent-rgb-space:6 182 212;--ui-accent-rgb-comma:6, 182, 212;--platform-cyan:#06b6d4;--instructors-cyan:#06b6d4;--instructors-cyan-deep:#0891b2;--pricing-cyan:#06b6d4;--pricing-cyan-deep:#0891b2;--gt-cyan:#06b6d4;--gt-cyan-rgb:6 182 212;--faq-cyan:#06b6d4;--faq-cyan-rgb:6 182 212;--footer-cyan:#06b6d4;--footer-cyan-rgb:6 182 212;--color-cyan-300:#67e8f9;--color-cyan-400:#22d3ee;--color-cyan-500:#06b6d4;--color-cyan-600:#0891b2;--color-cyan-700:#0891b2;--color-cyan-900:#0891b2"> <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5Q23F862" height="0" width="0" style="display:none;visibility:hidden" title="Google Tag Manager"></iframe></noscript> <a href="#conteudo" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2 focus:bg-cyan-500 focus:text-black focus:rounded-lg">
+Ir para o conteúdo
+</a>  <link rel="stylesheet" href="/_astro/cadence-rain.H7khVvfp.css"><div class="cadence-rain-bg" aria-hidden="true" data-max-dpr="1.5" style="--cadence-rain-shader-intensity:1;--cadence-rain-shader-alpha:0.5;--cadence-rain-center-glow:0.12;--cadence-rain-orb-1-opacity:0.13;--cadence-rain-orb-2-opacity:0.1;--cadence-rain-orb-3-opacity:0.12;--cadence-rain-star-opacity:0.3;--cadence-rain-fade-top:0.28;--cadence-rain-fade-bottom:0.72;--cadence-rain-lighten-opacity:0.22;--cadence-rain-lighten-strength:0.2;--cadence-rain-accent-glow:0.2;--accent-overlay-glow-mid-1:33vh;--accent-overlay-glow-mid-2:63vh;--accent-overlay-glow-fade-end:90vh"> <canvas class="cadence-rain-bg__canvas" id="cadenceRainCanvas"></canvas> <div class="cadence-rain-bg__orbs"> <div class="cadence-rain-bg__orb cadence-rain-bg__orb--1"></div> <div class="cadence-rain-bg__orb cadence-rain-bg__orb--2"></div> <div class="cadence-rain-bg__orb cadence-rain-bg__orb--3"></div> </div> <div class="cadence-rain-bg__stars"> <div class="cadence-rain-bg__star" style="top:8%;left:5%;width:90px;animation-duration:3.5s;animation-delay:0s"></div><div class="cadence-rain-bg__star" style="top:20%;left:72%;width:60px;animation-duration:4.2s;animation-delay:1.2s"></div><div class="cadence-rain-bg__star" style="top:45%;left:10%;width:70px;animation-duration:3.8s;animation-delay:2.8s"></div><div class="cadence-rain-bg__star" style="top:5%;left:40%;width:50px;animation-duration:4.5s;animation-delay:0.7s"></div><div class="cadence-rain-bg__star" style="top:30%;left:82%;width:85px;animation-duration:3.2s;animation-delay:2s"></div><div class="cadence-rain-bg__star" style="top:60%;left:25%;width:55px;animation-duration:5s;animation-delay:3.5s"></div><div class="cadence-rain-bg__star" style="top:12%;left:58%;width:75px;animation-duration:3.9s;animation-delay:1.8s"></div><div class="cadence-rain-bg__star" style="top:38%;left:33%;width:65px;animation-duration:4.1s;animation-delay:0.4s"></div><div class="cadence-rain-bg__star" style="top:52%;left:68%;width:48px;animation-duration:3.6s;animation-delay:2.4s"></div><div class="cadence-rain-bg__star" style="top:72%;left:12%;width:80px;animation-duration:4.8s;animation-delay:1.1s"></div><div class="cadence-rain-bg__star" style="top:18%;left:22%;width:58px;animation-duration:3.3s;animation-delay:3.2s"></div><div class="cadence-rain-bg__star" style="top:65%;left:48%;width:72px;animation-duration:4.4s;animation-delay:0.9s"></div><div class="cadence-rain-bg__star" style="top:28%;left:8%;width:44px;animation-duration:3.1s;animation-delay:2.6s"></div><div class="cadence-rain-bg__star" style="top:78%;left:78%;width:62px;animation-duration:4.6s;animation-delay:1.5s"></div><div class="cadence-rain-bg__star" style="top:42%;left:88%;width:52px;animation-duration:3.7s;animation-delay:3.8s"></div><div class="cadence-rain-bg__star" style="top:55%;left:3%;width:68px;animation-duration:4.3s;animation-delay:0.2s"></div><div class="cadence-rain-bg__star" style="top:85%;left:35%;width:56px;animation-duration:3.4s;animation-delay:2.1s"></div><div class="cadence-rain-bg__star" style="top:15%;left:92%;width:42px;animation-duration:4.9s;animation-delay:3s"></div> </div> <div class="cadence-rain-bg__fade"></div> <div class="cadence-rain-bg__lighten"></div> <div class="cadence-rain-bg__accent-glow"></div> </div> <script type="module" src="/_astro/BackgroundCadenceRain.astro_astro_type_script_index_0_lang.D7W7alYZ.js"></script>    <header class="cadence-header"> <nav class="cadence-header__nav" aria-label="Principal"> <div class="cadence-header__start"> <button type="button" class="cadence-header__hamburger" id="cadenceHeaderHamburger" aria-label="Menu" aria-expanded="false" aria-controls="cadenceHeaderMobile"> <span></span> <span></span> <span></span> </button> <a href="/" class="cadence-header__logo" aria-label="Asimov Academy"> <svg class="h-6 w-auto text-white" width="79" height="24" viewBox="0 0 79 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"> <path d="M6.52462 0.169113L13.0492 23.3095H10.2308L9.24438 19.5749H3.79076L2.81841 23.3095H0L6.52462 0.169113ZM8.59615 17.0945L7.0883 11.3024L6.51052 8.62478L5.96093 11.3024L4.43899 17.0945H8.59615Z" fill="currentColor"></path> <path d="M15.7972 19.9413C16.2575 20.2137 16.7367 20.458 17.2346 20.6741C17.7419 20.8902 18.2962 20.9982 18.8974 20.9982C19.2638 20.9982 19.6161 20.9466 19.9543 20.8432C20.2925 20.7399 20.5885 20.5802 20.8421 20.3641C21.0958 20.148 21.2978 19.8755 21.4481 19.5467C21.5984 19.2085 21.6736 18.8092 21.6736 18.3488C21.6736 18.0388 21.6313 17.7193 21.5467 17.3905C21.4716 17.0617 21.3401 16.7093 21.1522 16.3335C20.9737 15.9483 20.7341 15.5302 20.4335 15.0793C20.1422 14.6283 19.7758 14.1257 19.3343 13.5713L17.5164 11.2742C17.0655 10.7011 16.6803 10.1562 16.3609 9.63946C16.0508 9.12272 15.7972 8.62948 15.5999 8.15972C15.4026 7.68056 15.257 7.2249 15.163 6.79272C15.0785 6.35115 15.0362 5.91897 15.0362 5.49618C15.0362 4.79154 15.1489 4.14328 15.3744 3.55138C15.5999 2.95009 15.9287 2.43335 16.3609 2.00117C16.793 1.5596 17.3144 1.21668 17.9251 0.972402C18.5451 0.728127 19.245 0.605989 20.0248 0.605989C20.6448 0.605989 21.2696 0.690546 21.899 0.859659C22.5285 1.01938 23.1438 1.27775 23.7451 1.63476L22.6177 3.81914C22.2889 3.62184 21.9319 3.45273 21.5467 3.3118C21.1709 3.16148 20.7529 3.08632 20.2925 3.08632C19.5222 3.08632 18.9068 3.30711 18.4465 3.74868C17.9861 4.18086 17.756 4.79624 17.756 5.59483C17.756 5.81092 17.7795 6.03641 17.8264 6.27129C17.8734 6.49677 17.9533 6.74574 18.066 7.0182C18.1881 7.29066 18.3478 7.59131 18.5451 7.92014C18.7518 8.24897 19.0102 8.62008 19.3202 9.03347L21.9554 12.5003C22.2936 12.9513 22.613 13.3928 22.9137 13.825C23.2143 14.2478 23.4726 14.6847 23.6887 15.1356C23.9048 15.5772 24.0739 16.047 24.196 16.5449C24.3276 17.0335 24.3933 17.5643 24.3933 18.1374C24.3933 18.983 24.2571 19.744 23.9847 20.4204C23.7122 21.0875 23.3317 21.6559 22.8432 22.1257C22.3547 22.5954 21.7722 22.9571 21.0958 23.2108C20.4288 23.4551 19.696 23.5772 18.8974 23.5772C18.0707 23.5772 17.2815 23.4551 16.53 23.2108C15.7784 22.9665 15.1302 22.6565 14.5853 22.2807L15.7972 19.9413Z" fill="currentColor"></path> <path d="M27.9163 0.859659H30.5375V23.3095H27.9163V0.859659Z" fill="currentColor"></path> <path d="M35.3288 0L41.8111 11.8943L48.3075 0V23.3095H45.6864V12.7681L45.7569 9.93541L44.2631 12.7962L41.8252 17.2355V17.2637L41.8111 17.2496V17.2355L39.3591 12.7821L37.8653 9.93541L37.9499 12.7399V23.3095H35.3288V0Z" fill="currentColor"></path> <path d="M58.1015 23.5772C57.6506 23.5772 57.1855 23.5068 56.7064 23.3658C56.2367 23.2343 55.7763 23.0041 55.3254 22.6753C54.8744 22.3371 54.447 21.8908 54.043 21.3365C53.639 20.7728 53.282 20.0681 52.972 19.2225C52.6714 18.3676 52.4318 17.3529 52.2533 16.1785C52.0748 15.0041 51.9856 13.6418 51.9856 12.0916C51.9856 10.5414 52.0748 9.1791 52.2533 8.0047C52.4318 6.8303 52.6714 5.82032 52.972 4.97475C53.282 4.11979 53.639 3.41515 54.043 2.86083C54.447 2.29712 54.8744 1.85085 55.3254 1.52202C55.7763 1.18379 56.2367 0.948914 56.7064 0.817381C57.1855 0.676453 57.6506 0.605989 58.1015 0.605989C58.543 0.605989 59.0034 0.676453 59.4825 0.817381C59.9616 0.948914 60.4267 1.18379 60.8776 1.52202C61.3286 1.85085 61.756 2.29712 62.16 2.86083C62.564 3.41515 62.9163 4.11979 63.2169 4.97475C63.5269 5.82032 63.7712 6.8303 63.9497 8.0047C64.1282 9.1791 64.2174 10.5414 64.2174 12.0916C64.2174 13.6418 64.1282 15.0041 63.9497 16.1785C63.7712 17.3529 63.5269 18.3676 63.2169 19.2225C62.9163 20.0681 62.564 20.7728 62.16 21.3365C61.756 21.8908 61.3286 22.3371 60.8776 22.6753C60.4267 23.0041 59.9616 23.2343 59.4825 23.3658C59.0034 23.5068 58.543 23.5772 58.1015 23.5772ZM58.1015 20.9841C58.4961 20.9841 58.8953 20.8432 59.2993 20.5614C59.7033 20.2701 60.065 19.7863 60.3844 19.1098C60.7132 18.424 60.981 17.5126 61.1877 16.3758C61.3943 15.2296 61.4977 13.8015 61.4977 12.0916C61.4977 10.3817 61.3943 8.95831 61.1877 7.82149C60.981 6.67528 60.7132 5.76395 60.3844 5.08749C60.065 4.40164 59.7033 3.91779 59.2993 3.63594C58.8953 3.34469 58.4961 3.19906 58.1015 3.19906C57.7069 3.19906 57.3076 3.34469 56.9037 3.63594C56.4997 3.91779 56.1333 4.40164 55.8045 5.08749C55.4851 5.76395 55.222 6.67528 55.0153 7.82149C54.8087 8.95831 54.7053 10.3817 54.7053 12.0916C54.7053 13.8015 54.8087 15.2296 55.0153 16.3758C55.222 17.5126 55.4851 18.424 55.8045 19.1098C56.1333 19.7863 56.4997 20.2701 56.9037 20.5614C57.3076 20.8432 57.7069 20.9841 58.1015 20.9841Z" fill="currentColor"></path> <path d="M65.9508 0.859659H68.7692L71.8694 12.8667L72.4613 15.5584L73.0813 12.8667L76.1816 0.859659H79L72.4754 24L65.9508 0.859659Z" fill="currentColor"></path> </svg> </a> </div> <ul class="cadence-header__links"> <li class="cadence-header__dropdown"> <a href="/formacoes/engenheiro-de-ia/" class="cadence-header__dropdown-trigger" aria-haspopup="true"> Formações <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="cadence-header__dropdown-chevron" aria-hidden="true"><path d="m9 18 6-6-6-6"></path></svg> </a> <ul class="cadence-header__dropdown-menu"> <li> <a href="/formacoes/engenheiro-de-ia/"> Formação Engenheiro de Agentes de IA </a> </li><li> <a href="/formacoes/analista-de-dados/"> Formação Analista de Dados </a> </li><li> <a href="/formacoes/ai-designer/"> Formação AI Designer </a> </li> </ul> </li><li class="cadence-header__dropdown"> <a href="/trilhas/automatizando-tudo-com-n8n/" class="cadence-header__dropdown-trigger" aria-haspopup="true"> Trilhas <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="cadence-header__dropdown-chevron" aria-hidden="true"><path d="m9 18 6-6-6-6"></path></svg> </a> <ul class="cadence-header__dropdown-menu"> <li> <a href="/trilhas/automatizando-tudo-com-n8n/"> Trilha Automações com n8n </a> </li><li> <a href="/trilhas/openclaw/"> Trilha Dominando OpenClaw </a> </li><li> <a href="/trilhas/engenharia-de-dados/"> Trilha Engenharia de Dados </a> </li><li> <a href="/trilhas/dashboards-interativos-com-python/"> Trilha Dashboards com Python </a> </li><li> <a href="/trilhas/visao-computacional/"> Trilha Visão Computacional </a> </li><li> <a href="/trilhas/python-para-web/"> Trilha Python para Web </a> </li><li> <a href="/trilhas/data-science-e-machine-learning/"> Trilha Data Science e Machine Learning </a> </li> </ul> </li><li> <a href="/cursos/">Cursos</a> </li><li> <a href="/projetos/">Projetos</a> </li><li class="cadence-header__dropdown"> <a href="https://hub.asimov.academy/blog/" class="cadence-header__dropdown-trigger" aria-haspopup="true"> Conteúdos gratuitos <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="cadence-header__dropdown-chevron" aria-hidden="true"><path d="m9 18 6-6-6-6"></path></svg> </a> <ul class="cadence-header__dropdown-menu"> <li> <a href="/misc/materiais/"> Materiais </a> </li><li> <a href="https://hub.asimov.academy/blog/" target="_blank" rel="noopener noreferrer"> Blog </a> </li><li> <a href="https://hub.asimov.academy/tutoriais/" target="_blank" rel="noopener noreferrer"> Tutoriais </a> </li> </ul> </li> </ul> <div class="cadence-header__actions"> <a href="https://hub.asimov.academy/login/" class="cadence-header__btn cadence-header__btn--ghost">Entrar</a> <a href="#assine" class="cadence-header__btn cadence-header__btn--solid">Matricule-se</a> </div> <div class="cadence-header__mobile-bar"> <a href="https://hub.asimov.academy/login/" class="cadence-header__mobile-login">Entrar</a> <a href="#assine" class="cadence-header__btn cadence-header__btn--solid cadence-header__btn--compact">Matricule-se</a> </div> </nav> <div class="cadence-header__mobile" id="cadenceHeaderMobile"> <ul> <li class="cadence-header__mobile-group"> <button type="button" class="cadence-header__mobile-parent" aria-expanded="false"> Formações <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="cadence-header__mobile-chevron" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg> </button> <ul class="cadence-header__mobile-submenu"> <li> <a href="/formacoes/engenheiro-de-ia/" class="cadence-header__mobile-child"> Formação Engenheiro de Agentes de IA </a> </li><li> <a href="/formacoes/analista-de-dados/" class="cadence-header__mobile-child"> Formação Analista de Dados </a> </li><li> <a href="/formacoes/ai-designer/" class="cadence-header__mobile-child"> Formação AI Designer </a> </li> </ul> </li><li class="cadence-header__mobile-group"> <button type="button" class="cadence-header__mobile-parent" aria-expanded="false"> Trilhas <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="cadence-header__mobile-chevron" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg> </button> <ul class="cadence-header__mobile-submenu"> <li> <a href="/trilhas/automatizando-tudo-com-n8n/" class="cadence-header__mobile-child"> Trilha Automações com n8n </a> </li><li> <a href="/trilhas/openclaw/" class="cadence-header__mobile-child"> Trilha Dominando OpenClaw </a> </li><li> <a href="/trilhas/engenharia-de-dados/" class="cadence-header__mobile-child"> Trilha Engenharia de Dados </a> </li><li> <a href="/trilhas/dashboards-interativos-com-python/" class="cadence-header__mobile-child"> Trilha Dashboards com Python </a> </li><li> <a href="/trilhas/visao-computacional/" class="cadence-header__mobile-child"> Trilha Visão Computacional </a> </li><li> <a href="/trilhas/python-para-web/" class="cadence-header__mobile-child"> Trilha Python para Web </a> </li><li> <a href="/trilhas/data-science-e-machine-learning/" class="cadence-header__mobile-child"> Trilha Data Science e Machine Learning </a> </li> </ul> </li><li> <a href="/cursos/">Cursos</a> </li><li> <a href="/projetos/">Projetos</a> </li><li class="cadence-header__mobile-group"> <button type="button" class="cadence-header__mobile-parent" aria-expanded="false"> Conteúdos gratuitos <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="cadence-header__mobile-chevron" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg> </button> <ul class="cadence-header__mobile-submenu"> <li> <a href="/misc/materiais/" class="cadence-header__mobile-child"> Materiais </a> </li><li> <a href="https://hub.asimov.academy/blog/" class="cadence-header__mobile-child" target="_blank" rel="noopener noreferrer"> Blog </a> </li><li> <a href="https://hub.asimov.academy/tutoriais/" class="cadence-header__mobile-child" target="_blank" rel="noopener noreferrer"> Tutoriais </a> </li> </ul> </li> </ul> </div> </header> <div class="cadence-header-spacer" aria-hidden="true"></div> <script type="module">function c(){const t=document.getElementById("cadenceHeaderHamburger"),a=document.getElementById("cadenceHeaderMobile");if(!t||!a||t.dataset.bound==="true")return;t.dataset.bound="true";const s=a.querySelectorAll(".cadence-header__mobile-group"),r=()=>{s.forEach(e=>{e.classList.remove("is-open"),e.querySelector(".cadence-header__mobile-parent")?.setAttribute("aria-expanded","false")})};t.addEventListener("click",()=>{const e=t.classList.toggle("is-open");a.classList.toggle("is-open",e),t.setAttribute("aria-expanded",e?"true":"false"),e||r()}),s.forEach(e=>{const n=e.querySelector(".cadence-header__mobile-parent");n&&n.addEventListener("click",()=>{const d=!e.classList.contains("is-open");r(),d&&(e.classList.add("is-open"),n.setAttribute("aria-expanded","true"))})})}c();document.addEventListener("astro:page-load",c);</script>  <div class="relative z-10 flex flex-col min-h-screen"> <main id="conteudo" class="flex-1 w-full max-w-full relative overflow-x-clip">    <div class="emp-v2-topbar" role="region" aria-label="Atendimento corporativo">
+Atendimento Corporativo disponível · Seg a Sex · 9h às 18h · 51 99625-3887
+</div>  <section class="emp-hero section-container emp-v2-hero" aria-labelledby="emp-v2-hero-title"> <div class="emp-hero__grid justify-items-center lg:justify-items-stretch"> <div class="emp-hero__copy w-full flex flex-col items-center lg:items-start text-center lg:text-left animate-on-scroll animate-fade-slide-in anim-delay-100"> <p class="section-badge trail-overview-v2__badge"> <span class="section-badge__dot" aria-hidden="true"></span>
+Python, Automações e IA
+</p> <h1 id="emp-v2-hero-title" class="w-full text-center lg:text-left">
+Times sem <span class="index4-pricing-title-highlight">Python e IA</span> estão ficando
+          para trás.
+</h1> <p class="text-copy emp-hero__lead mx-auto lg:mx-0">
+Mais de 30 mil profissionais evoluíram com a Asimov Academy. Leve o mesmo nível de
+          formação para o seu time, com condições exclusivas para grupos corporativos.
+</p> <div class="emp-v2-hero__ctas index4-cadence emp-v2-cta-bar"> <a href="https://wa.me/5551996253887?text=Ol%C3%A1%2C%20vim%20pela%20p%C3%A1gina%20corporativa%20e%20gostaria%20de%20saber%20mais%20sobre%20os%20planos%20para%20empresas." class="index4-pricing-card__cta index4-pricing-card__cta--primary emp-v2-cta--inline" target="_blank" rel="noopener noreferrer">
+Falar com um Especialista
+</a> <a href="#diferenciais" class="index4-pricing-card__cta index4-pricing-card__cta--outline emp-v2-cta--inline" data-scroll-anchor>
+Como funciona na prática?
+</a> </div> <p class="emp-v2-hero__cta-hint text-card">
+Ou
+<a href="#contato" class="emp-v2-hero__cta-link" data-scroll-anchor>
+solicite uma proposta pelo formulário
+</a> </p> </div> <article class="emp-hero-form-card emp-v2-dashboard-card animate-on-scroll animate-fade-slide-in anim-delay-200" aria-label="Evolução do colaborador"> <p class="emp-v2-dashboard-card__label">Evolução do Colaborador</p> <p class="emp-v2-dashboard-card__title">Asimov · Acesso Total</p> <div class="emp-v2-progress"> <div class="emp-v2-progress__row"> <div class="emp-v2-progress__meta"> <span>Criando Agentes com Agno</span> <span>91%</span> </div> <div class="emp-v2-progress__bar"> <span class="emp-v2-progress__fill" style="--progress: 91%"></span> </div> </div><div class="emp-v2-progress__row"> <div class="emp-v2-progress__meta"> <span>Dominando Automações com n8n</span> <span>76%</span> </div> <div class="emp-v2-progress__bar"> <span class="emp-v2-progress__fill" style="--progress: 76%"></span> </div> </div><div class="emp-v2-progress__row"> <div class="emp-v2-progress__meta"> <span>Claude Desktop — Automatize tarefas</span> <span>84%</span> </div> <div class="emp-v2-progress__bar"> <span class="emp-v2-progress__fill" style="--progress: 84%"></span> </div> </div><div class="emp-v2-progress__row"> <div class="emp-v2-progress__meta"> <span>Agentes de Atendimento no WhatsApp</span> <span>68%</span> </div> <div class="emp-v2-progress__bar"> <span class="emp-v2-progress__fill" style="--progress: 68%"></span> </div> </div> </div> <p class="emp-v2-dashboard-card__stats">
++42% produtividade · 275h de conteúdo · A+ engajamento
+</p> </article> </div> </section>  <section class="emp-v2-urgency" aria-label="Mensagem de urgência"> <p>Sua concorrência já está treinando com IA. O que o seu time está esperando?</p> </section>  <section class="emp-logos emp-v2-marquee-section" aria-labelledby="emp-v2-marquee-label"> <div class="section-container emp-logos__header"> <p id="emp-v2-marquee-label" class="emp-v2-marquee-label">
+EMPRESAS QUE TREINAM COM A ASIMOV
+</p> </div> <div class="emp-logos__marquee"> <div class="tech-marquee emp-v2-name-marquee" data-tech-marquee> <div class="tech-marquee-row"> <div class="tech-marquee-track tech-marquee-track--left"> <div class="tech-marquee-group"> <span class="emp-v2-marquee-pill tech-pill">Petrobras</span><span class="emp-v2-marquee-pill tech-pill">Itaú</span><span class="emp-v2-marquee-pill tech-pill">Bradesco</span><span class="emp-v2-marquee-pill tech-pill">Embraer</span><span class="emp-v2-marquee-pill tech-pill">Vale</span><span class="emp-v2-marquee-pill tech-pill">Stone</span><span class="emp-v2-marquee-pill tech-pill">Petrobras</span><span class="emp-v2-marquee-pill tech-pill">Itaú</span><span class="emp-v2-marquee-pill tech-pill">Bradesco</span><span class="emp-v2-marquee-pill tech-pill">Embraer</span><span class="emp-v2-marquee-pill tech-pill">Vale</span><span class="emp-v2-marquee-pill tech-pill">Stone</span><span class="emp-v2-marquee-pill tech-pill">Petrobras</span><span class="emp-v2-marquee-pill tech-pill">Itaú</span><span class="emp-v2-marquee-pill tech-pill">Bradesco</span><span class="emp-v2-marquee-pill tech-pill">Embraer</span><span class="emp-v2-marquee-pill tech-pill">Vale</span><span class="emp-v2-marquee-pill tech-pill">Stone</span><span class="emp-v2-marquee-pill tech-pill">Petrobras</span><span class="emp-v2-marquee-pill tech-pill">Itaú</span><span class="emp-v2-marquee-pill tech-pill">Bradesco</span><span class="emp-v2-marquee-pill tech-pill">Embraer</span><span class="emp-v2-marquee-pill tech-pill">Vale</span><span class="emp-v2-marquee-pill tech-pill">Stone</span> </div> <div class="tech-marquee-group" aria-hidden="true"> <span class="emp-v2-marquee-pill tech-pill">Petrobras</span><span class="emp-v2-marquee-pill tech-pill">Itaú</span><span class="emp-v2-marquee-pill tech-pill">Bradesco</span><span class="emp-v2-marquee-pill tech-pill">Embraer</span><span class="emp-v2-marquee-pill tech-pill">Vale</span><span class="emp-v2-marquee-pill tech-pill">Stone</span><span class="emp-v2-marquee-pill tech-pill">Petrobras</span><span class="emp-v2-marquee-pill tech-pill">Itaú</span><span class="emp-v2-marquee-pill tech-pill">Bradesco</span><span class="emp-v2-marquee-pill tech-pill">Embraer</span><span class="emp-v2-marquee-pill tech-pill">Vale</span><span class="emp-v2-marquee-pill tech-pill">Stone</span><span class="emp-v2-marquee-pill tech-pill">Petrobras</span><span class="emp-v2-marquee-pill tech-pill">Itaú</span><span class="emp-v2-marquee-pill tech-pill">Bradesco</span><span class="emp-v2-marquee-pill tech-pill">Embraer</span><span class="emp-v2-marquee-pill tech-pill">Vale</span><span class="emp-v2-marquee-pill tech-pill">Stone</span><span class="emp-v2-marquee-pill tech-pill">Petrobras</span><span class="emp-v2-marquee-pill tech-pill">Itaú</span><span class="emp-v2-marquee-pill tech-pill">Bradesco</span><span class="emp-v2-marquee-pill tech-pill">Embraer</span><span class="emp-v2-marquee-pill tech-pill">Vale</span><span class="emp-v2-marquee-pill tech-pill">Stone</span> </div> </div> </div> <div class="tech-marquee-row"> <div class="tech-marquee-track tech-marquee-track--right"> <div class="tech-marquee-group"> <span class="emp-v2-marquee-pill tech-pill">B3</span><span class="emp-v2-marquee-pill tech-pill">Renner</span><span class="emp-v2-marquee-pill tech-pill">SEFAZ</span><span class="emp-v2-marquee-pill tech-pill">Unimed</span><span class="emp-v2-marquee-pill tech-pill">Ministério da Cultura</span><span class="emp-v2-marquee-pill tech-pill">EMS</span><span class="emp-v2-marquee-pill tech-pill">B3</span><span class="emp-v2-marquee-pill tech-pill">Renner</span><span class="emp-v2-marquee-pill tech-pill">SEFAZ</span><span class="emp-v2-marquee-pill tech-pill">Unimed</span><span class="emp-v2-marquee-pill tech-pill">Ministério da Cultura</span><span class="emp-v2-marquee-pill tech-pill">EMS</span><span class="emp-v2-marquee-pill tech-pill">B3</span><span class="emp-v2-marquee-pill tech-pill">Renner</span><span class="emp-v2-marquee-pill tech-pill">SEFAZ</span><span class="emp-v2-marquee-pill tech-pill">Unimed</span><span class="emp-v2-marquee-pill tech-pill">Ministério da Cultura</span><span class="emp-v2-marquee-pill tech-pill">EMS</span><span class="emp-v2-marquee-pill tech-pill">B3</span><span class="emp-v2-marquee-pill tech-pill">Renner</span><span class="emp-v2-marquee-pill tech-pill">SEFAZ</span><span class="emp-v2-marquee-pill tech-pill">Unimed</span><span class="emp-v2-marquee-pill tech-pill">Ministério da Cultura</span><span class="emp-v2-marquee-pill tech-pill">EMS</span> </div> <div class="tech-marquee-group" aria-hidden="true"> <span class="emp-v2-marquee-pill tech-pill">B3</span><span class="emp-v2-marquee-pill tech-pill">Renner</span><span class="emp-v2-marquee-pill tech-pill">SEFAZ</span><span class="emp-v2-marquee-pill tech-pill">Unimed</span><span class="emp-v2-marquee-pill tech-pill">Ministério da Cultura</span><span class="emp-v2-marquee-pill tech-pill">EMS</span><span class="emp-v2-marquee-pill tech-pill">B3</span><span class="emp-v2-marquee-pill tech-pill">Renner</span><span class="emp-v2-marquee-pill tech-pill">SEFAZ</span><span class="emp-v2-marquee-pill tech-pill">Unimed</span><span class="emp-v2-marquee-pill tech-pill">Ministério da Cultura</span><span class="emp-v2-marquee-pill tech-pill">EMS</span><span class="emp-v2-marquee-pill tech-pill">B3</span><span class="emp-v2-marquee-pill tech-pill">Renner</span><span class="emp-v2-marquee-pill tech-pill">SEFAZ</span><span class="emp-v2-marquee-pill tech-pill">Unimed</span><span class="emp-v2-marquee-pill tech-pill">Ministério da Cultura</span><span class="emp-v2-marquee-pill tech-pill">EMS</span><span class="emp-v2-marquee-pill tech-pill">B3</span><span class="emp-v2-marquee-pill tech-pill">Renner</span><span class="emp-v2-marquee-pill tech-pill">SEFAZ</span><span class="emp-v2-marquee-pill tech-pill">Unimed</span><span class="emp-v2-marquee-pill tech-pill">Ministério da Cultura</span><span class="emp-v2-marquee-pill tech-pill">EMS</span> </div> </div> </div> </div> </div> </section>  <section class="section-container stats-section" id="contato" aria-labelledby="emp-v2-form-title"> <div class="emp-v2-form-section__grid"> <div class="animate-on-scroll animate-fade-slide-in anim-delay-100"> <p class="section-badge"> <span class="section-badge__dot" aria-hidden="true"></span>
+FALE COM A GENTE
+</p> <h2 id="emp-v2-form-title" class="section-title mb-0">
+Quantos colaboradores você quer capacitar?
+</h2> <p class="text-copy mt-4">
+Nosso time comercial analisa o perfil da sua empresa e indica o plano ideal, sem
+          compromisso.
+</p> <p class="emp-v2-form-wa-label">Prefere falar agora?</p> <div class="index4-cadence emp-v2-cta-bar"> <a href="https://wa.me/5551996253887?text=Ol%C3%A1%2C%20vim%20pela%20p%C3%A1gina%20corporativa%20e%20gostaria%20de%20saber%20mais%20sobre%20os%20planos%20para%20empresas." class="index4-pricing-card__cta index4-pricing-card__cta--outline emp-v2-cta--inline" target="_blank" rel="noopener noreferrer">
+Falar com um Especialista no WhatsApp
+</a> </div> </div> <article class="emp-hero-form-card animate-on-scroll animate-fade-slide-in anim-delay-150"> <h3 class="text-card emp-hero-form-card__label" style="font-weight: 600; color: #fff;">
+Solicitar proposta
+</h3> <form class="emp-form" id="emp-v2-lead-form" novalidate> <div> <label for="emp-v2-name">NOME</label> <input type="text" id="emp-v2-name" name="name" placeholder="Seu nome" autocomplete="name"> </div> <div> <label for="emp-v2-whatsapp">WHATSAPP</label> <input type="tel" id="emp-v2-whatsapp" name="whatsapp" placeholder="(51) 99999-9999" autocomplete="tel" inputmode="tel"> </div> <div> <label for="emp-v2-team">TAMANHO DO TIME</label> <select id="emp-v2-team" name="team"> <option value="">Selecione</option> <option value="Até 10 pessoas">Até 10 pessoas</option> <option value="11 a 50">11 a 50</option> <option value="51 a 200">51 a 200</option> <option value="Mais de 200">Mais de 200</option> </select> </div> <button type="submit">
+Quero uma recomendação de plano
+</button> <p id="emp-v2-form-error" class="emp-v2-form-error" role="alert" aria-live="polite" hidden>
+Preencha nome, WhatsApp e tamanho do time para continuar.
+</p> <p class="text-card" style="margin: 0.5rem 0 0; font-size: 0.75rem; line-height: 1.5;">
+Nosso time comercial entra em contato e ajuda a montar o melhor plano para a sua
+            realidade.
+</p> </form> </article> </div> </section>  <section class="section-container stats-section emp-v2-metrics" aria-labelledby="emp-v2-metrics-title"> <h2 id="emp-v2-metrics-title" class="sr-only">Métricas da plataforma</h2> <ul class="stats-grid list-none p-0 m-0"> <li class="animate-on-scroll animate-fade-slide-in" style="animation-delay: 0.1s"> <article class="trail-overview-v2-card emp-v2-metric-card"> <span class="trail-overview-v2-card__shine" aria-hidden="true"></span> <span class="trail-overview-v2-card__grid" aria-hidden="true"></span> <div class="trail-overview-v2-card__icon-stage" aria-hidden="true"> <span class="trail-overview-v2-card__icon-pedestal"></span> <span class="trail-overview-v2-card__icon-halo"></span> <span class="trail-overview-v2-card__icon-ring"></span> <iconify-icon class="trail-overview-v2-card__icon" icon="solar:users-group-rounded-linear" width="36" height="36" style="color: var(--ui-accent-light)"></iconify-icon> </div> <h3 class="trail-overview-v2-card__title">+30 mil</h3> <p class="text-card trail-overview-v2-card__text">Junte-se a uma comunidade engajada com milhares de estudantes e troque experiências que fazem a diferença</p> </article> </li><li class="animate-on-scroll animate-fade-slide-in" style="animation-delay: 0.18s"> <article data-accent-variant="dark" class="trail-overview-v2-card emp-v2-metric-card"> <span class="trail-overview-v2-card__shine" aria-hidden="true"></span> <span class="trail-overview-v2-card__grid" aria-hidden="true"></span> <div class="trail-overview-v2-card__icon-stage" aria-hidden="true"> <span class="trail-overview-v2-card__icon-pedestal"></span> <span class="trail-overview-v2-card__icon-halo"></span> <span class="trail-overview-v2-card__icon-ring"></span> <iconify-icon class="trail-overview-v2-card__icon" icon="solar:clock-circle-linear" width="36" height="36" style="color: var(--ui-accent-light)"></iconify-icon> </div> <h3 class="trail-overview-v2-card__title">275h+</h3> <p class="text-card trail-overview-v2-card__text">de conteúdo disponível na plataforma para capacitar seu time em Python, IA e automação</p> </article> </li><li class="animate-on-scroll animate-fade-slide-in" style="animation-delay: 0.26s"> <article data-accent-variant="light" class="trail-overview-v2-card emp-v2-metric-card"> <span class="trail-overview-v2-card__shine" aria-hidden="true"></span> <span class="trail-overview-v2-card__grid" aria-hidden="true"></span> <div class="trail-overview-v2-card__icon-stage" aria-hidden="true"> <span class="trail-overview-v2-card__icon-pedestal"></span> <span class="trail-overview-v2-card__icon-halo"></span> <span class="trail-overview-v2-card__icon-ring"></span> <iconify-icon class="trail-overview-v2-card__icon" icon="solar:code-square-linear" width="36" height="36" style="color: var(--ui-accent-light)"></iconify-icon> </div> <h3 class="trail-overview-v2-card__title">101</h3> <p class="text-card trail-overview-v2-card__text">projetos práticos para consolidar o aprendizado com aplicação real no dia a dia</p> </article> </li><li class="animate-on-scroll animate-fade-slide-in" style="animation-delay: 0.33999999999999997s"> <article data-accent-variant="glow" class="trail-overview-v2-card emp-v2-metric-card"> <span class="trail-overview-v2-card__shine" aria-hidden="true"></span> <span class="trail-overview-v2-card__grid" aria-hidden="true"></span> <div class="trail-overview-v2-card__icon-stage" aria-hidden="true"> <span class="trail-overview-v2-card__icon-pedestal"></span> <span class="trail-overview-v2-card__icon-halo"></span> <span class="trail-overview-v2-card__icon-ring"></span> <iconify-icon class="trail-overview-v2-card__icon" icon="solar:book-bookmark-linear" width="36" height="36" style="color: var(--ui-accent-light)"></iconify-icon> </div> <h3 class="trail-overview-v2-card__title">82</h3> <p class="text-card trail-overview-v2-card__text">cursos na plataforma, do básico ao avançado, com atualizações constantes</p> </article> </li> </ul> </section>  <div class="index4-cadence index4-typography-lumina"> <section class="section index4-pricing-section" aria-labelledby="emp-v2-products-title"> <div class="section-sep"></div> <div class="container index4-pricing-container"> <header class="index4-pricing-header reveal active"> <h2 id="emp-v2-products-title" class="index4-pricing-title">
+Os mesmos produtos Asimov, em condições para grupos.
+</h2> <p class="index4-pricing-subtitle text-copy">
+Três modalidades de licenciamento corporativo — escolhidas conforme o tamanho do time,
+            o objetivo e o orçamento.
+</p> </header> <div class="index4-pricing-grid index4-pricing-grid--three"> <article class="index4-pricing-card">  <div class="index4-pricing-card__head"> <div class="index4-pricing-card__titles"> <p class="index4-pricing-badge" style="margin-bottom: 0.5rem;"> <span class="index4-pricing-badge-dot" aria-hidden="true"></span> TRILHAS ESTRUTURADAS </p> <h3 class="index4-pricing-card__name">Trilhas</h3> </div> <div class="index4-pricing-card__icon" aria-hidden="true"> <iconify-icon icon="solar:routing-2-linear" width="22" height="22"></iconify-icon> </div> </div> <p class="text-copy" style="margin: 0 0 1rem; font-size: 0.9375rem;"> Programas formativos com início, meio e fim. Organizados por objetivo: Dados, IA, Automação e Web. </p> <ul class="index4-pricing-card__benefits"> <li class="index4-pricing-card__benefit"> <span class="index4-pricing-card__check" aria-hidden="true"> <iconify-icon icon="solar:check-circle-bold" width="18" height="18"></iconify-icon> </span> <span class="index4-pricing-card__benefit-text">Progressão estruturada do zero ao avançado</span> </li><li class="index4-pricing-card__benefit"> <span class="index4-pricing-card__check" aria-hidden="true"> <iconify-icon icon="solar:check-circle-bold" width="18" height="18"></iconify-icon> </span> <span class="index4-pricing-card__benefit-text">Projetos práticos avaliados</span> </li><li class="index4-pricing-card__benefit"> <span class="index4-pricing-card__check" aria-hidden="true"> <iconify-icon icon="solar:check-circle-bold" width="18" height="18"></iconify-icon> </span> <span class="index4-pricing-card__benefit-text">Certificado Asimov ao concluir</span> </li> </ul> <p class="index4-pricing-card__benefit-text index4-pricing-card__benefit-text--muted"> Ideal para formar profissionais em habilidades específicas. </p> <div class="index4-pricing-card__footer"> <a href="https://wa.me/5551996253887?text=Ol%C3%A1%2C%20vim%20pela%20p%C3%A1gina%20corporativa%20e%20gostaria%20de%20saber%20mais%20sobre%20os%20planos%20para%20empresas." class="index4-pricing-card__cta index4-pricing-card__cta--outline" target="_blank" rel="noopener noreferrer">
+Solicitar proposta
+</a> </div> </article><article class="index4-pricing-card index4-pricing-card--featured"> <span class="index4-pricing-card__popular">MAIS ESCOLHIDO</span> <div class="index4-pricing-card__head"> <div class="index4-pricing-card__titles"> <p class="index4-pricing-badge" style="margin-bottom: 0.5rem;"> <span class="index4-pricing-badge-dot" aria-hidden="true"></span> PLATAFORMA INTEIRA </p> <h3 class="index4-pricing-card__name">Acesso Total</h3> </div> <div class="index4-pricing-card__icon" aria-hidden="true"> <iconify-icon icon="solar:shield-star-linear" width="22" height="22"></iconify-icon> </div> </div> <p class="text-copy" style="margin: 0 0 1rem; font-size: 0.9375rem;"> Todo o catálogo Asimov — cursos, formações, projetos e atualizações — para cada colaborador, com renovação anual. </p> <ul class="index4-pricing-card__benefits"> <li class="index4-pricing-card__benefit"> <span class="index4-pricing-card__check" aria-hidden="true"> <iconify-icon icon="solar:check-circle-bold" width="18" height="18"></iconify-icon> </span> <span class="index4-pricing-card__benefit-text">Catálogo completo sempre atualizado</span> </li><li class="index4-pricing-card__benefit"> <span class="index4-pricing-card__check" aria-hidden="true"> <iconify-icon icon="solar:check-circle-bold" width="18" height="18"></iconify-icon> </span> <span class="index4-pricing-card__benefit-text">Cada colaborador escolhe seu próprio caminho</span> </li><li class="index4-pricing-card__benefit"> <span class="index4-pricing-card__check" aria-hidden="true"> <iconify-icon icon="solar:check-circle-bold" width="18" height="18"></iconify-icon> </span> <span class="index4-pricing-card__benefit-text">Novos cursos incluídos sem custo extra</span> </li> </ul> <p class="index4-pricing-card__benefit-text index4-pricing-card__benefit-text--muted"> Ideal para times que precisam de amplitude e autonomia. </p> <div class="index4-pricing-card__footer"> <a href="https://wa.me/5551996253887?text=Ol%C3%A1%2C%20vim%20pela%20p%C3%A1gina%20corporativa%20e%20gostaria%20de%20saber%20mais%20sobre%20os%20planos%20para%20empresas." class="index4-pricing-card__cta index4-pricing-card__cta--primary" target="_blank" rel="noopener noreferrer">
+Solicitar proposta
+</a> </div> </article><article class="index4-pricing-card">  <div class="index4-pricing-card__head"> <div class="index4-pricing-card__titles"> <p class="index4-pricing-badge" style="margin-bottom: 0.5rem;"> <span class="index4-pricing-badge-dot" aria-hidden="true"></span> FORMAÇÕES ESTRUTURADAS </p> <h3 class="index4-pricing-card__name">Formações</h3> </div> <div class="index4-pricing-card__icon" aria-hidden="true"> <iconify-icon icon="solar:square-academic-cap-linear" width="22" height="22"></iconify-icon> </div> </div> <p class="text-copy" style="margin: 0 0 1rem; font-size: 0.9375rem;"> Programas completos do zero ao avançado, por área de atuação — com projetos práticos e certificado. </p> <ul class="index4-pricing-card__benefits"> <li class="index4-pricing-card__benefit"> <span class="index4-pricing-card__check" aria-hidden="true"> <iconify-icon icon="solar:check-circle-bold" width="18" height="18"></iconify-icon> </span> <span class="index4-pricing-card__benefit-text">Formação Engenheiro de Agentes de IA</span> </li><li class="index4-pricing-card__benefit"> <span class="index4-pricing-card__check" aria-hidden="true"> <iconify-icon icon="solar:check-circle-bold" width="18" height="18"></iconify-icon> </span> <span class="index4-pricing-card__benefit-text">Formação Analista de Dados</span> </li><li class="index4-pricing-card__benefit"> <span class="index4-pricing-card__check" aria-hidden="true"> <iconify-icon icon="solar:check-circle-bold" width="18" height="18"></iconify-icon> </span> <span class="index4-pricing-card__benefit-text">Formação AI Designer</span> </li> </ul> <p class="index4-pricing-card__benefit-text index4-pricing-card__benefit-text--muted"> Ideal para formar profissionais com profundidade em uma área específica. </p> <div class="index4-pricing-card__footer"> <a href="https://wa.me/5551996253887?text=Ol%C3%A1%2C%20vim%20pela%20p%C3%A1gina%20corporativa%20e%20gostaria%20de%20saber%20mais%20sobre%20os%20planos%20para%20empresas." class="index4-pricing-card__cta index4-pricing-card__cta--outline" target="_blank" rel="noopener noreferrer">
+Solicitar proposta
+</a> </div> </article> </div> </div> </section> </div>  <section class="section-container stats-section" aria-labelledby="emp-v2-discount-title"> <h2 id="emp-v2-discount-title" class="section-title animate-on-scroll">
+Quanto maior o time, maior o desconto.
+</h2> <div class="animate-on-scroll" style="margin-top: 2rem"> <table class="emp-v2-discount-table"> <thead> <tr> <th scope="col">Faixa de acessos</th> <th scope="col">Ação</th> </tr> </thead> <tbody> <tr> <td data-label="Faixa">10 a 20 acessos</td> <td data-label="Ação"> <div class="index4-cadence"> <a href="https://wa.me/5551996253887?text=Ol%C3%A1%2C%20vim%20pela%20p%C3%A1gina%20corporativa%20e%20gostaria%20de%20saber%20mais%20sobre%20os%20planos%20para%20empresas." class="index4-pricing-card__cta index4-pricing-card__cta--outline" target="_blank" rel="noopener noreferrer">
+Solicitar proposta
+</a> </div> </td> </tr><tr> <td data-label="Faixa">21 a 50 acessos</td> <td data-label="Ação"> <div class="index4-cadence"> <a href="https://wa.me/5551996253887?text=Ol%C3%A1%2C%20vim%20pela%20p%C3%A1gina%20corporativa%20e%20gostaria%20de%20saber%20mais%20sobre%20os%20planos%20para%20empresas." class="index4-pricing-card__cta index4-pricing-card__cta--outline" target="_blank" rel="noopener noreferrer">
+Solicitar proposta
+</a> </div> </td> </tr><tr> <td data-label="Faixa">51 a 100 acessos</td> <td data-label="Ação"> <div class="index4-cadence"> <a href="https://wa.me/5551996253887?text=Ol%C3%A1%2C%20vim%20pela%20p%C3%A1gina%20corporativa%20e%20gostaria%20de%20saber%20mais%20sobre%20os%20planos%20para%20empresas." class="index4-pricing-card__cta index4-pricing-card__cta--outline" target="_blank" rel="noopener noreferrer">
+Solicitar proposta
+</a> </div> </td> </tr><tr> <td data-label="Faixa">Acima de 100 acessos</td> <td data-label="Ação"> <div class="index4-cadence"> <a href="https://wa.me/5551996253887?text=Ol%C3%A1%2C%20vim%20pela%20p%C3%A1gina%20corporativa%20e%20gostaria%20de%20saber%20mais%20sobre%20os%20planos%20para%20empresas." class="index4-pricing-card__cta index4-pricing-card__cta--outline" target="_blank" rel="noopener noreferrer">
+Solicitar proposta
+</a> </div> </td> </tr> </tbody> </table> <p class="emp-v2-discount-callout">
+Setor público? Aceitamos pagamento via empenho para contratações a partir de 10 licenças.
+<a href="https://wa.me/5551996253887?text=Ol%C3%A1%2C%20vim%20pela%20p%C3%A1gina%20corporativa%20e%20gostaria%20de%20saber%20mais%20sobre%20os%20planos%20para%20empresas." target="_blank" rel="noopener noreferrer">
+Solicitar proposta →
+</a> </p> </div> </section>  <section class="emp-v2-cta-strip section-container" aria-labelledby="emp-v2-cta-strip-title"> <article class="emp-cta-card emp-v2-cta-strip__card animate-on-scroll"> <div> <h2 id="emp-v2-cta-strip-title">Quer saber o valor exato para o tamanho do seu time?</h2> <p>Informe quantos colaboradores e receba uma proposta em minutos.</p> </div> <div class="index4-cadence emp-v2-cta-bar emp-v2-cta-bar--end"> <a href="#contato" class="index4-pricing-card__cta index4-pricing-card__cta--primary emp-v2-cta--inline" data-scroll-anchor>
+Solicitar proposta
+</a> </div> </article> </section>  <section class="section-container stats-section" id="diferenciais" aria-labelledby="emp-v2-diff-title"> <header class="emp-v2-section-head animate-on-scroll"> <p class="section-badge"> <span class="section-badge__dot" aria-hidden="true"></span>
+POR QUE ASIMOV
+</p> <h2 id="emp-v2-diff-title" class="section-title mb-0">
+Por que empresas escolhem a Asimov?
+</h2> </header> <article class="emp-v2-diff__intro animate-on-scroll"> <h3 class="section-title" style="font-size: clamp(1.35rem, 3vw, 1.75rem); text-align: left;">
+O melhor caminho de aprendizado para cada perfil da sua empresa
+</h3> <p class="text-copy" style="margin-top: 1rem; max-width: 48rem;">
+Nossa equipe de ensino estrutura o percurso ideal para cada perfil do time — do
+        colaborador iniciante ao profissional técnico avançado.
+</p> <ul class="emp-v2-diff__list"> <li>Onboarding de aprendizado personalizado por equipe</li> <li>Trilhas de Python, IA, Dados e Automação</li> <li>Projetos práticos com aplicação real</li> </ul> </article> <ul class="stats-grid emp-v2-diff__cards-row list-none p-0 m-0"> <li class="animate-on-scroll animate-fade-slide-in" style="animation-delay: 0.1s"> <article class="trail-overview-v2-card"> <span class="trail-overview-v2-card__shine" aria-hidden="true"></span> <span class="trail-overview-v2-card__grid" aria-hidden="true"></span> <div class="trail-overview-v2-card__icon-stage" aria-hidden="true"> <span class="trail-overview-v2-card__icon-pedestal"></span> <span class="trail-overview-v2-card__icon-halo"></span> <span class="trail-overview-v2-card__icon-ring"></span> <iconify-icon class="trail-overview-v2-card__icon" icon="solar:refresh-circle-linear" width="36" height="36" style="color: var(--ui-accent-light)"></iconify-icon> </div> <h3 class="trail-overview-v2-card__title">Conteúdo prático e atualizado</h3> <p class="text-card trail-overview-v2-card__text">Currículo revisado constantemente — LLMs, agentes e automações aplicadas à realidade do mercado.</p> </article> </li><li class="animate-on-scroll animate-fade-slide-in" style="animation-delay: 0.16s"> <article data-accent-variant="dark" class="trail-overview-v2-card"> <span class="trail-overview-v2-card__shine" aria-hidden="true"></span> <span class="trail-overview-v2-card__grid" aria-hidden="true"></span> <div class="trail-overview-v2-card__icon-stage" aria-hidden="true"> <span class="trail-overview-v2-card__icon-pedestal"></span> <span class="trail-overview-v2-card__icon-halo"></span> <span class="trail-overview-v2-card__icon-ring"></span> <iconify-icon class="trail-overview-v2-card__icon" icon="solar:chat-round-dots-linear" width="36" height="36" style="color: var(--ui-accent-light)"></iconify-icon> </div> <h3 class="trail-overview-v2-card__title">Professores reais, não chatbots</h3> <p class="text-card trail-overview-v2-card__text">Especialistas do mercado respondem dúvidas do seu time diretamente na plataforma.</p> </article> </li><li class="animate-on-scroll animate-fade-slide-in" style="animation-delay: 0.22s"> <article data-accent-variant="light" class="trail-overview-v2-card"> <span class="trail-overview-v2-card__shine" aria-hidden="true"></span> <span class="trail-overview-v2-card__grid" aria-hidden="true"></span> <div class="trail-overview-v2-card__icon-stage" aria-hidden="true"> <span class="trail-overview-v2-card__icon-pedestal"></span> <span class="trail-overview-v2-card__icon-halo"></span> <span class="trail-overview-v2-card__icon-ring"></span> <iconify-icon class="trail-overview-v2-card__icon" icon="solar:diploma-verified-linear" width="36" height="36" style="color: var(--ui-accent-light)"></iconify-icon> </div> <h3 class="trail-overview-v2-card__title">Certificação Asimov</h3> <p class="text-card trail-overview-v2-card__text">Reconhecimento formal valorizado pelo mercado a cada trilha ou formação concluída.</p> </article> </li><li class="animate-on-scroll animate-fade-slide-in" style="animation-delay: 0.28s"> <article data-accent-variant="glow" class="trail-overview-v2-card"> <span class="trail-overview-v2-card__shine" aria-hidden="true"></span> <span class="trail-overview-v2-card__grid" aria-hidden="true"></span> <div class="trail-overview-v2-card__icon-stage" aria-hidden="true"> <span class="trail-overview-v2-card__icon-pedestal"></span> <span class="trail-overview-v2-card__icon-halo"></span> <span class="trail-overview-v2-card__icon-ring"></span> <iconify-icon class="trail-overview-v2-card__icon" icon="solar:chart-square-linear" width="36" height="36" style="color: var(--ui-accent-light)"></iconify-icon> </div> <h3 class="trail-overview-v2-card__title">Dashboard gerencial</h3> <p class="text-card trail-overview-v2-card__text">Acompanhe progresso, engajamento e evolução de cada colaborador em um só lugar.</p> </article> </li> </ul> </section>  <section class="section-container stats-section" aria-labelledby="emp-v2-benefits-title"> <header class="emp-v2-section-head animate-on-scroll"> <p class="section-badge"> <span class="section-badge__dot" aria-hidden="true"></span>
+INCLUÍDO EM TODOS OS PLANOS
+</p> <h2 id="emp-v2-benefits-title" class="section-title mb-0">
+Tudo que sua empresa recebe, em qualquer plano.
+</h2> </header> <ul class="stats-grid list-none p-0 m-0"> <li class="animate-on-scroll animate-fade-slide-in" style="animation-delay: 0.1s"> <article class="trail-overview-v2-card"> <span class="trail-overview-v2-card__shine" aria-hidden="true"></span> <span class="trail-overview-v2-card__grid" aria-hidden="true"></span> <div class="trail-overview-v2-card__icon-stage" aria-hidden="true"> <span class="trail-overview-v2-card__icon-pedestal"></span> <span class="trail-overview-v2-card__icon-halo"></span> <span class="trail-overview-v2-card__icon-ring"></span> <iconify-icon class="trail-overview-v2-card__icon" icon="solar:diploma-verified-linear" width="36" height="36" style="color: var(--ui-accent-light)"></iconify-icon> </div> <h3 class="trail-overview-v2-card__title">Certificado por trilha</h3> <p class="text-card trail-overview-v2-card__text">Emitido automaticamente ao concluir cada formação ou trilha</p> </article> </li><li class="animate-on-scroll animate-fade-slide-in" style="animation-delay: 0.16s"> <article data-accent-variant="dark" class="trail-overview-v2-card"> <span class="trail-overview-v2-card__shine" aria-hidden="true"></span> <span class="trail-overview-v2-card__grid" aria-hidden="true"></span> <div class="trail-overview-v2-card__icon-stage" aria-hidden="true"> <span class="trail-overview-v2-card__icon-pedestal"></span> <span class="trail-overview-v2-card__icon-halo"></span> <span class="trail-overview-v2-card__icon-ring"></span> <iconify-icon class="trail-overview-v2-card__icon" icon="solar:chart-square-linear" width="36" height="36" style="color: var(--ui-accent-light)"></iconify-icon> </div> <h3 class="trail-overview-v2-card__title">Dashboard de gestão</h3> <p class="text-card trail-overview-v2-card__text">Painel para o gestor acompanhar progresso e engajamento do time</p> </article> </li><li class="animate-on-scroll animate-fade-slide-in" style="animation-delay: 0.22s"> <article data-accent-variant="light" class="trail-overview-v2-card"> <span class="trail-overview-v2-card__shine" aria-hidden="true"></span> <span class="trail-overview-v2-card__grid" aria-hidden="true"></span> <div class="trail-overview-v2-card__icon-stage" aria-hidden="true"> <span class="trail-overview-v2-card__icon-pedestal"></span> <span class="trail-overview-v2-card__icon-halo"></span> <span class="trail-overview-v2-card__icon-ring"></span> <iconify-icon class="trail-overview-v2-card__icon" icon="solar:chat-round-dots-linear" width="36" height="36" style="color: var(--ui-accent-light)"></iconify-icon> </div> <h3 class="trail-overview-v2-card__title">Suporte com professores</h3> <p class="text-card trail-overview-v2-card__text">Especialistas respondem dúvidas de seg. a sex., das 9h às 18h</p> </article> </li><li class="animate-on-scroll animate-fade-slide-in" style="animation-delay: 0.28s"> <article data-accent-variant="glow" class="trail-overview-v2-card"> <span class="trail-overview-v2-card__shine" aria-hidden="true"></span> <span class="trail-overview-v2-card__grid" aria-hidden="true"></span> <div class="trail-overview-v2-card__icon-stage" aria-hidden="true"> <span class="trail-overview-v2-card__icon-pedestal"></span> <span class="trail-overview-v2-card__icon-halo"></span> <span class="trail-overview-v2-card__icon-ring"></span> <iconify-icon class="trail-overview-v2-card__icon" icon="solar:refresh-circle-linear" width="36" height="36" style="color: var(--ui-accent-light)"></iconify-icon> </div> <h3 class="trail-overview-v2-card__title">Conteúdo sempre atualizado</h3> <p class="text-card trail-overview-v2-card__text">Novos cursos incluídos automaticamente, sem custo adicional</p> </article> </li><li class="animate-on-scroll animate-fade-slide-in" style="animation-delay: 0.33999999999999997s"> <article class="trail-overview-v2-card"> <span class="trail-overview-v2-card__shine" aria-hidden="true"></span> <span class="trail-overview-v2-card__grid" aria-hidden="true"></span> <div class="trail-overview-v2-card__icon-stage" aria-hidden="true"> <span class="trail-overview-v2-card__icon-pedestal"></span> <span class="trail-overview-v2-card__icon-halo"></span> <span class="trail-overview-v2-card__icon-ring"></span> <iconify-icon class="trail-overview-v2-card__icon" icon="solar:map-arrow-right-linear" width="36" height="36" style="color: var(--ui-accent-light)"></iconify-icon> </div> <h3 class="trail-overview-v2-card__title">Onboarding de aprendizado</h3> <p class="text-card trail-overview-v2-card__text">Nossa equipe estrutura o melhor caminho para cada perfil do time</p> </article> </li><li class="animate-on-scroll animate-fade-slide-in" style="animation-delay: 0.4s"> <article data-accent-variant="dark" class="trail-overview-v2-card"> <span class="trail-overview-v2-card__shine" aria-hidden="true"></span> <span class="trail-overview-v2-card__grid" aria-hidden="true"></span> <div class="trail-overview-v2-card__icon-stage" aria-hidden="true"> <span class="trail-overview-v2-card__icon-pedestal"></span> <span class="trail-overview-v2-card__icon-halo"></span> <span class="trail-overview-v2-card__icon-ring"></span> <iconify-icon class="trail-overview-v2-card__icon" icon="solar:cpu-bolt-linear" width="36" height="36" style="color: var(--ui-accent-light)"></iconify-icon> </div> <h3 class="trail-overview-v2-card__title">Suporte com agentes de IA</h3> <p class="text-card trail-overview-v2-card__text">Atendimento inteligente disponível fora do horário comercial</p> </article> </li> </ul> <div class="index4-cadence emp-v2-cta-bar emp-v2-cta-bar--center" style="margin-top: 2rem"> <a href="https://wa.me/5551996253887?text=Ol%C3%A1%2C%20vim%20pela%20p%C3%A1gina%20corporativa%20e%20gostaria%20de%20saber%20mais%20sobre%20os%20planos%20para%20empresas." class="index4-pricing-card__cta index4-pricing-card__cta--primary emp-v2-cta--inline" target="_blank" rel="noopener noreferrer">
+Quero esses benefícios para o meu time
+</a> </div> </section>  <section class="emp-v2-faq section-container" aria-labelledby="emp-v2-faq-title"> <header class="emp-v2-section-head animate-on-scroll"> <p class="section-badge"> <span class="section-badge__dot" aria-hidden="true"></span>
+DÚVIDAS FREQUENTES
+</p> <h2 id="emp-v2-faq-title" class="section-title mb-0">Perguntas frequentes</h2> </header> <div class="faq-accordion animate-on-scroll animate-fade-slide-in anim-delay-150" data-faq-accordion> <div class="faq-item" data-faq-item> <button type="button" class="faq-trigger" data-faq-trigger aria-expanded="false" aria-controls="emp-v2-faq-panel-0" id="emp-v2-faq-trigger-0"> <span class="faq-question">O que está incluído nos planos?</span> <span class="faq-icon" aria-hidden="true"> <svg viewBox="0 0 24 24" focusable="false"> <polyline points="6 9 12 15 18 9"></polyline> </svg> </span> </button> <div class="faq-body" id="emp-v2-faq-panel-0" data-faq-panel role="region" aria-labelledby="emp-v2-faq-trigger-0" aria-hidden="true"> <div class="faq-body-inner"> <div class="faq-content"> <p>Acesso aos cursos, formações, projetos práticos, suporte com professores e dashboard de gestão. O conteúdo varia conforme o plano escolhido.</p> </div> </div> </div> </div><div class="faq-item" data-faq-item> <button type="button" class="faq-trigger" data-faq-trigger aria-expanded="false" aria-controls="emp-v2-faq-panel-1" id="emp-v2-faq-trigger-1"> <span class="faq-question">Como funciona o suporte com professores?</span> <span class="faq-icon" aria-hidden="true"> <svg viewBox="0 0 24 24" focusable="false"> <polyline points="6 9 12 15 18 9"></polyline> </svg> </span> </button> <div class="faq-body" id="emp-v2-faq-panel-1" data-faq-panel role="region" aria-labelledby="emp-v2-faq-trigger-1" aria-hidden="true"> <div class="faq-body-inner"> <div class="faq-content"> <p>Especialistas Asimov respondem dúvidas de segunda a sexta, das 9h às 18h. Fora do horário, agentes de IA garantem atendimento contínuo.</p> </div> </div> </div> </div><div class="faq-item" data-faq-item> <button type="button" class="faq-trigger" data-faq-trigger aria-expanded="false" aria-controls="emp-v2-faq-panel-2" id="emp-v2-faq-trigger-2"> <span class="faq-question">Posso personalizar o caminho de estudos do meu time?</span> <span class="faq-icon" aria-hidden="true"> <svg viewBox="0 0 24 24" focusable="false"> <polyline points="6 9 12 15 18 9"></polyline> </svg> </span> </button> <div class="faq-body" id="emp-v2-faq-panel-2" data-faq-panel role="region" aria-labelledby="emp-v2-faq-trigger-2" aria-hidden="true"> <div class="faq-body-inner"> <div class="faq-content"> <p>Sim. Nossa equipe faz o onboarding pedagógico e estrutura trilhas conforme a função, nível e objetivos de cada colaborador.</p> </div> </div> </div> </div><div class="faq-item" data-faq-item> <button type="button" class="faq-trigger" data-faq-trigger aria-expanded="false" aria-controls="emp-v2-faq-panel-3" id="emp-v2-faq-trigger-3"> <span class="faq-question">Há contrato mínimo ou fidelidade?</span> <span class="faq-icon" aria-hidden="true"> <svg viewBox="0 0 24 24" focusable="false"> <polyline points="6 9 12 15 18 9"></polyline> </svg> </span> </button> <div class="faq-body" id="emp-v2-faq-panel-3" data-faq-panel role="region" aria-labelledby="emp-v2-faq-trigger-3" aria-hidden="true"> <div class="faq-body-inner"> <div class="faq-content"> <p>Os planos são contratados em ciclos anuais. Para grupos grandes, condições especiais podem ser negociadas com nossa equipe.</p> </div> </div> </div> </div><div class="faq-item" data-faq-item> <button type="button" class="faq-trigger" data-faq-trigger aria-expanded="false" aria-controls="emp-v2-faq-panel-4" id="emp-v2-faq-trigger-4"> <span class="faq-question">Vocês atendem setor público?</span> <span class="faq-icon" aria-hidden="true"> <svg viewBox="0 0 24 24" focusable="false"> <polyline points="6 9 12 15 18 9"></polyline> </svg> </span> </button> <div class="faq-body" id="emp-v2-faq-panel-4" data-faq-panel role="region" aria-labelledby="emp-v2-faq-trigger-4" aria-hidden="true"> <div class="faq-body-inner"> <div class="faq-content"> <p>Sim. Aceitamos pagamento via empenho e atendemos órgãos públicos a partir de 10 licenças.</p> </div> </div> </div> </div><div class="faq-item" data-faq-item> <button type="button" class="faq-trigger" data-faq-trigger aria-expanded="false" aria-controls="emp-v2-faq-panel-5" id="emp-v2-faq-trigger-5"> <span class="faq-question">Como faço para contratar?</span> <span class="faq-icon" aria-hidden="true"> <svg viewBox="0 0 24 24" focusable="false"> <polyline points="6 9 12 15 18 9"></polyline> </svg> </span> </button> <div class="faq-body" id="emp-v2-faq-panel-5" data-faq-panel role="region" aria-labelledby="emp-v2-faq-trigger-5" aria-hidden="true"> <div class="faq-body-inner"> <div class="faq-content"> <p>Fale com um especialista pelo WhatsApp ou envie o formulário. Nossa equipe retorna com a proposta personalizada.</p> </div> </div> </div> </div> </div> </section> <script type="module">const p="5551996253887",u="Olá, vim pela página corporativa e gostaria de saber mais sobre os planos para empresas.";function v(e=""){const t=e?`${u}
+
+${e}`:u;return`https://wa.me/${p}?text=${encodeURIComponent(t)}`}function g(e){const t=e.replace(/\D/g,"").slice(0,11);return t.length<=2?t.length?`(${t}`:"":t.length<=6?`(${t.slice(0,2)}) ${t.slice(2)}`:t.length<=10?`(${t.slice(0,2)}) ${t.slice(2,6)}-${t.slice(6)}`:`(${t.slice(0,2)}) ${t.slice(2,7)}-${t.slice(7)}`}function E(){const e=document.querySelector(".site-header, header"),t=document.querySelector(".emp-v2-topbar"),n=e?.getBoundingClientRect().height??60,o=t?.getBoundingClientRect().height??0;return n+o+16}function $(e){const t=document.getElementById(e);if(!t)return!1;const n=t.getBoundingClientRect().top+window.scrollY-E();return window.scrollTo({top:Math.max(0,n),behavior:"smooth"}),!0}function b(){document.querySelectorAll('a[data-scroll-anchor][href^="#"]').forEach(e=>{e.dataset.anchorBound!=="true"&&(e.dataset.anchorBound="true",e.addEventListener("click",t=>{const n=e.getAttribute("href");if(!n||n==="#")return;const o=n.slice(1);document.getElementById(o)&&(t.preventDefault(),$(o),history.pushState(null,"",n))}))})}function y(){const e=document.querySelector("#emp-v2-whatsapp");e&&e.addEventListener("input",()=>{const t=e.selectionStart??0,n=e.value;e.value=g(n);const o=e.value.length-n.length;e.setSelectionRange(t+o,t+o)})}function w(){const e=document.getElementById("emp-v2-lead-form");e&&e.addEventListener("submit",t=>{t.preventDefault();const n=e.querySelector("#emp-v2-name"),o=e.querySelector("#emp-v2-whatsapp"),s=e.querySelector("#emp-v2-team"),c=document.getElementById("emp-v2-form-error");[n,o,s].forEach(h=>h?.classList.remove("is-invalid"));const a=n?.value.trim()??"",l=o?.value.trim()??"",d=s?.value??"";let i=!0,r=null;if(a||(n?.classList.add("is-invalid"),r=n,i=!1),(l.replace(/\D/g,"").length??0)<10&&(o?.classList.add("is-invalid"),r=r??o,i=!1),d||(s?.classList.add("is-invalid"),r=r??s,i=!1),!i){c?.removeAttribute("hidden"),r?.focus();return}c?.setAttribute("hidden","");const f=[`Nome: ${a}`,`WhatsApp: ${l}`,`Tamanho do time: ${d}`];window.location.href=v(f.join(`
+`))})}function S(){const e=document.querySelector(".emp-v2-progress");if(!e)return;if(window.matchMedia("(prefers-reduced-motion: reduce)").matches){e.classList.add("is-ready");return}const t=new IntersectionObserver(n=>{n.forEach(o=>{o.isIntersecting&&(setTimeout(()=>e.classList.add("is-ready"),400),t.disconnect())})},{threshold:.2});t.observe(e)}function m(){b(),y(),w(),S()}m();document.addEventListener("astro:page-load",m);</script> <script type="module" src="/_astro/index.astro_astro_type_script_index_1_lang.BLTcjrQN.js"></script>  </main> <footer class="site-footer" aria-labelledby="site-footer-title"> <div class="site-footer__watermark" aria-hidden="true">ASIMOV</div> <div class="site-footer__inner"> <div class="site-footer__grid"> <div class="site-footer__brand"> <h2 id="site-footer-title" class="sr-only">Rodapé ASIMOV</h2> <a href="https://asimov.academy/" class="site-footer__logo"> ASIMOV </a> <p class="text-copy site-footer__tagline">A maior escola de programação em Python.</p> <nav class="site-footer__social" aria-label="Redes sociais"> <ul class="site-footer__social-list"> <li> <a href="https://www.linkedin.com/company/asimov-academy/" class="site-footer__social-link" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"> <iconify-icon icon="mdi:linkedin" width="22" height="22"></iconify-icon> </a> </li><li> <a href="https://www.instagram.com/asimov.academy/" class="site-footer__social-link" target="_blank" rel="noopener noreferrer" aria-label="Instagram"> <iconify-icon icon="mdi:instagram" width="22" height="22"></iconify-icon> </a> </li><li> <a href="https://github.com/asimov-academy" class="site-footer__social-link" target="_blank" rel="noopener noreferrer" aria-label="GitHub"> <iconify-icon icon="mdi:github" width="22" height="22"></iconify-icon> </a> </li><li> <a href="https://www.tiktok.com/@asimov.academy" class="site-footer__social-link" target="_blank" rel="noopener noreferrer" aria-label="TikTok"> <iconify-icon icon="simple-icons:tiktok" width="22" height="22"></iconify-icon> </a> </li><li> <a href="https://twitter.com/asimovacademy" class="site-footer__social-link" target="_blank" rel="noopener noreferrer" aria-label="X"> <iconify-icon icon="simple-icons:x" width="22" height="22"></iconify-icon> </a> </li><li> <a href="https://www.youtube.com/c/AsimovAcademy" class="site-footer__social-link" target="_blank" rel="noopener noreferrer" aria-label="YouTube"> <iconify-icon icon="mdi:youtube" width="22" height="22"></iconify-icon> </a> </li> </ul> </nav> </div> <nav class="site-footer__col" aria-label="A plataforma"> <h3 class="site-footer__col-title">A plataforma</h3> <ul class="site-footer__links"> <li> <a href="/cursos/" class="site-footer__link">  <span>Lista de cursos</span> </a> </li><li> <a href="https://hub.asimov.academy/blog/" class="site-footer__link" target="_blank" rel="noopener noreferrer">  <span>Blog</span> </a> </li><li> <a href="https://hub.asimov.academy/tutoriais/" class="site-footer__link" target="_blank" rel="noopener noreferrer">  <span>Tutoriais</span> </a> </li> </ul> </nav><nav class="site-footer__col" aria-label="Sobre"> <h3 class="site-footer__col-title">Sobre</h3> <ul class="site-footer__links"> <li> <a href="https://hub.asimov.academy/sobre/" class="site-footer__link" target="_blank" rel="noopener noreferrer"> <span class="site-footer__link-check" aria-hidden="true"> <iconify-icon icon="mdi:check" width="14" height="14"></iconify-icon> </span> <span>Sobre nós</span> </a> </li><li> <a href="https://asimov.academy/manifesto-programacao-para-nao-programadores/" class="site-footer__link"> <span class="site-footer__link-check" aria-hidden="true"> <iconify-icon icon="mdi:check" width="14" height="14"></iconify-icon> </span> <span>Manifesto Asimov</span> </a> </li><li> <a href="https://www.linkedin.com/jobs/search/?currentJobId=4412035664&amp;geoId=106057199&amp;keywords=Asimov%20Academy&amp;location=Brazil&amp;src=v3_3895f27b-1055-402c-81bb-d82ec37b94fb_68cb003f2372e2ed854d14ac_0_s-1&amp;trk=public_jobs_jobs-search-bar_search-submit" class="site-footer__link"> <span class="site-footer__link-check" aria-hidden="true"> <iconify-icon icon="mdi:check" width="14" height="14"></iconify-icon> </span> <span>Trabalhe Conosco</span> </a> </li><li> <a href="/misc/empresas/" class="site-footer__link"> <span class="site-footer__link-check" aria-hidden="true"> <iconify-icon icon="mdi:check" width="14" height="14"></iconify-icon> </span> <span>Para empresas</span> </a> </li><li> <a href="https://hub.asimov.academy/politica-de-privacidade" class="site-footer__link" target="_blank" rel="noopener noreferrer"> <span class="site-footer__link-check" aria-hidden="true"> <iconify-icon icon="mdi:check" width="14" height="14"></iconify-icon> </span> <span>Política de privacidade</span> </a> </li><li> <a href="https://hub.asimov.academy/termos-de-uso/" class="site-footer__link" target="_blank" rel="noopener noreferrer"> <span class="site-footer__link-check" aria-hidden="true"> <iconify-icon icon="mdi:check" width="14" height="14"></iconify-icon> </span> <span>Termos de uso</span> </a> </li><li> <a href="https://asimov.academy/misc/work/empresas/" class="site-footer__link"> <span class="site-footer__link-check" aria-hidden="true"> <iconify-icon icon="mdi:check" width="14" height="14"></iconify-icon> </span> <span>Contrate nossos alunos</span> </a> </li> </ul> </nav><nav class="site-footer__col" aria-label="Suporte"> <h3 class="site-footer__col-title">Suporte</h3> <ul class="site-footer__links"> <li> <a href="https://api.whatsapp.com/send?phone=555196253887&amp;text=Ol%C3%A1%2C%20gostaria%20de%20saber%20mais%20sobre%20a%20Asimov" class="site-footer__link">  <span>Contato</span> </a> </li><li> <a href="/misc/contatos-oficiais/" class="site-footer__link"> <span class="site-footer__link-check" aria-hidden="true"> <iconify-icon icon="mdi:check" width="14" height="14"></iconify-icon> </span> <span>Números Oficiais</span> </a> </li> </ul> </nav> </div> <div class="site-footer__bar"> <p class="site-footer__legal">
+© 2026 Asimov. Todos os direitos reservados. CNPJ: 41.075.192/0001-82 </p> </div> </div> </footer> </div> <a href="https://api.whatsapp.com/send/?phone=555196253887&amp;text=Ol%C3%A1%2C%20vim%20pela%20p%C3%A1gina%20corporativa%20e%20gostaria%20de%20saber%20mais%20sobre%20os%20planos%20para%20empresas." class="whatsapp-fab" target="_blank" rel="noopener noreferrer" aria-label="Falar com a Asimov no WhatsApp">  <svg class="whatsapp-fab__icon" width="28" height="28" viewBox="0 0 24 24" aria-hidden="true" focusable="false"> <path fill="currentColor" d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21c5.46 0 9.91-4.45 9.91-9.91c0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2m.01 1.67c2.2 0 4.26.86 5.82 2.42a8.23 8.23 0 0 1 2.41 5.83c0 4.54-3.7 8.23-8.24 8.23c-1.48 0-2.93-.39-4.19-1.15l-.3-.17l-3.12.82l.83-3.04l-.2-.32a8.2 8.2 0 0 1-1.26-4.38c.01-4.54 3.7-8.24 8.25-8.24M8.53 7.33c-.16 0-.43.06-.66.31c-.22.25-.87.86-.87 2.07c0 1.22.89 2.39 1 2.56c.12.17 1.76 2.67 4.25 3.73c.59.27 1.05.42 1.41.53c.59.19 1.13.16 1.56.1c.48-.07 1.46-.6 1.67-1.18c.21-.58.21-1.07.15-1.18c-.07-.1-.23-.16-.48-.28c-.25-.11-1.47-.72-1.69-.82c-.23-.08-.37-.12-.53.13c-.16.25-.64.81-.78.98c-.15.17-.29.19-.53.07c-.25-.13-1.05-.39-1.99-1.23c-.74-.66-1.23-1.47-1.38-1.72c-.14-.25-.02-.38.11-.51c.11-.11.25-.29.37-.43c.13-.14.17-.25.25-.41c.08-.17.04-.31-.02-.43c-.06-.11-.53-1.28-.73-1.75c-.19-.44-.39-.38-.53-.39c-.14 0-.3-.01-.46-.01"></path> </svg> </a> <div id="pre-checkout-modal" class="pco-backdrop" role="dialog" aria-modal="true" aria-labelledby="pco-title" hidden data-astro-cid-suf2zmrn> <div class="index4-cadence pco-shell" data-astro-cid-suf2zmrn> <article class="index4-pricing-card pco-dialog" data-astro-cid-suf2zmrn> <button id="pre-checkout-close" class="pco-close" type="button" aria-label="Fechar modal" data-astro-cid-suf2zmrn> <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" data-astro-cid-suf2zmrn> <line x1="18" y1="6" x2="6" y2="18" data-astro-cid-suf2zmrn></line> <line x1="6" y1="6" x2="18" y2="18" data-astro-cid-suf2zmrn></line> </svg> </button> <h2 id="pco-title" class="index4-pricing-card__name pco-title" data-astro-cid-suf2zmrn>Você está quase lá!</h2> <p class="pco-subtitle" data-astro-cid-suf2zmrn>Falta mais um passo para acessar a página de inscrição.</p> <form id="pre-checkout-form" class="pco-form" novalidate data-astro-cid-suf2zmrn> <input type="hidden" id="pre-checkout-plan-id" name="plan_id" value="" data-astro-cid-suf2zmrn> <label class="pco-field" data-astro-cid-suf2zmrn> <span class="pco-label" data-astro-cid-suf2zmrn>Nome</span> <input type="text" name="name" placeholder="Seu nome completo" required autocomplete="name" data-astro-cid-suf2zmrn> </label> <label class="pco-field" data-astro-cid-suf2zmrn> <span class="pco-label" data-astro-cid-suf2zmrn>WhatsApp</span> <input type="tel" name="phone" placeholder="(11) 99999-9999" required autocomplete="tel" data-astro-cid-suf2zmrn> </label> <label class="pco-field" data-astro-cid-suf2zmrn> <span class="pco-label" data-astro-cid-suf2zmrn>E-mail</span> <input type="email" name="email" placeholder="voce@email.com" required autocomplete="email" data-astro-cid-suf2zmrn> </label> <p id="pre-checkout-error" class="pco-error" role="alert" hidden data-astro-cid-suf2zmrn>
+Não foi possível enviar — você será redirecionado mesmo assim.
+</p> <div class="index4-pricing-card__footer pco-footer" data-astro-cid-suf2zmrn> <button type="submit" class="index4-pricing-card__cta index4-pricing-card__cta--primary" data-astro-cid-suf2zmrn>
+Continuar para inscrição
+</button> <p class="index4-pricing-card__guarantee pco-privacy" data-astro-cid-suf2zmrn> <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" data-astro-cid-suf2zmrn> <rect x="3" y="11" width="18" height="11" rx="2" data-astro-cid-suf2zmrn></rect> <path d="M7 11V7a5 5 0 0 1 10 0v4" data-astro-cid-suf2zmrn></path> </svg>
+Seus dados estão protegidos. Não enviamos spam.
+</p> </div> </form> </article> </div> </div> <script id="pre-checkout-catalog" type="application/json">{"byCheckoutPath":{"/S88776596X":{"planId":"lifetime","productName":"Acesso Vitalício"},"/W86376714E":{"planId":"annual","productName":"Assinatura Anual"},"/P104283823A":{"planId":"formacao_ai_designer","productName":"Formação AI Designer"},"/G90302516D":{"planId":"formacao_analista_dados","productName":"Formação Analista de Dados"},"/X102265782X":{"planId":"trilha_engenheiro_ia","productName":"Formação Engenheiro de Agentes de IA"},"/T101062424J":{"planId":"trilha_automacoes_n8n","productName":"Trilha Automações com n8n"},"/Q106151350R":{"planId":"trilha_openclaw","productName":"Trilha Dominando OpenClaw"},"/V103457766X":{"planId":"ebooks_home","productName":"ebooks_home"},"/V103849841F":{"planId":"ebooks_analista_dados","productName":"ebooks_analista_dados"},"/I103847986P":{"planId":"cursos_analista_dados","productName":"cursos_analista_dados"},"/T103456910J":{"planId":"ebooks_engenheiro_ia","productName":"ebooks_engenheiro_ia"},"/O103848053V":{"planId":"cursos_engenheiro_ia","productName":"cursos_engenheiro_ia"},"/M103457467D":{"planId":"ebooks_n8n","productName":"ebooks_n8n"},"/V103848776Y":{"planId":"cursos_n8n","productName":"cursos_n8n"}}}</script> <script type="module" src="/_astro/LPLayout.astro_astro_type_script_index_0_lang.BbUaeGQ4.js"></script> </body> </html>
