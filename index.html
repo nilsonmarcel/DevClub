@@ -143,19 +143,19 @@
         </div>
 
         <!-- Headline -->
-        <h1 id="hero-target-h1" class="relative z-20 text-3xl sm:text-4xl lg:text-5xl font-display font-extrabold tracking-tight leading-[1.15] text-white motion-item motion-delay-3">
+        <h1 id="target-h1" class="relative z-20 text-3xl sm:text-4xl lg:text-5xl font-display font-extrabold tracking-tight leading-[1.15] text-white motion-item motion-delay-3">
           Aprenda Tecnologia, IA e Programação com quem forma os profissionais mais <span class="text-gradient">disputados</span> do mercado.
         </h1>
 
         <!-- Subtítulo -->
-        <p id="hero-target-subtitle" class="text-lg sm:text-xl text-[#D1D5DB] font-normal leading-relaxed max-w-2xl motion-item motion-delay-4">
+        <p id="target-subtitle" class="text-lg sm:text-xl text-[#D1D5DB] font-normal leading-relaxed max-w-2xl motion-item motion-delay-4">
           Mais de <strong class="text-white font-semibold underline decoration-[#22C55E]/50 underline-offset-4">25.000 alunos</strong> já aceleraram suas carreiras conosco e hoje trabalham nas maiores empresas do Brasil e do mundo.
         </p>
 
         <!-- CTA Buttons -->
-        <div id="hero-target-ctas" class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-2 motion-item motion-delay-5">
+        <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-2 motion-item motion-delay-5">
           <!-- CTA Principal -->
-          <a href="#inscreva-se" class="btn-primary-glow group">
+          <a id="target-cta-1" href="#inscreva-se" class="btn-primary-glow group">
             <span class="flex items-center gap-3">
               Quero ser aluno
               <i data-lucide="arrow-right" class="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1"></i>
@@ -163,7 +163,7 @@
           </a>
 
           <!-- CTA Secundário -->
-          <a href="#formacoes" class="btn-secondary-glass group">
+          <a id="target-cta-2" href="#formacoes" class="btn-secondary-glass group">
             <span class="flex items-center gap-3">
               <i data-lucide="play-circle" class="w-5 h-5 text-[#4ADE80] transition-transform duration-300 group-hover:scale-110"></i>
               Conhecer as Formações
@@ -172,7 +172,7 @@
         </div>
 
         <!-- Inline Floating Student Avatars & Social Proof -->
-        <div id="hero-target-avatars" class="pt-4 flex flex-wrap items-center gap-6 border-t border-white/[0.08] motion-item motion-delay-6">
+        <div id="target-avatars" class="pt-4 flex flex-wrap items-center gap-6 border-t border-white/[0.08] motion-item motion-delay-6">
           <div class="flex items-center -space-x-3">
             <img class="w-10 h-10 rounded-full border-2 border-[#050505] object-cover" src="assets/4618335d5d96ab2c_avatar-1.KTpp4UFb_sg2gE.webp" alt="Aluno 1">
             <img class="w-10 h-10 rounded-full border-2 border-[#050505] object-cover" src="assets/41bc85c4bca30b64_avatar-2.iccIjlt__Z27PNAE.webp" alt="Aluno 2">
@@ -244,7 +244,7 @@
     <div class="mt-16 sm:mt-24 grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
       
       <!-- Metric 1: 25.000+ Alunos -->
-      <div class="stat-card group motion-item motion-delay-3">
+      <div id="target-stat-1" class="stat-card group motion-item motion-delay-3">
         <div class="hud-corner hud-corner-tl opacity-0 group-hover:opacity-100 transition-opacity"></div>
         <div class="hud-corner hud-corner-br opacity-0 group-hover:opacity-100 transition-opacity"></div>
         <div class="flex items-center justify-between mb-2">
@@ -258,7 +258,7 @@
       </div>
 
       <!-- Metric 2: 500+ Empresas -->
-      <div class="stat-card group motion-item motion-delay-4">
+      <div id="target-stat-2" class="stat-card group motion-item motion-delay-4">
         <div class="hud-corner hud-corner-tl opacity-0 group-hover:opacity-100 transition-opacity"></div>
         <div class="hud-corner hud-corner-br opacity-0 group-hover:opacity-100 transition-opacity"></div>
         <div class="flex items-center justify-between mb-2">
@@ -272,7 +272,7 @@
       </div>
 
       <!-- Metric 3: 98% Satisfação -->
-      <div class="stat-card group motion-item motion-delay-5">
+      <div id="target-stat-3" class="stat-card group motion-item motion-delay-5">
         <div class="hud-corner hud-corner-tl opacity-0 group-hover:opacity-100 transition-opacity"></div>
         <div class="hud-corner hud-corner-br opacity-0 group-hover:opacity-100 transition-opacity"></div>
         <div class="flex items-center justify-between mb-2">
@@ -286,7 +286,7 @@
       </div>
 
       <!-- Metric 4: 100+ Especialistas -->
-      <div class="stat-card group motion-item motion-delay-6">
+      <div id="target-stat-4" class="stat-card group motion-item motion-delay-6">
         <div class="hud-corner hud-corner-tl opacity-0 group-hover:opacity-100 transition-opacity"></div>
         <div class="hud-corner hud-corner-br opacity-0 group-hover:opacity-100 transition-opacity"></div>
         <div class="flex items-center justify-between mb-2">
@@ -297,6 +297,1317 @@
           100+
         </div>
         <p class="text-xs text-[#9CA3AF] font-medium mt-1">Especialistas e Mentores</p>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- SEGUNDA DOBRA: PARTNERS MARQUEE & ECOSSISTEMA DE ALTA PERFORMANCE (Identidade Flutuante & Transparente da Primeira Dobra) -->
+  <section id="ecossistema" class="relative z-10 max-w-7xl mx-auto px-6 py-20 overflow-visible">
+    
+    <!-- 1. SEGUNDA DOBRA: LOGO MARQUEE & PROVA SOCIAL (Flutuante, Sem Caixas) -->
+    <div class="mb-20 text-center">
+      <div class="tagline-badge mx-auto mb-4 motion-item">
+        <div class="tagline-pulse-dot"></div>
+        <span>Empregabilidade & Conexões Globais</span>
+      </div>
+      
+      <h2 class="text-3xl sm:text-4xl md:text-5xl text-white font-display font-extrabold tracking-tight leading-[1.15] max-w-4xl mx-auto motion-item motion-delay-1">
+        Quem aprende aqui chega nas <span class="text-gradient">maiores empresas</span>.
+      </h2>
+      
+      <p class="mt-4 text-base sm:text-lg font-normal text-[#D1D5DB] leading-relaxed max-w-2xl mx-auto motion-item motion-delay-2">
+        Nossos alunos conquistam oportunidades em startups, multinacionais e grandes empresas de tecnologia.
+      </p>
+
+      <!-- Infinite Marquee (Flutuante, Transparente) -->
+      <div class="mt-12 relative overflow-hidden marquee-mask group py-7 border-y border-white/[0.08]">
+        <div class="animate-marquee whitespace-nowrap flex gap-14 sm:gap-20 items-center opacity-75 grayscale hover:grayscale-0 transition-all duration-500 text-white font-display">
+          <span class="text-2xl sm:text-3xl font-extrabold tracking-tight hover:text-[#4ADE80] transition-colors cursor-pointer">Google</span>
+          <span class="text-2xl sm:text-3xl font-bold tracking-tight hover:text-[#4ADE80] transition-colors cursor-pointer">Microsoft</span>
+          <span class="text-2xl sm:text-3xl font-extrabold tracking-tighter hover:text-[#4ADE80] transition-colors cursor-pointer">Meta</span>
+          <span class="text-2xl sm:text-3xl font-bold tracking-tight hover:text-[#FDE68A] transition-colors cursor-pointer">Amazon</span>
+          <span class="text-2xl sm:text-3xl font-extrabold tracking-tight text-[#4ADE80]">Mercado Livre</span>
+          <span class="text-2xl sm:text-3xl font-black italic tracking-tighter hover:text-[#4ADE80] transition-colors cursor-pointer">iFood</span>
+          <span class="text-2xl sm:text-3xl font-bold tracking-tight text-[#FDE68A]">Nubank</span>
+          <span class="text-2xl sm:text-3xl font-black tracking-tight hover:text-[#4ADE80] transition-colors cursor-pointer">Stone</span>
+          <span class="text-2xl sm:text-3xl font-extrabold tracking-tighter hover:text-[#4ADE80] transition-colors cursor-pointer">XP</span>
+          <span class="text-2xl sm:text-3xl font-bold tracking-tight hover:text-[#FDE68A] transition-colors cursor-pointer">Santander</span>
+          <span class="text-2xl sm:text-3xl font-mono font-bold tracking-tight text-[#4ADE80]">IBM</span>
+          <span class="text-2xl sm:text-3xl font-semibold tracking-wide hover:text-[#4ADE80] transition-colors cursor-pointer">Accenture</span>
+
+          <!-- Duplicated for Seamless Infinite Loop -->
+          <span class="text-2xl sm:text-3xl font-extrabold tracking-tight hover:text-[#4ADE80] transition-colors cursor-pointer">Google</span>
+          <span class="text-2xl sm:text-3xl font-bold tracking-tight hover:text-[#4ADE80] transition-colors cursor-pointer">Microsoft</span>
+          <span class="text-2xl sm:text-3xl font-extrabold tracking-tighter hover:text-[#4ADE80] transition-colors cursor-pointer">Meta</span>
+          <span class="text-2xl sm:text-3xl font-bold tracking-tight hover:text-[#FDE68A] transition-colors cursor-pointer">Amazon</span>
+          <span class="text-2xl sm:text-3xl font-extrabold tracking-tight text-[#4ADE80]">Mercado Livre</span>
+          <span class="text-2xl sm:text-3xl font-black italic tracking-tighter hover:text-[#4ADE80] transition-colors cursor-pointer">iFood</span>
+          <span class="text-2xl sm:text-3xl font-bold tracking-tight text-[#FDE68A]">Nubank</span>
+          <span class="text-2xl sm:text-3xl font-black tracking-tight hover:text-[#4ADE80] transition-colors cursor-pointer">Stone</span>
+          <span class="text-2xl sm:text-3xl font-extrabold tracking-tighter hover:text-[#4ADE80] transition-colors cursor-pointer">XP</span>
+        </div>
+      </div>
+
+      <!-- Botão Centralizado "Ver Planos" (Identidade DevClub) -->
+      <div class="mt-10 flex justify-center motion-item motion-delay-3">
+        <a href="#formacoes" class="btn-primary-glow">
+          <span class="flex items-center gap-2">
+            Ver Planos
+            <i data-lucide="arrow-right" class="w-4 h-4"></i>
+          </span>
+        </a>
+      </div>
+    </div>
+
+    <!-- 2. SEGUNDA DOBRA: TRILHAS DE TECNOLOGIA & FORMAÇÕES (Flutuante & Transparente) -->
+    <div class="flex flex-col gap-10 w-full">
+      
+      <!-- Section Header -->
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-8 w-full">
+        <div class="flex flex-col gap-4 max-w-3xl">
+          <div class="flex gap-3 items-center motion-item motion-delay-1">
+            <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-[#22C55E]/15 text-xs font-mono font-bold text-[#4ADE80] border border-[#22C55E]/30 shadow-[0_0_12px_rgba(34,197,94,0.3)]">01</span>
+            <span class="text-xs font-mono font-medium tracking-widest uppercase text-[#9CA3AF]">TRILHAS & FORMAÇÕES DE ELITE</span>
+          </div>
+          <h2 class="text-3xl sm:text-4xl md:text-5xl text-white font-display font-extrabold tracking-tight leading-[1.15] motion-item motion-delay-2">
+            Escolha sua trilha e domine a <span class="text-gradient">tecnologia do futuro</span>.
+          </h2>
+          <p class="text-base sm:text-lg font-normal text-[#D1D5DB] leading-relaxed max-w-2xl motion-item motion-delay-3">
+            Do absoluto zero ao nível profissional.
+          </p>
+        </div>
+
+        <div class="flex items-center gap-3 overflow-x-auto pb-2 md:pb-0 motion-item motion-delay-4">
+          <button class="px-4 py-2 rounded-full bg-[#22C55E] text-black font-mono font-bold text-xs shadow-[0_0_15px_rgba(34,197,94,0.4)] whitespace-nowrap">Todas as Trilhas (15)</button>
+          <button class="px-4 py-2 rounded-full bg-white/5 border border-white/10 text-gray-300 hover:text-white hover:bg-white/10 font-mono font-medium text-xs transition-colors whitespace-nowrap">Dev & Software</button>
+          <button class="px-4 py-2 rounded-full bg-white/5 border border-white/10 text-gray-300 hover:text-white hover:bg-white/10 font-mono font-medium text-xs transition-colors whitespace-nowrap">IA & Automação</button>
+          <button class="px-4 py-2 rounded-full bg-white/5 border border-white/10 text-gray-300 hover:text-white hover:bg-white/10 font-mono font-medium text-xs transition-colors whitespace-nowrap">Dados & BI</button>
+        </div>
+      </div>
+
+      <!-- 15 Cards Grid (5 Colunas Perfeitas no Desktop: 3 fileiras x 5 colunas) -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-5 gap-5">
+        
+        <!-- Card 1: Frontend -->
+        <div class="bento-card p-6 flex flex-col justify-between group motion-item motion-delay-1">
+          <div class="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-[#22C55E]/15 via-[#0A0A0C] to-[#0A0A0C]"></div>
+          <div class="relative z-10">
+            <div class="flex items-center justify-between mb-4">
+              <div class="flex items-center gap-2.5">
+                <span class="w-2.5 h-2.5 rounded-full bg-[#4ADE80] animate-pulse"></span>
+                <span class="text-xs font-mono font-bold uppercase tracking-wider text-[#4ADE80]">DESENVOLVIMENTO</span>
+              </div>
+              <span class="px-2.5 py-1 rounded-full bg-white/5 border border-white/10 text-[11px] font-mono text-[#D1D5DB] flex items-center gap-1">
+                <i data-lucide="clock" class="w-3 h-3 text-[#4ADE80]"></i> 120h Práticas
+              </span>
+            </div>
+            <div class="w-12 h-12 rounded-2xl bg-[#22C55E]/20 border border-[#22C55E]/40 flex items-center justify-center mb-4 text-[#4ADE80] shadow-[0_0_20px_rgba(34,197,94,0.35)] group-hover:scale-110 transition-transform">
+              <i data-lucide="layout" class="w-6 h-6"></i>
+            </div>
+            <h3 class="text-2xl font-display font-bold text-white tracking-tight group-hover:text-[#4ADE80] transition-colors">Frontend</h3>
+            <p class="mt-2 text-sm text-[#D1D5DB] leading-relaxed">Crie interfaces modernas, reativas e com alta velocidade utilizando os padrões visuais mais exigidos do mercado.</p>
+          </div>
+          <div class="relative z-10 mt-6 pt-4 border-t border-white/10 flex items-center justify-between">
+            <span class="text-xs font-mono text-[#9CA3AF]">Zero ao Avançado</span>
+            <button class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-white/5 border border-white/10 group-hover:border-[#22C55E] group-hover:bg-[#22C55E]/10 text-xs font-bold text-white group-hover:text-[#4ADE80] transition-all">
+              <span>Saiba Mais</span>
+              <i data-lucide="arrow-right" class="w-3.5 h-3.5 transition-transform group-hover:translate-x-1"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Card 2: Backend -->
+        <div class="bento-card p-6 flex flex-col justify-between group motion-item motion-delay-2">
+          <div class="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-[#16A34A]/15 via-[#0A0A0C] to-[#0A0A0C]"></div>
+          <div class="relative z-10">
+            <div class="flex items-center justify-between mb-4">
+              <div class="flex items-center gap-2.5">
+                <span class="w-2.5 h-2.5 rounded-full bg-[#4ADE80] animate-pulse"></span>
+                <span class="text-xs font-mono font-bold uppercase tracking-wider text-[#4ADE80]">ARQUITETURA</span>
+              </div>
+              <span class="px-2.5 py-1 rounded-full bg-white/5 border border-white/10 text-[11px] font-mono text-[#D1D5DB] flex items-center gap-1">
+                <i data-lucide="clock" class="w-3 h-3 text-[#4ADE80]"></i> 140h Práticas
+              </span>
+            </div>
+            <div class="w-12 h-12 rounded-2xl bg-[#22C55E]/20 border border-[#22C55E]/40 flex items-center justify-center mb-4 text-[#4ADE80] shadow-[0_0_20px_rgba(34,197,94,0.35)] group-hover:scale-110 transition-transform">
+              <i data-lucide="server" class="w-6 h-6"></i>
+            </div>
+            <h3 class="text-2xl font-display font-bold text-white tracking-tight group-hover:text-[#4ADE80] transition-colors">Backend</h3>
+            <p class="mt-2 text-sm text-[#D1D5DB] leading-relaxed">Construa arquiteturas robustas, APIs escaláveis, integração de microsserviços e bancos de dados de alto tráfego.</p>
+          </div>
+          <div class="relative z-10 mt-6 pt-4 border-t border-white/10 flex items-center justify-between">
+            <span class="text-xs font-mono text-[#9CA3AF]">Sistemas de Alta Escala</span>
+            <button class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-white/5 border border-white/10 group-hover:border-[#22C55E] group-hover:bg-[#22C55E]/10 text-xs font-bold text-white group-hover:text-[#4ADE80] transition-all">
+              <span>Saiba Mais</span>
+              <i data-lucide="arrow-right" class="w-3.5 h-3.5 transition-transform group-hover:translate-x-1"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Card 3: Full Stack -->
+        <div class="bento-card p-6 flex flex-col justify-between group motion-item motion-delay-3">
+          <div class="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-[#FDE68A]/15 via-[#0A0A0C] to-[#0A0A0C]"></div>
+          <div class="relative z-10">
+            <div class="flex items-center justify-between mb-4">
+              <div class="flex items-center gap-2.5">
+                <span class="w-2.5 h-2.5 rounded-full bg-[#FDE68A] animate-pulse"></span>
+                <span class="text-xs font-mono font-bold uppercase tracking-wider text-[#FDE68A]">COMPLETO • EM ALTA</span>
+              </div>
+              <span class="px-2.5 py-1 rounded-full bg-white/5 border border-white/10 text-[11px] font-mono text-[#D1D5DB] flex items-center gap-1">
+                <i data-lucide="clock" class="w-3 h-3 text-[#FDE68A]"></i> 220h Imersão
+              </span>
+            </div>
+            <div class="w-12 h-12 rounded-2xl bg-[#FDE68A]/20 border border-[#FDE68A]/40 flex items-center justify-center mb-4 text-[#FDE68A] shadow-[0_0_20px_rgba(253,230,138,0.35)] group-hover:scale-110 transition-transform">
+              <i data-lucide="layers" class="w-6 h-6"></i>
+            </div>
+            <h3 class="text-2xl font-display font-bold text-white tracking-tight group-hover:text-[#FDE68A] transition-colors">Full Stack</h3>
+            <p class="mt-2 text-sm text-[#D1D5DB] leading-relaxed">Domínio de ponta a ponta. Torne-se o engenheiro completo capaz de construir aplicações web do banco de dados à interface.</p>
+          </div>
+          <div class="relative z-10 mt-6 pt-4 border-t border-white/10 flex items-center justify-between">
+            <span class="text-xs font-mono text-[#9CA3AF]">Ponta a Ponta</span>
+            <button class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-white/5 border border-white/10 group-hover:border-[#FDE68A] group-hover:bg-[#FDE68A]/10 text-xs font-bold text-white group-hover:text-[#FDE68A] transition-all">
+              <span>Saiba Mais</span>
+              <i data-lucide="arrow-right" class="w-3.5 h-3.5 transition-transform group-hover:translate-x-1"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Card 4: Mobile -->
+        <div class="bento-card p-6 flex flex-col justify-between group motion-item motion-delay-4">
+          <div class="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-[#22C55E]/15 via-[#0A0A0C] to-[#0A0A0C]"></div>
+          <div class="relative z-10">
+            <div class="flex items-center justify-between mb-4">
+              <div class="flex items-center gap-2.5">
+                <span class="w-2.5 h-2.5 rounded-full bg-[#4ADE80] animate-pulse"></span>
+                <span class="text-xs font-mono font-bold uppercase tracking-wider text-[#4ADE80]">APLICATIVOS</span>
+              </div>
+              <span class="px-2.5 py-1 rounded-full bg-white/5 border border-white/10 text-[11px] font-mono text-[#D1D5DB] flex items-center gap-1">
+                <i data-lucide="clock" class="w-3 h-3 text-[#4ADE80]"></i> 110h Práticas
+              </span>
+            </div>
+            <div class="w-12 h-12 rounded-2xl bg-[#22C55E]/20 border border-[#22C55E]/40 flex items-center justify-center mb-4 text-[#4ADE80] shadow-[0_0_20px_rgba(34,197,94,0.35)] group-hover:scale-110 transition-transform">
+              <i data-lucide="smartphone" class="w-6 h-6"></i>
+            </div>
+            <h3 class="text-2xl font-display font-bold text-white tracking-tight group-hover:text-[#4ADE80] transition-colors">Mobile</h3>
+            <p class="mt-2 text-sm text-[#D1D5DB] leading-relaxed">Desenvolva aplicativos modernos e responsivos para iOS e Android com performance nativa e recursos de hardware.</p>
+          </div>
+          <div class="relative z-10 mt-6 pt-4 border-t border-white/10 flex items-center justify-between">
+            <span class="text-xs font-mono text-[#9CA3AF]">iOS & Android</span>
+            <button class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-white/5 border border-white/10 group-hover:border-[#22C55E] group-hover:bg-[#22C55E]/10 text-xs font-bold text-white group-hover:text-[#4ADE80] transition-all">
+              <span>Saiba Mais</span>
+              <i data-lucide="arrow-right" class="w-3.5 h-3.5 transition-transform group-hover:translate-x-1"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Card 5: React -->
+        <div class="bento-card p-6 flex flex-col justify-between group motion-item motion-delay-5">
+          <div class="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-[#4ADE80]/15 via-[#0A0A0C] to-[#0A0A0C]"></div>
+          <div class="relative z-10">
+            <div class="flex items-center justify-between mb-4">
+              <div class="flex items-center gap-2.5">
+                <span class="w-2.5 h-2.5 rounded-full bg-[#4ADE80] animate-pulse"></span>
+                <span class="text-xs font-mono font-bold uppercase tracking-wider text-[#4ADE80]">LIBRARY CORE</span>
+              </div>
+              <span class="px-2.5 py-1 rounded-full bg-white/5 border border-white/10 text-[11px] font-mono text-[#D1D5DB] flex items-center gap-1">
+                <i data-lucide="clock" class="w-3 h-3 text-[#4ADE80]"></i> 90h Práticas
+              </span>
+            </div>
+            <div class="w-12 h-12 rounded-2xl bg-[#4ADE80]/20 border border-[#4ADE80]/40 flex items-center justify-center mb-4 text-[#4ADE80] shadow-[0_0_20px_rgba(74,222,128,0.35)] group-hover:scale-110 transition-transform">
+              <i data-lucide="atom" class="w-6 h-6"></i>
+            </div>
+            <h3 class="text-2xl font-display font-bold text-white tracking-tight group-hover:text-[#4ADE80] transition-colors">React</h3>
+            <p class="mt-2 text-sm text-[#D1D5DB] leading-relaxed">Domine a biblioteca mais requisitada do mundo. Componentização, gerenciamento de estado avançado, Hooks e SSR.</p>
+          </div>
+          <div class="relative z-10 mt-6 pt-4 border-t border-white/10 flex items-center justify-between">
+            <span class="text-xs font-mono text-[#9CA3AF]">Next.js & Hooks</span>
+            <button class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-white/5 border border-white/10 group-hover:border-[#4ADE80] group-hover:bg-[#4ADE80]/10 text-xs font-bold text-white group-hover:text-[#4ADE80] transition-all">
+              <span>Saiba Mais</span>
+              <i data-lucide="arrow-right" class="w-3.5 h-3.5 transition-transform group-hover:translate-x-1"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Card 6: Node -->
+        <div class="bento-card p-6 flex flex-col justify-between group motion-item motion-delay-6">
+          <div class="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-[#16A34A]/15 via-[#0A0A0C] to-[#0A0A0C]"></div>
+          <div class="relative z-10">
+            <div class="flex items-center justify-between mb-4">
+              <div class="flex items-center gap-2.5">
+                <span class="w-2.5 h-2.5 rounded-full bg-[#4ADE80] animate-pulse"></span>
+                <span class="text-xs font-mono font-bold uppercase tracking-wider text-[#4ADE80]">RUNTIME JS</span>
+              </div>
+              <span class="px-2.5 py-1 rounded-full bg-white/5 border border-white/10 text-[11px] font-mono text-[#D1D5DB] flex items-center gap-1">
+                <i data-lucide="clock" class="w-3 h-3 text-[#4ADE80]"></i> 85h Práticas
+              </span>
+            </div>
+            <div class="w-12 h-12 rounded-2xl bg-[#22C55E]/20 border border-[#22C55E]/40 flex items-center justify-center mb-4 text-[#4ADE80] shadow-[0_0_20px_rgba(34,197,94,0.35)] group-hover:scale-110 transition-transform">
+              <i data-lucide="cpu" class="w-6 h-6"></i>
+            </div>
+            <h3 class="text-2xl font-display font-bold text-white tracking-tight group-hover:text-[#4ADE80] transition-colors">Node</h3>
+            <p class="mt-2 text-sm text-[#D1D5DB] leading-relaxed">Crie servidores de alta velocidade com Node.js, Express, Fastify, autenticação JWT e integrações de microsserviços.</p>
+          </div>
+          <div class="relative z-10 mt-6 pt-4 border-t border-white/10 flex items-center justify-between">
+            <span class="text-xs font-mono text-[#9CA3AF]">Backend em JS</span>
+            <button class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-white/5 border border-white/10 group-hover:border-[#22C55E] group-hover:bg-[#22C55E]/10 text-xs font-bold text-white group-hover:text-[#4ADE80] transition-all">
+              <span>Saiba Mais</span>
+              <i data-lucide="arrow-right" class="w-3.5 h-3.5 transition-transform group-hover:translate-x-1"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Card 7: JavaScript -->
+        <div class="bento-card p-6 flex flex-col justify-between group motion-item motion-delay-1">
+          <div class="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-[#FDE68A]/15 via-[#0A0A0C] to-[#0A0A0C]"></div>
+          <div class="relative z-10">
+            <div class="flex items-center justify-between mb-4">
+              <div class="flex items-center gap-2.5">
+                <span class="w-2.5 h-2.5 rounded-full bg-[#FDE68A] animate-pulse"></span>
+                <span class="text-xs font-mono font-bold uppercase tracking-wider text-[#FDE68A]">LINGUAGEM BASE</span>
+              </div>
+              <span class="px-2.5 py-1 rounded-full bg-white/5 border border-white/10 text-[11px] font-mono text-[#D1D5DB] flex items-center gap-1">
+                <i data-lucide="clock" class="w-3 h-3 text-[#FDE68A]"></i> 80h Fundamento
+              </span>
+            </div>
+            <div class="w-12 h-12 rounded-2xl bg-[#FDE68A]/20 border border-[#FDE68A]/40 flex items-center justify-center mb-4 text-[#FDE68A] shadow-[0_0_20px_rgba(253,230,138,0.35)] group-hover:scale-110 transition-transform">
+              <i data-lucide="code-2" class="w-6 h-6"></i>
+            </div>
+            <h3 class="text-2xl font-display font-bold text-white tracking-tight group-hover:text-[#FDE68A] transition-colors">JavaScript</h3>
+            <p class="mt-2 text-sm text-[#D1D5DB] leading-relaxed">A linguagem fundamental da web moderna. Domine lógica avançada, assincronismo, manipulação de DOM e ES6+.</p>
+          </div>
+          <div class="relative z-10 mt-6 pt-4 border-t border-white/10 flex items-center justify-between">
+            <span class="text-xs font-mono text-[#9CA3AF]">Fundamento Essencial</span>
+            <button class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-white/5 border border-white/10 group-hover:border-[#FDE68A] group-hover:bg-[#FDE68A]/10 text-xs font-bold text-white group-hover:text-[#FDE68A] transition-all">
+              <span>Saiba Mais</span>
+              <i data-lucide="arrow-right" class="w-3.5 h-3.5 transition-transform group-hover:translate-x-1"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Card 8: HTML -->
+        <div class="bento-card p-6 flex flex-col justify-between group motion-item motion-delay-2">
+          <div class="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-[#22C55E]/15 via-[#0A0A0C] to-[#0A0A0C]"></div>
+          <div class="relative z-10">
+            <div class="flex items-center justify-between mb-4">
+              <div class="flex items-center gap-2.5">
+                <span class="w-2.5 h-2.5 rounded-full bg-[#4ADE80] animate-pulse"></span>
+                <span class="text-xs font-mono font-bold uppercase tracking-wider text-[#4ADE80]">ESTRUTURA WEB</span>
+              </div>
+              <span class="px-2.5 py-1 rounded-full bg-white/5 border border-white/10 text-[11px] font-mono text-[#D1D5DB] flex items-center gap-1">
+                <i data-lucide="clock" class="w-3 h-3 text-[#4ADE80]"></i> 30h Fundamento
+              </span>
+            </div>
+            <div class="w-12 h-12 rounded-2xl bg-[#22C55E]/20 border border-[#22C55E]/40 flex items-center justify-center mb-4 text-[#4ADE80] shadow-[0_0_20px_rgba(34,197,94,0.35)] group-hover:scale-110 transition-transform">
+              <i data-lucide="globe" class="w-6 h-6"></i>
+            </div>
+            <h3 class="text-2xl font-display font-bold text-white tracking-tight group-hover:text-[#4ADE80] transition-colors">HTML</h3>
+            <p class="mt-2 text-sm text-[#D1D5DB] leading-relaxed">Estruturação semântica de páginas web, tags modernas HTML5, acessibilidade (WCAG) e otimização para motores de busca (SEO).</p>
+          </div>
+          <div class="relative z-10 mt-6 pt-4 border-t border-white/10 flex items-center justify-between">
+            <span class="text-xs font-mono text-[#9CA3AF]">Semântica & SEO</span>
+            <button class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-white/5 border border-white/10 group-hover:border-[#22C55E] group-hover:bg-[#22C55E]/10 text-xs font-bold text-white group-hover:text-[#4ADE80] transition-all">
+              <span>Saiba Mais</span>
+              <i data-lucide="arrow-right" class="w-3.5 h-3.5 transition-transform group-hover:translate-x-1"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Card 9: CSS -->
+        <div class="bento-card p-6 flex flex-col justify-between group motion-item motion-delay-3">
+          <div class="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-[#4ADE80]/15 via-[#0A0A0C] to-[#0A0A0C]"></div>
+          <div class="relative z-10">
+            <div class="flex items-center justify-between mb-4">
+              <div class="flex items-center gap-2.5">
+                <span class="w-2.5 h-2.5 rounded-full bg-[#4ADE80] animate-pulse"></span>
+                <span class="text-xs font-mono font-bold uppercase tracking-wider text-[#4ADE80]">ESTILIZAÇÃO UI</span>
+              </div>
+              <span class="px-2.5 py-1 rounded-full bg-white/5 border border-white/10 text-[11px] font-mono text-[#D1D5DB] flex items-center gap-1">
+                <i data-lucide="clock" class="w-3 h-3 text-[#4ADE80]"></i> 45h Fundamento
+              </span>
+            </div>
+            <div class="w-12 h-12 rounded-2xl bg-[#4ADE80]/20 border border-[#4ADE80]/40 flex items-center justify-center mb-4 text-[#4ADE80] shadow-[0_0_20px_rgba(74,222,128,0.35)] group-hover:scale-110 transition-transform">
+              <i data-lucide="palette" class="w-6 h-6"></i>
+            </div>
+            <h3 class="text-2xl font-display font-bold text-white tracking-tight group-hover:text-[#4ADE80] transition-colors">CSS</h3>
+            <p class="mt-2 text-sm text-[#D1D5DB] leading-relaxed">Estilização profissional com Flexbox, CSS Grid, animações modernas, variáveis CSS, Tailwind CSS e layouts responsivos.</p>
+          </div>
+          <div class="relative z-10 mt-6 pt-4 border-t border-white/10 flex items-center justify-between">
+            <span class="text-xs font-mono text-[#9CA3AF]">Design & Layout</span>
+            <button class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-white/5 border border-white/10 group-hover:border-[#4ADE80] group-hover:bg-[#4ADE80]/10 text-xs font-bold text-white group-hover:text-[#4ADE80] transition-all">
+              <span>Saiba Mais</span>
+              <i data-lucide="arrow-right" class="w-3.5 h-3.5 transition-transform group-hover:translate-x-1"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Card 10: Gestor de IA -->
+        <div class="bento-card p-6 flex flex-col justify-between group motion-item motion-delay-4">
+          <div class="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-[#4ADE80]/20 via-[#0A0A0C] to-[#0A0A0C]"></div>
+          <div class="relative z-10">
+            <div class="flex items-center justify-between mb-4">
+              <div class="flex items-center gap-2.5">
+                <span class="w-2.5 h-2.5 rounded-full bg-[#4ADE80] animate-pulse"></span>
+                <span class="text-xs font-mono font-bold uppercase tracking-wider text-[#4ADE80]">LIDERANÇA IA</span>
+              </div>
+              <span class="px-2.5 py-1 rounded-full bg-white/5 border border-white/10 text-[11px] font-mono text-[#D1D5DB] flex items-center gap-1">
+                <i data-lucide="clock" class="w-3 h-3 text-[#4ADE80]"></i> 100h Executivo
+              </span>
+            </div>
+            <div class="w-12 h-12 rounded-2xl bg-[#22C55E]/20 border border-[#22C55E]/40 flex items-center justify-center mb-4 text-[#4ADE80] shadow-[0_0_20px_rgba(34,197,94,0.35)] group-hover:scale-110 transition-transform">
+              <i data-lucide="brain-circuit" class="w-6 h-6"></i>
+            </div>
+            <h3 class="text-2xl font-display font-bold text-white tracking-tight group-hover:text-[#4ADE80] transition-colors">Gestor de IA</h3>
+            <p class="mt-2 text-sm text-[#D1D5DB] leading-relaxed">Aprenda a liderar e implementar estratégias de Inteligência Artificial em produtos, processos de negócio e equipes de tecnologia.</p>
+          </div>
+          <div class="relative z-10 mt-6 pt-4 border-t border-white/10 flex items-center justify-between">
+            <span class="text-xs font-mono text-[#9CA3AF]">Estratégia & Produto</span>
+            <button class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-white/5 border border-white/10 group-hover:border-[#22C55E] group-hover:bg-[#22C55E]/10 text-xs font-bold text-white group-hover:text-[#4ADE80] transition-all">
+              <span>Saiba Mais</span>
+              <i data-lucide="arrow-right" class="w-3.5 h-3.5 transition-transform group-hover:translate-x-1"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Card 11: IA + Automação -->
+        <div class="bento-card p-6 flex flex-col justify-between group motion-item motion-delay-5">
+          <div class="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-[#FDE68A]/20 via-[#0A0A0C] to-[#0A0A0C]"></div>
+          <div class="relative z-10">
+            <div class="flex items-center justify-between mb-4">
+              <div class="flex items-center gap-2.5">
+                <span class="w-2.5 h-2.5 rounded-full bg-[#FDE68A] animate-pulse"></span>
+                <span class="text-xs font-mono font-bold uppercase tracking-wider text-[#FDE68A]">REVOLUCIONÁRIO</span>
+              </div>
+              <span class="px-2.5 py-1 rounded-full bg-white/5 border border-white/10 text-[11px] font-mono text-[#D1D5DB] flex items-center gap-1">
+                <i data-lucide="clock" class="w-3 h-3 text-[#FDE68A]"></i> 130h Práticas
+              </span>
+            </div>
+            <div class="w-12 h-12 rounded-2xl bg-[#FDE68A]/20 border border-[#FDE68A]/40 flex items-center justify-center mb-4 text-[#FDE68A] shadow-[0_0_20px_rgba(253,230,138,0.35)] group-hover:scale-110 transition-transform">
+              <i data-lucide="sparkles" class="w-6 h-6"></i>
+            </div>
+            <h3 class="text-2xl font-display font-bold text-white tracking-tight group-hover:text-[#FDE68A] transition-colors">IA + Automação</h3>
+            <p class="mt-2 text-sm text-[#D1D5DB] leading-relaxed">Conecte modelos de linguagem (LLMs) a fluxos de trabalho operacionais, criando Agentes Autônomos de alta eficiência.</p>
+          </div>
+          <div class="relative z-10 mt-6 pt-4 border-t border-white/10 flex items-center justify-between">
+            <span class="text-xs font-mono text-[#9CA3AF]">Agentes & LLMs</span>
+            <button class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-white/5 border border-white/10 group-hover:border-[#FDE68A] group-hover:bg-[#FDE68A]/10 text-xs font-bold text-white group-hover:text-[#FDE68A] transition-all">
+              <span>Saiba Mais</span>
+              <i data-lucide="arrow-right" class="w-3.5 h-3.5 transition-transform group-hover:translate-x-1"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Card 12: Claude Code -->
+        <div class="bento-card p-6 flex flex-col justify-between group motion-item motion-delay-6">
+          <div class="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-[#22C55E]/15 via-[#0A0A0C] to-[#0A0A0C]"></div>
+          <div class="relative z-10">
+            <div class="flex items-center justify-between mb-4">
+              <div class="flex items-center gap-2.5">
+                <span class="w-2.5 h-2.5 rounded-full bg-[#4ADE80] animate-pulse"></span>
+                <span class="text-xs font-mono font-bold uppercase tracking-wider text-[#4ADE80]">AUTOMAÇÃO DE CÓDIGO</span>
+              </div>
+              <span class="px-2.5 py-1 rounded-full bg-white/5 border border-white/10 text-[11px] font-mono text-[#D1D5DB] flex items-center gap-1">
+                <i data-lucide="clock" class="w-3 h-3 text-[#4ADE80]"></i> 60h Imersão
+              </span>
+            </div>
+            <div class="w-12 h-12 rounded-2xl bg-[#22C55E]/20 border border-[#22C55E]/40 flex items-center justify-center mb-4 text-[#4ADE80] shadow-[0_0_20px_rgba(34,197,94,0.35)] group-hover:scale-110 transition-transform">
+              <i data-lucide="bot" class="w-6 h-6"></i>
+            </div>
+            <h3 class="text-2xl font-display font-bold text-white tracking-tight group-hover:text-[#4ADE80] transition-colors">Claude Code</h3>
+            <p class="mt-2 text-sm text-[#D1D5DB] leading-relaxed">Desenvolva softwares e sistemas complexos em velocidade récorde integrando os modelos mais avançados da Anthropic.</p>
+          </div>
+          <div class="relative z-10 mt-6 pt-4 border-t border-white/10 flex items-center justify-between">
+            <span class="text-xs font-mono text-[#9CA3AF]">IA da Anthropic</span>
+            <button class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-white/5 border border-white/10 group-hover:border-[#22C55E] group-hover:bg-[#22C55E]/10 text-xs font-bold text-white group-hover:text-[#4ADE80] transition-all">
+              <span>Saiba Mais</span>
+              <i data-lucide="arrow-right" class="w-3.5 h-3.5 transition-transform group-hover:translate-x-1"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Card 13: N8N -->
+        <div class="bento-card p-6 flex flex-col justify-between group motion-item motion-delay-1">
+          <div class="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-[#4ADE80]/15 via-[#0A0A0C] to-[#0A0A0C]"></div>
+          <div class="relative z-10">
+            <div class="flex items-center justify-between mb-4">
+              <div class="flex items-center gap-2.5">
+                <span class="w-2.5 h-2.5 rounded-full bg-[#4ADE80] animate-pulse"></span>
+                <span class="text-xs font-mono font-bold uppercase tracking-wider text-[#4ADE80]">WORKFLOWS</span>
+              </div>
+              <span class="px-2.5 py-1 rounded-full bg-white/5 border border-white/10 text-[11px] font-mono text-[#D1D5DB] flex items-center gap-1">
+                <i data-lucide="clock" class="w-3 h-3 text-[#4ADE80]"></i> 50h Práticas
+              </span>
+            </div>
+            <div class="w-12 h-12 rounded-2xl bg-[#4ADE80]/20 border border-[#4ADE80]/40 flex items-center justify-center mb-4 text-[#4ADE80] shadow-[0_0_20px_rgba(74,222,128,0.35)] group-hover:scale-110 transition-transform">
+              <i data-lucide="workflow" class="w-6 h-6"></i>
+            </div>
+            <h3 class="text-2xl font-display font-bold text-white tracking-tight group-hover:text-[#4ADE80] transition-colors">N8N</h3>
+            <p class="mt-2 text-sm text-[#D1D5DB] leading-relaxed">Crie automações de processos sem código e integração avançada de sistemas com a plataforma open-source líder mundial.</p>
+          </div>
+          <div class="relative z-10 mt-6 pt-4 border-t border-white/10 flex items-center justify-between">
+            <span class="text-xs font-mono text-[#9CA3AF]">Automação Avançada</span>
+            <button class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-white/5 border border-white/10 group-hover:border-[#4ADE80] group-hover:bg-[#4ADE80]/10 text-xs font-bold text-white group-hover:text-[#4ADE80] transition-all">
+              <span>Saiba Mais</span>
+              <i data-lucide="arrow-right" class="w-3.5 h-3.5 transition-transform group-hover:translate-x-1"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Card 14: Power BI -->
+        <div class="bento-card p-6 flex flex-col justify-between group motion-item motion-delay-2">
+          <div class="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-[#16A34A]/15 via-[#0A0A0C] to-[#0A0A0C]"></div>
+          <div class="relative z-10">
+            <div class="flex items-center justify-between mb-4">
+              <div class="flex items-center gap-2.5">
+                <span class="w-2.5 h-2.5 rounded-full bg-[#4ADE80] animate-pulse"></span>
+                <span class="text-xs font-mono font-bold uppercase tracking-wider text-[#4ADE80]">DASHBOARDS</span>
+              </div>
+              <span class="px-2.5 py-1 rounded-full bg-white/5 border border-white/10 text-[11px] font-mono text-[#D1D5DB] flex items-center gap-1">
+                <i data-lucide="clock" class="w-3 h-3 text-[#4ADE80]"></i> 75h Práticas
+              </span>
+            </div>
+            <div class="w-12 h-12 rounded-2xl bg-[#22C55E]/20 border border-[#22C55E]/40 flex items-center justify-center mb-4 text-[#4ADE80] shadow-[0_0_20px_rgba(34,197,94,0.35)] group-hover:scale-110 transition-transform">
+              <i data-lucide="bar-chart-3" class="w-6 h-6"></i>
+            </div>
+            <h3 class="text-2xl font-display font-bold text-white tracking-tight group-hover:text-[#4ADE80] transition-colors">Power BI</h3>
+            <p class="mt-2 text-sm text-[#D1D5DB] leading-relaxed">Construa relatórios dinâmicos, indicadores de desempenho empresarial e dashboards visuais com linguagem DAX.</p>
+          </div>
+          <div class="relative z-10 mt-6 pt-4 border-t border-white/10 flex items-center justify-between">
+            <span class="text-xs font-mono text-[#9CA3AF]">Business Intelligence</span>
+            <button class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-white/5 border border-white/10 group-hover:border-[#22C55E] group-hover:bg-[#22C55E]/10 text-xs font-bold text-white group-hover:text-[#4ADE80] transition-all">
+              <span>Saiba Mais</span>
+              <i data-lucide="arrow-right" class="w-3.5 h-3.5 transition-transform group-hover:translate-x-1"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Card 15: Análise de Dados -->
+        <div class="bento-card p-6 flex flex-col justify-between group motion-item motion-delay-3">
+          <div class="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-[#FDE68A]/15 via-[#0A0A0C] to-[#0A0A0C]"></div>
+          <div class="relative z-10">
+            <div class="flex items-center justify-between mb-4">
+              <div class="flex items-center gap-2.5">
+                <span class="w-2.5 h-2.5 rounded-full bg-[#FDE68A] animate-pulse"></span>
+                <span class="text-xs font-mono font-bold uppercase tracking-wider text-[#FDE68A]">INSIGHTS & DADOS</span>
+              </div>
+              <span class="px-2.5 py-1 rounded-full bg-white/5 border border-white/10 text-[11px] font-mono text-[#D1D5DB] flex items-center gap-1">
+                <i data-lucide="clock" class="w-3 h-3 text-[#FDE68A]"></i> 115h Práticas
+              </span>
+            </div>
+            <div class="w-12 h-12 rounded-2xl bg-[#FDE68A]/20 border border-[#FDE68A]/40 flex items-center justify-center mb-4 text-[#FDE68A] shadow-[0_0_20px_rgba(253,230,138,0.35)] group-hover:scale-110 transition-transform">
+              <i data-lucide="pie-chart" class="w-6 h-6"></i>
+            </div>
+            <h3 class="text-2xl font-display font-bold text-white tracking-tight group-hover:text-[#FDE68A] transition-colors">Análise de Dados</h3>
+            <p class="mt-2 text-sm text-[#D1D5DB] leading-relaxed">Extraia inteligência estratégica a partir de grandes volumes de dados utilizando Python, SQL e modelagem estatística.</p>
+          </div>
+          <div class="relative z-10 mt-6 pt-4 border-t border-white/10 flex items-center justify-between">
+            <span class="text-xs font-mono text-[#9CA3AF]">Python & SQL</span>
+            <button class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-white/5 border border-white/10 group-hover:border-[#FDE68A] group-hover:bg-[#FDE68A]/10 text-xs font-bold text-white group-hover:text-[#FDE68A] transition-all">
+              <span>Saiba Mais</span>
+              <i data-lucide="arrow-right" class="w-3.5 h-3.5 transition-transform group-hover:translate-x-1"></i>
+            </button>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- BOTTOM CALLOUT BANNER (Identidade Flutuante & Glassmorfismo) -->
+      <div class="mt-8 overflow-hidden rounded-3xl bg-gradient-to-r from-[#22C55E]/15 via-white/[0.03] to-transparent border border-[#22C55E]/30 backdrop-blur-xl p-8 sm:p-10 relative flex flex-col md:flex-row items-center justify-between gap-6 shadow-[0_0_40px_rgba(34,197,94,0.15)] motion-item">
+        <div class="pointer-events-none absolute -right-10 -bottom-10 w-64 h-64 bg-[#22C55E]/20 rounded-full blur-3xl"></div>
+        <div class="relative z-10 max-w-xl">
+          <h3 class="text-2xl sm:text-3xl font-display font-extrabold text-white tracking-tight">Pronto para lançar sua carreira mais rápido?</h3>
+          <p class="mt-2 text-sm text-[#D1D5DB]">Escolha sua trilha hoje, crie projetos reais e escale seu conhecimento do zero ao nível profissional.</p>
+        </div>
+        <div class="relative z-10 flex items-center gap-4 shrink-0">
+          <a href="#inscreva-se" class="btn-primary-glow">
+            <span class="flex items-center gap-2">
+              Começar agora
+              <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </span>
+          </a>
+          <a href="#formacoes" class="btn-secondary-glass">
+            <span>Ver preços</span>
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- TERCEIRA DOBRA: STACK DE MERCADO & ILUSTRAÇÃO 3D (Identidade Flutuante & Transparente da primeira dobra) -->
+  <section id="tecnologias" class="relative z-10 max-w-7xl mx-auto px-6 py-24 overflow-visible">
+    
+    <!-- Protocol HUD System Header Indicator (Idêntico ao da Primeira Dobra) -->
+    <div class="flex items-center justify-between mb-8 pb-3 border-b border-white/[0.06] text-xs font-mono tracking-widest text-[#9CA3AF] motion-item motion-delay-1">
+      <div class="flex items-center gap-3">
+        <span class="text-[#4ADE80]">SYSTEM ///</span>
+        <span>02 /// HIGH_DEMAND_TECH_STACK</span>
+        <span class="hidden sm:inline-block px-2 py-0.5 rounded bg-white/5 border border-white/10 text-[10px]">V4.8_STABLE</span>
+      </div>
+      <div class="flex items-center gap-2">
+        <span class="inline-block w-1.5 h-1.5 rounded-full bg-[#22C55E] animate-ping"></span>
+        <span class="text-[#D1D5DB]">STACK_SYNC: 18/18 ONLINE</span>
+      </div>
+    </div>
+
+    <!-- Header Text (Flutuante, Sem Caixas) -->
+    <div class="flex flex-col gap-4 max-w-3xl mb-16">
+      <div class="tagline-badge motion-item motion-delay-2">
+        <div class="tagline-pulse-dot"></div>
+        <span>Matriz Tecnológica Dominada nas Grandes Empresas</span>
+      </div>
+      <h2 class="text-3xl sm:text-4xl md:text-5xl text-white font-display font-extrabold tracking-tight leading-[1.15] motion-item motion-delay-3">
+        Estude exatamente o que o <span class="text-gradient">mercado procura</span>.
+      </h2>
+      <p class="text-base sm:text-lg font-normal text-[#D1D5DB] leading-relaxed max-w-2xl motion-item motion-delay-4">
+        As linguagens, frameworks e ferramentas mais utilizadas pelas empresas.
+      </p>
+    </div>
+
+    <!-- MAIN SHOWCASE GRID (Elementos Flutuantes Transparentes em Espaço 3D) -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center mb-16">
+      
+      <!-- ESQUERDA: GRANDE ILUSTRAÇÃO 3D (Livre em Espaço 3D, Sem Caixa Aparente) -->
+      <div class="lg:col-span-7 relative flex items-center justify-center min-h-[440px] motion-item">
+        
+        <!-- Glow Iluminado de Fundo do Espaço 3D -->
+        <div class="pointer-events-none absolute w-96 h-96 bg-[#22C55E]/20 rounded-full blur-[100px]"></div>
+        <div class="pointer-events-none absolute w-72 h-72 bg-[#FDE68A]/15 rounded-full blur-[90px]"></div>
+
+        <!-- Grande Ilustração 3D Flutuante sem Moldura Fechada -->
+        <div class="relative flex items-center justify-center group">
+          <img src="assets/ai_neural_core_3d.png" alt="Grande Ilustração 3D Tecnológica" class="w-80 sm:w-[420px] h-80 sm:h-[420px] object-contain drop-shadow-[0_0_60px_rgba(34,197,94,0.5)] animate-float" />
+          
+          <!-- Anéis Holográficos Flutuantes ao Redor do Render 3D -->
+          <div class="absolute w-[440px] h-[440px] rounded-full border border-[#22C55E]/30 animate-spin-slow pointer-events-none"></div>
+          <div class="absolute w-[360px] h-[360px] rounded-full border border-[#FDE68A]/25 animate-spin-slow-reverse pointer-events-none"></div>
+
+          <!-- Badges Flutuantes em Vidro Transparente sobre a Ilustração 3D -->
+          <div class="absolute -bottom-4 -left-2 sm:left-4 bg-[#050505]/60 border border-[#22C55E]/40 px-5 py-3 rounded-2xl backdrop-blur-xl flex items-center gap-3 shadow-[0_0_30px_rgba(34,197,94,0.25)] z-20">
+            <div class="w-9 h-9 rounded-xl bg-[#22C55E]/20 flex items-center justify-center text-[#4ADE80]">
+              <i data-lucide="sparkles" class="w-5 h-5"></i>
+            </div>
+            <div>
+              <p class="text-xs font-bold text-white leading-none">Matriz Quântica 2026</p>
+              <p class="text-[10px] text-[#4ADE80] font-mono mt-1">100% Projetos Práticos</p>
+            </div>
+          </div>
+
+          <div class="absolute -top-4 -right-2 sm:right-4 bg-[#050505]/60 border border-[#FDE68A]/40 px-4 py-2.5 rounded-2xl backdrop-blur-xl flex items-center gap-2.5 shadow-[0_0_30px_rgba(253,230,138,0.25)] z-20">
+            <span class="w-2 h-2 rounded-full bg-[#FDE68A] animate-pulse"></span>
+            <span class="text-xs font-mono text-[#FDE68A] font-bold">LIVE STACK SYNC</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- DIREITA: ESTATÍSTICAS E PAINEL TRANSPARENTE -->
+      <div class="lg:col-span-5 flex flex-col gap-6 motion-item motion-delay-2">
+        
+        <!-- Status Flutuante 1 -->
+        <div class="border-l-2 border-[#22C55E] pl-6 py-3 relative group transition-all">
+          <div class="flex items-center justify-between mb-1">
+            <span class="font-mono text-xs text-[#9CA3AF] uppercase">DEMANDA GLOBAL DE MERCADO</span>
+            <i data-lucide="trending-up" class="w-5 h-5 text-[#4ADE80]"></i>
+          </div>
+          <div class="flex items-baseline gap-2">
+            <span class="text-4xl sm:text-5xl font-display font-extrabold text-white tracking-tight">18</span>
+            <span class="text-sm font-mono text-[#4ADE80] font-bold">Tecnologias Dominadas</span>
+          </div>
+          <p class="text-xs text-[#D1D5DB] mt-2 leading-relaxed">As linguagens e ferramentas indispensáveis exigidas em entrevistas técnicas no Brasil e no exterior.</p>
+        </div>
+
+        <!-- Status Flutuante 2 -->
+        <div class="border-l-2 border-[#FDE68A] pl-6 py-3 relative group transition-all">
+          <div class="flex items-center justify-between mb-1">
+            <span class="font-mono text-xs text-[#9CA3AF] uppercase">METODOLOGIA HANDS-ON</span>
+            <i data-lucide="zap" class="w-5 h-5 text-[#FDE68A]"></i>
+          </div>
+          <div class="flex items-baseline gap-2">
+            <span class="text-4xl sm:text-5xl font-display font-extrabold text-white tracking-tight">100%</span>
+            <span class="text-sm font-mono text-[#FDE68A] font-bold">Prática em Produção</span>
+          </div>
+          <p class="text-xs text-[#D1D5DB] mt-2 leading-relaxed">Desenvolva aplicações completas, microsserviços e automações inteligentes em projetos reais.</p>
+        </div>
+
+        <!-- Callout Transparente com Borda Neon sutil -->
+        <div class="p-6 rounded-2xl bg-white/[0.02] border border-white/10 backdrop-blur-md">
+          <h4 class="text-base font-display font-bold text-white mb-1 flex items-center gap-2">
+            <i data-lucide="check-circle-2" class="w-4 h-4 text-[#4ADE80]"></i>
+            Sem perder tempo com o obsoleto
+          </h4>
+          <p class="text-xs text-[#D1D5DB] leading-relaxed">Você foca exatamente na combinação tecnológica de alto valor contratual para conquistar sua vaga.</p>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- CARROSSEL INFINITO MARQUEE DAS 18 TECNOLOGIAS (100% Transparente sem caixas aparentes) -->
+    <div class="mt-8 pt-8 border-t border-white/[0.08]">
+      <div class="flex items-center justify-between mb-8">
+        <div class="flex items-center gap-3">
+          <span class="w-2.5 h-2.5 rounded-full bg-[#4ADE80] animate-pulse"></span>
+          <h3 class="text-base sm:text-lg font-display font-bold text-white tracking-tight">Tecnologias Integradas no Currículo</h3>
+        </div>
+        <span class="font-mono text-xs text-[#9CA3AF]">18 / 18 FERRAMENTAS INDEXADAS</span>
+      </div>
+
+      <!-- Carrossel Marquee Infinito Flutuante Transparente com Efeito de Desaparecimento nas Bordas -->
+      <div class="relative overflow-hidden marquee-mask group py-6">
+        <div class="animate-marquee whitespace-nowrap flex gap-6 items-center">
+          
+          <!-- Loop 1 (18 Tecnologias Flutuantes com Vetores SVG Nativos de Alta Definição) -->
+          
+          <!-- 1. React -->
+          <div class="flex items-center gap-4 px-7 py-4 rounded-2xl bg-white/[0.04] border border-white/10 hover:border-[#22C55E] hover:bg-[#22C55E]/10 hover:scale-105 hover:shadow-[0_0_30px_rgba(34,197,94,0.35)] transition-all cursor-pointer backdrop-blur-xl group">
+            <svg class="w-8 h-8 shrink-0 text-[#61DAFB] group-hover:scale-110 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <ellipse cx="12" cy="12" rx="10" ry="4.5"/>
+              <ellipse cx="12" cy="12" rx="10" ry="4.5" transform="rotate(60 12 12)"/>
+              <ellipse cx="12" cy="12" rx="10" ry="4.5" transform="rotate(120 12 12)"/>
+              <circle cx="12" cy="12" r="2" fill="currentColor"/>
+            </svg>
+            <span class="text-base sm:text-lg font-display font-extrabold text-white group-hover:text-[#4ADE80] transition-colors">React</span>
+          </div>
+
+          <!-- 2. Next -->
+          <div class="flex items-center gap-4 px-7 py-4 rounded-2xl bg-white/[0.04] border border-white/10 hover:border-[#22C55E] hover:bg-[#22C55E]/10 hover:scale-105 hover:shadow-[0_0_30px_rgba(34,197,94,0.35)] transition-all cursor-pointer backdrop-blur-xl group">
+            <svg class="w-8 h-8 shrink-0 text-white group-hover:scale-110 transition-transform" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 0C5.37 0 0 5.37 0 12s5.37 12 12 12 12-5.37 12-12S18.63 0 12 0zm5.55 17.55l-5.55-7.85v7.85H10V6.45h2.2l5.35 7.6V6.45h2v11.1h-2z"/>
+            </svg>
+            <span class="text-base sm:text-lg font-display font-extrabold text-white group-hover:text-[#4ADE80] transition-colors">Next</span>
+          </div>
+
+          <!-- 3. Node -->
+          <div class="flex items-center gap-4 px-7 py-4 rounded-2xl bg-white/[0.04] border border-white/10 hover:border-[#22C55E] hover:bg-[#22C55E]/10 hover:scale-105 hover:shadow-[0_0_30px_rgba(34,197,94,0.35)] transition-all cursor-pointer backdrop-blur-xl group">
+            <svg class="w-8 h-8 shrink-0 text-[#5FA04E] group-hover:scale-110 transition-transform" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 1.875L2.25 7.5v11.25L12 24.375l9.75-5.625V7.5L12 1.875zm0 3.164l6.75 3.896v7.79L12 20.621l-6.75-3.896v-7.79L12 5.039z"/>
+            </svg>
+            <span class="text-base sm:text-lg font-display font-extrabold text-white group-hover:text-[#4ADE80] transition-colors">Node</span>
+          </div>
+
+          <!-- 4. Express -->
+          <div class="flex items-center gap-4 px-7 py-4 rounded-2xl bg-white/[0.04] border border-white/10 hover:border-[#22C55E] hover:bg-[#22C55E]/10 hover:scale-105 hover:shadow-[0_0_30px_rgba(34,197,94,0.35)] transition-all cursor-pointer backdrop-blur-xl group">
+            <svg class="w-8 h-8 shrink-0 text-white group-hover:scale-110 transition-transform" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M24 12c0 6.627-5.373 12-12 12S0 18.627 0 12 5.373 0 12 0s12 5.373 12 12zm-6.2-3.4h-3.4l-2.4 4.2-2.4-4.2H6.2l3.8 6-4 6.4h3.4l2.6-4.4 2.6 4.4h3.4l-4-6.4 4-6z"/>
+            </svg>
+            <span class="text-base sm:text-lg font-display font-extrabold text-white group-hover:text-[#4ADE80] transition-colors">Express</span>
+          </div>
+
+          <!-- 5. TypeScript -->
+          <div class="flex items-center gap-4 px-7 py-4 rounded-2xl bg-white/[0.04] border border-white/10 hover:border-[#22C55E] hover:bg-[#22C55E]/10 hover:scale-105 hover:shadow-[0_0_30px_rgba(34,197,94,0.35)] transition-all cursor-pointer backdrop-blur-xl group">
+            <svg class="w-8 h-8 shrink-0 text-[#3178C6] group-hover:scale-110 transition-transform" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M1.5 0h21A1.5 1.5 0 0124 1.5v21a1.5 1.5 0 01-1.5 1.5h-21A1.5 1.5 0 010 22.5v-21A1.5 1.5 0 011.5 0zm10.74 13.85h-2.18v6.4h-2.52v-6.4H5.36V11.7h6.88v2.15zm7.39 2.05c0-.82-.42-1.48-1.26-1.95-.56-.3-1.45-.6-2.67-.9-.94-.23-1.58-.45-1.9-.66-.33-.22-.49-.52-.49-.9 0-.4.18-.73.55-.98.37-.25.9-.38 1.58-.38.65 0 1.2.14 1.64.43.44.29.7.74.78 1.34h2.46c-.08-1.18-.55-2.09-1.41-2.73-.86-.64-1.99-.96-3.39-.96-1.43 0-2.58.33-3.45.98-.87.65-1.3 1.52-1.3 2.61 0 .81.33 1.48.98 2 .65.52 1.67.92 3.05 1.2 1.05.22 1.76.45 2.13.68.37.23.55.55.55.97 0 .43-.22.78-.65 1.04-.43.26-1.05.39-1.87.39-.81 0-1.49-.17-2.04-.52-.55-.35-.87-.89-.96-1.63H9.42c.1 1.35.63 2.37 1.6 3.06.97.69 2.27 1.03 3.9 1.03 1.54 0 2.76-.32 3.66-.96.9-.64 1.35-1.54 1.35-2.7z"/>
+            </svg>
+            <span class="text-base sm:text-lg font-display font-extrabold text-white group-hover:text-[#4ADE80] transition-colors">TypeScript</span>
+          </div>
+
+          <!-- 6. JavaScript -->
+          <div class="flex items-center gap-4 px-7 py-4 rounded-2xl bg-white/[0.04] border border-white/10 hover:border-[#FDE68A] hover:bg-[#FDE68A]/10 hover:scale-105 hover:shadow-[0_0_30px_rgba(253,230,138,0.35)] transition-all cursor-pointer backdrop-blur-xl group">
+            <svg class="w-8 h-8 shrink-0 text-[#F7DF1E] group-hover:scale-110 transition-transform" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M0 0h24v24H0V0zm22.034 18.276c-.175-1.095-.888-2.015-3.003-2.873-.736-.345-1.554-.585-1.797-.758-.435-.294-.435-.615-.435-.815 0-.48.345-.885 1.14-.885.645 0 1.155.255 1.545.795.345.48.345.51.9.195l.795-.51c.36-.24.36-.24.165-.585-.585-.945-1.665-1.545-3.375-1.545-2.175 0-3.555 1.215-3.555 2.925 0 1.215.705 2.115 2.25 2.745 1.485.645 1.875.885 2.1.1.24.285.345.69.345 1.005 0 .6-.45.99-1.305.99-.9 0-1.455-.45-1.92-1.125-.345-.48-.345-.48-.84-.18l-.72.45c-.345.24-.24.39.12.915.93 1.35 2.175 1.935 4.305 1.935 2.655 0 4.155-1.29 4.155-3.255 0-.255-.075-1.2-.24-1.665zM12.435 12h-2.145v6.525c0 1.77-.855 2.37-2.145 2.37-1.14 0-1.845-.585-2.265-1.395-.165-.36-.345-.36-.84-.09l-.675.45c-.345.24-.345.24-.09.705.81 1.485 2.145 2.175 4.095 2.175 3.09 0 4.065-1.65 4.065-4.305V12z"/>
+            </svg>
+            <span class="text-base sm:text-lg font-display font-extrabold text-white group-hover:text-[#FDE68A] transition-colors">JavaScript</span>
+          </div>
+
+          <!-- 7. Python -->
+          <div class="flex items-center gap-4 px-7 py-4 rounded-2xl bg-white/[0.04] border border-white/10 hover:border-[#22C55E] hover:bg-[#22C55E]/10 hover:scale-105 hover:shadow-[0_0_30px_rgba(34,197,94,0.35)] transition-all cursor-pointer backdrop-blur-xl group">
+            <svg class="w-8 h-8 shrink-0 text-[#3776AB] group-hover:scale-110 transition-transform" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M11.873 0c-3.1 0-2.91 1.344-2.91 1.344l.006 1.39h2.955v.42H7.766S5.5 2.916 5.5 6.027c0 3.11 1.96 3.01 1.96 3.01h1.17V7.37s-.063-1.96 1.96-1.96h3.385s1.897.02 1.897-1.835V1.835S16.143 0 11.873 0zm-1.6 1.05a.65.65 0 110 1.3.65.65 0 010-1.3zm.86 11.884c3.1 0 2.91-1.344 2.91-1.344l-.006-1.39h-2.955v-.42h4.157s2.266.238 2.266-2.872c0-3.11-1.96-3.01-1.96-3.01h-1.17v1.667s.063 1.96-1.96 1.96h-3.385s-1.897-.02-1.897 1.835v1.667s-.267 1.835 4.004 1.835zm1.6 1.05a.65.65 0 110-1.3.65.65 0 010 1.3z"/>
+            </svg>
+            <span class="text-base sm:text-lg font-display font-extrabold text-white group-hover:text-[#4ADE80] transition-colors">Python</span>
+          </div>
+
+          <!-- 8. Docker -->
+          <div class="flex items-center gap-4 px-7 py-4 rounded-2xl bg-white/[0.04] border border-white/10 hover:border-[#22C55E] hover:bg-[#22C55E]/10 hover:scale-105 hover:shadow-[0_0_30px_rgba(34,197,94,0.35)] transition-all cursor-pointer backdrop-blur-xl group">
+            <svg class="w-8 h-8 shrink-0 text-[#2496ED] group-hover:scale-110 transition-transform" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M13.983 11.078h2.119a.186.186 0 00.186-.185V9.006a.186.186 0 00-.186-.186h-2.119a.185.185 0 00-.185.186v1.887c0 .102.083.185.185.185zm-2.954-5.43h2.118a.185.185 0 00.186-.186V3.574a.185.185 0 00-.186-.185h-2.118a.185.185 0 00-.185.185v1.888c0 .102.082.185.185.185zm0 2.716h2.118a.187.187 0 00.186-.186V6.29a.186.186 0 00-.186-.185h-2.118a.185.185 0 00-.185.185v1.887c0 .103.082.186.185.186zm-2.954 0h2.119a.186.186 0 00.185-.186V6.29a.185.185 0 00-.185-.185H8.075a.185.185 0 00-.185.185v1.887c0 .103.083.186.185.186zm0 2.714h2.119a.186.186 0 00.185-.185V9.006a.185.185 0 00-.185-.186H8.075a.185.185 0 00-.185.186v1.887c0 .102.083.185.185.185zm-2.955 0h2.119a.186.186 0 00.185-.185V9.006a.185.185 0 00-.185-.186H5.12a.185.185 0 00-.185.186v1.887c0 .102.083.185.185.185zm-2.955 0h2.119a.186.186 0 00.185-.185V9.006a.185.185 0 00-.185-.186H2.165a.185.185 0 00-.185.186v1.887c0 .102.083.185.185.185zm8.864 2.715h2.118a.185.185 0 00.186-.185v-1.887a.186.186 0 00-.186-.185h-2.118a.185.185 0 00-.185.185v1.887c0 .102.082.185.185.185zm-2.954 0h2.119a.185.185 0 00.185-.185v-1.887a.186.186 0 00-.185-.185H8.075a.185.185 0 00-.185.185v1.887c0 .102.083.185.185.185zm-2.955 0h2.119a.185.185 0 00.185-.185v-1.887a.186.186 0 00-.185-.185H5.12a.185.185 0 00-.185.185v1.887c0 .102.083.185.185.185zm-2.955 0h2.119a.185.185 0 00.185-.185v-1.887a.186.186 0 00-.185-.185H2.165a.185.185 0 00-.185.185v1.887c0 .102.083.185.185.185zm-2.03 2.016c.367.625.922 1.155 1.637 1.547 2.062 1.134 5.378 1.134 7.44 0 1.833-1.008 2.665-2.613 2.766-3.85h-11.843z"/>
+            </svg>
+            <span class="text-base sm:text-lg font-display font-extrabold text-white group-hover:text-[#4ADE80] transition-colors">Docker</span>
+          </div>
+
+          <!-- 9. Git -->
+          <div class="flex items-center gap-4 px-7 py-4 rounded-2xl bg-white/[0.04] border border-white/10 hover:border-[#22C55E] hover:bg-[#22C55E]/10 hover:scale-105 hover:shadow-[0_0_30px_rgba(34,197,94,0.35)] transition-all cursor-pointer backdrop-blur-xl group">
+            <svg class="w-8 h-8 shrink-0 text-[#F05032] group-hover:scale-110 transition-transform" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M23.546 10.93L13.067.452a1.548 1.548 0 00-2.188 0L8.708 2.627l2.76 2.76a1.838 1.838 0 012.327 2.341l2.658 2.66a1.838 1.838 0 011.9 3.039 1.837 1.837 0 01-2.6 0 1.85 1.85 0 01-.404-1.996L12.86 8.955v6.525c.176.086.342.203.488.348a1.85 1.85 0 010 2.6 1.844 1.844 0 01-2.609 0 1.834 1.834 0 010-2.598c.182-.18.387-.316.605-.406V8.835a1.834 1.834 0 01-.996-2.41L7.636 3.7L.45 10.881c-.6.605-.6 1.584 0 2.189l10.48 10.477a1.545 1.545 0 002.186 0l10.43-10.43a1.544 1.544 0 000-2.187z"/>
+            </svg>
+            <span class="text-base sm:text-lg font-display font-extrabold text-white group-hover:text-[#4ADE80] transition-colors">Git</span>
+          </div>
+
+          <!-- 10. GitHub -->
+          <div class="flex items-center gap-4 px-7 py-4 rounded-2xl bg-white/[0.04] border border-white/10 hover:border-[#22C55E] hover:bg-[#22C55E]/10 hover:scale-105 hover:shadow-[0_0_30px_rgba(34,197,94,0.35)] transition-all cursor-pointer backdrop-blur-xl group">
+            <svg class="w-8 h-8 shrink-0 text-white group-hover:scale-110 transition-transform" viewBox="0 0 24 24" fill="currentColor">
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
+            </svg>
+            <span class="text-base sm:text-lg font-display font-extrabold text-white group-hover:text-[#4ADE80] transition-colors">GitHub</span>
+          </div>
+
+          <!-- 11. MongoDB -->
+          <div class="flex items-center gap-4 px-7 py-4 rounded-2xl bg-white/[0.04] border border-white/10 hover:border-[#22C55E] hover:bg-[#22C55E]/10 hover:scale-105 hover:shadow-[0_0_30px_rgba(34,197,94,0.35)] transition-all cursor-pointer backdrop-blur-xl group">
+            <svg class="w-8 h-8 shrink-0 text-[#47A248] group-hover:scale-110 transition-transform" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M17.193 9.555c-1.637-2.618-4.221-4.757-5.068-8.555-.098.006-.217.065-.26.155-.91 3.798-3.493 5.937-5.13 8.555-1.745 2.793-2.128 5.76-1.053 8.895 1.107 3.23 3.99 5.395 6.444 5.395 2.455 0 5.337-2.165 6.444-5.395 1.075-3.135.692-6.102-1.053-8.895zm-5.193 12.445v-9.5c0-.276.224-.5.5-.5s.5.224.5.5v9.5c0 .276-.224.5-.5.5s-.5-.224-.5-.5z"/>
+            </svg>
+            <span class="text-base sm:text-lg font-display font-extrabold text-white group-hover:text-[#4ADE80] transition-colors">MongoDB</span>
+          </div>
+
+          <!-- 12. PostgreSQL -->
+          <div class="flex items-center gap-4 px-7 py-4 rounded-2xl bg-white/[0.04] border border-white/10 hover:border-[#22C55E] hover:bg-[#22C55E]/10 hover:scale-105 hover:shadow-[0_0_30px_rgba(34,197,94,0.35)] transition-all cursor-pointer backdrop-blur-xl group">
+            <svg class="w-8 h-8 shrink-0 text-[#4169E1] group-hover:scale-110 transition-transform" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 0C5.37 0 0 5.37 0 12s5.37 12 12 12 12-5.37 12-12S18.63 0 12 0zm-1.8 17.4v-4.2H8.4v-1.8h1.8V9.6c0-1.98 1.26-3 3-3h1.8v1.8h-1.2c-.66 0-.9.24-.9.9v2.1h2.1v1.8h-2.1v4.2h-2.7z"/>
+            </svg>
+            <span class="text-base sm:text-lg font-display font-extrabold text-white group-hover:text-[#4ADE80] transition-colors">PostgreSQL</span>
+          </div>
+
+          <!-- 13. AWS -->
+          <div class="flex items-center gap-4 px-7 py-4 rounded-2xl bg-white/[0.04] border border-white/10 hover:border-[#FDE68A] hover:bg-[#FDE68A]/10 hover:scale-105 hover:shadow-[0_0_30px_rgba(253,230,138,0.35)] transition-all cursor-pointer backdrop-blur-xl group">
+            <svg class="w-8 h-8 shrink-0 text-[#FF9900] group-hover:scale-110 transition-transform" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M18.75 11.55c-.27 0-.52.06-.74.17l-3.23-3.23A3.6 3.6 0 0012 4.5a3.6 3.6 0 00-3.6 3.6c0 .32.05.62.13.9L5.3 12.23a2.7 2.7 0 00-.8-.13 2.7 2.7 0 102.7 2.7c0-.28-.05-.55-.13-.81l3.23-3.23c.22.1.47.16.7.16.23 0 .48-.06.7-.16l3.23 3.23c-.08.26-.13.53-.13.81a2.7 2.7 0 102.7-2.7z"/>
+            </svg>
+            <span class="text-base sm:text-lg font-display font-extrabold text-white group-hover:text-[#FDE68A] transition-colors">AWS</span>
+          </div>
+
+          <!-- 14. OpenAI -->
+          <div class="flex items-center gap-4 px-7 py-4 rounded-2xl bg-white/[0.04] border border-white/10 hover:border-[#22C55E] hover:bg-[#22C55E]/10 hover:scale-105 hover:shadow-[0_0_30px_rgba(34,197,94,0.35)] transition-all cursor-pointer backdrop-blur-xl group">
+            <svg class="w-8 h-8 shrink-0 text-[#10A37F] group-hover:scale-110 transition-transform" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M22.28 9.87a6.38 6.38 0 00-.54-5.19 6.46 6.46 0 00-6.73-3.1 6.38 6.38 0 00-4.63-2.07 6.46 6.46 0 00-6.19 4.38 6.38 6.38 0 00-4.1 3.1 6.46 6.46 0 00.54 7.37 6.38 6.38 0 00.54 5.19 6.46 6.46 0 006.73 3.1 6.38 6.38 0 004.63 2.07 6.46 6.46 0 006.19-4.38 6.38 6.38 0 004.1-3.1 6.46 6.46 0 00-.56-7.37zM12 15.5a3.5 3.5 0 110-7 3.5 3.5 0 010 7z"/>
+            </svg>
+            <span class="text-base sm:text-lg font-display font-extrabold text-white group-hover:text-[#4ADE80] transition-colors">OpenAI</span>
+          </div>
+
+          <!-- 15. Claude -->
+          <div class="flex items-center gap-4 px-7 py-4 rounded-2xl bg-white/[0.04] border border-white/10 hover:border-[#22C55E] hover:bg-[#22C55E]/10 hover:scale-105 hover:shadow-[0_0_30px_rgba(34,197,94,0.35)] transition-all cursor-pointer backdrop-blur-xl group">
+            <svg class="w-8 h-8 shrink-0 text-[#D97706] group-hover:scale-110 transition-transform" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2a10 10 0 100 20 10 10 0 000-20zm0 4a6 6 0 110 12 6 6 0 010-12zm0 3a3 3 0 100 6 3 3 0 000-6z"/>
+            </svg>
+            <span class="text-base sm:text-lg font-display font-extrabold text-white group-hover:text-[#4ADE80] transition-colors">Claude</span>
+          </div>
+
+          <!-- 16. N8N -->
+          <div class="flex items-center gap-4 px-7 py-4 rounded-2xl bg-white/[0.04] border border-white/10 hover:border-[#22C55E] hover:bg-[#22C55E]/10 hover:scale-105 hover:shadow-[0_0_30px_rgba(34,197,94,0.35)] transition-all cursor-pointer backdrop-blur-xl group">
+            <svg class="w-8 h-8 shrink-0 text-[#FF6584] group-hover:scale-110 transition-transform" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm-2 16h-2v-4h2v4zm0-6h-2V6h2v4zm6 6h-2V6h2v10z"/>
+            </svg>
+            <span class="text-base sm:text-lg font-display font-extrabold text-white group-hover:text-[#4ADE80] transition-colors">N8N</span>
+          </div>
+
+          <!-- 17. Power BI -->
+          <div class="flex items-center gap-4 px-7 py-4 rounded-2xl bg-white/[0.04] border border-white/10 hover:border-[#22C55E] hover:bg-[#22C55E]/10 hover:scale-105 hover:shadow-[0_0_30px_rgba(34,197,94,0.35)] transition-all cursor-pointer backdrop-blur-xl group">
+            <svg class="w-8 h-8 shrink-0 text-[#F2C811] group-hover:scale-110 transition-transform" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M5 19h3V9H5v10zm5 0h3V5h-3v14zm5 0h3v-7h-3v7z"/>
+            </svg>
+            <span class="text-base sm:text-lg font-display font-extrabold text-white group-hover:text-[#4ADE80] transition-colors">Power BI</span>
+          </div>
+
+          <!-- 18. Figma -->
+          <div class="flex items-center gap-4 px-7 py-4 rounded-2xl bg-white/[0.04] border border-white/10 hover:border-[#FDE68A] hover:bg-[#FDE68A]/10 hover:scale-105 hover:shadow-[0_0_30px_rgba(253,230,138,0.35)] transition-all cursor-pointer backdrop-blur-xl group">
+            <svg class="w-8 h-8 shrink-0 text-[#F24E1E] group-hover:scale-110 transition-transform" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M8 24c2.21 0 4-1.79 4-4v-4H8c-2.21 0-4 1.79-4 4s1.79 4 4 4zm0-24C5.79 0 4 1.79 4 4s1.79 4 4 4h4V0H8zm0 8c-2.21 0-4 1.79-4 4s1.79 4 4 4h4V8H8zm8-4c0-2.21-1.79-4-4-4h-4v8h4c2.21 0 4-1.79 4-4zm0 8c0-2.21-1.79-4-4-4h-4v8h4c2.21 0 4-1.79 4-4z"/>
+            </svg>
+            <span class="text-base sm:text-lg font-display font-extrabold text-white group-hover:text-[#FDE68A] transition-colors">Figma</span>
+          </div>
+
+          <!-- Loop 2 (Duplicado para Carrossel Infinito Contínuo) -->
+
+          <!-- 1. React -->
+          <div class="flex items-center gap-4 px-7 py-4 rounded-2xl bg-white/[0.04] border border-white/10 hover:border-[#22C55E] hover:bg-[#22C55E]/10 hover:scale-105 hover:shadow-[0_0_30px_rgba(34,197,94,0.35)] transition-all cursor-pointer backdrop-blur-xl group">
+            <svg class="w-8 h-8 shrink-0 text-[#61DAFB] group-hover:scale-110 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <ellipse cx="12" cy="12" rx="10" ry="4.5"/>
+              <ellipse cx="12" cy="12" rx="10" ry="4.5" transform="rotate(60 12 12)"/>
+              <ellipse cx="12" cy="12" rx="10" ry="4.5" transform="rotate(120 12 12)"/>
+              <circle cx="12" cy="12" r="2" fill="currentColor"/>
+            </svg>
+            <span class="text-base sm:text-lg font-display font-extrabold text-white group-hover:text-[#4ADE80] transition-colors">React</span>
+          </div>
+
+          <!-- 2. Next -->
+          <div class="flex items-center gap-4 px-7 py-4 rounded-2xl bg-white/[0.04] border border-white/10 hover:border-[#22C55E] hover:bg-[#22C55E]/10 hover:scale-105 hover:shadow-[0_0_30px_rgba(34,197,94,0.35)] transition-all cursor-pointer backdrop-blur-xl group">
+            <svg class="w-8 h-8 shrink-0 text-white group-hover:scale-110 transition-transform" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 0C5.37 0 0 5.37 0 12s5.37 12 12 12 12-5.37 12-12S18.63 0 12 0zm5.55 17.55l-5.55-7.85v7.85H10V6.45h2.2l5.35 7.6V6.45h2v11.1h-2z"/>
+            </svg>
+            <span class="text-base sm:text-lg font-display font-extrabold text-white group-hover:text-[#4ADE80] transition-colors">Next</span>
+          </div>
+
+          <!-- 3. Node -->
+          <div class="flex items-center gap-4 px-7 py-4 rounded-2xl bg-white/[0.04] border border-white/10 hover:border-[#22C55E] hover:bg-[#22C55E]/10 hover:scale-105 hover:shadow-[0_0_30px_rgba(34,197,94,0.35)] transition-all cursor-pointer backdrop-blur-xl group">
+            <svg class="w-8 h-8 shrink-0 text-[#5FA04E] group-hover:scale-110 transition-transform" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 1.875L2.25 7.5v11.25L12 24.375l9.75-5.625V7.5L12 1.875zm0 3.164l6.75 3.896v7.79L12 20.621l-6.75-3.896v-7.79L12 5.039z"/>
+            </svg>
+            <span class="text-base sm:text-lg font-display font-extrabold text-white group-hover:text-[#4ADE80] transition-colors">Node</span>
+          </div>
+
+          <!-- 4. Express -->
+          <div class="flex items-center gap-4 px-7 py-4 rounded-2xl bg-white/[0.04] border border-white/10 hover:border-[#22C55E] hover:bg-[#22C55E]/10 hover:scale-105 hover:shadow-[0_0_30px_rgba(34,197,94,0.35)] transition-all cursor-pointer backdrop-blur-xl group">
+            <svg class="w-8 h-8 shrink-0 text-white group-hover:scale-110 transition-transform" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M24 12c0 6.627-5.373 12-12 12S0 18.627 0 12 5.373 0 12 0s12 5.373 12 12zm-6.2-3.4h-3.4l-2.4 4.2-2.4-4.2H6.2l3.8 6-4 6.4h3.4l2.6-4.4 2.6 4.4h3.4l-4-6.4 4-6z"/>
+            </svg>
+            <span class="text-base sm:text-lg font-display font-extrabold text-white group-hover:text-[#4ADE80] transition-colors">Express</span>
+          </div>
+
+          <!-- 5. TypeScript -->
+          <div class="flex items-center gap-4 px-7 py-4 rounded-2xl bg-white/[0.04] border border-white/10 hover:border-[#22C55E] hover:bg-[#22C55E]/10 hover:scale-105 hover:shadow-[0_0_30px_rgba(34,197,94,0.35)] transition-all cursor-pointer backdrop-blur-xl group">
+            <svg class="w-8 h-8 shrink-0 text-[#3178C6] group-hover:scale-110 transition-transform" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M1.5 0h21A1.5 1.5 0 0124 1.5v21a1.5 1.5 0 01-1.5 1.5h-21A1.5 1.5 0 010 22.5v-21A1.5 1.5 0 011.5 0zm10.74 13.85h-2.18v6.4h-2.52v-6.4H5.36V11.7h6.88v2.15zm7.39 2.05c0-.82-.42-1.48-1.26-1.95-.56-.3-1.45-.6-2.67-.9-.94-.23-1.58-.45-1.9-.66-.33-.22-.49-.52-.49-.9 0-.4.18-.73.55-.98.37-.25.9-.38 1.58-.38.65 0 1.2.14 1.64.43.44.29.7.74.78 1.34h2.46c-.08-1.18-.55-2.09-1.41-2.73-.86-.64-1.99-.96-3.39-.96-1.43 0-2.58.33-3.45.98-.87.65-1.3 1.52-1.3 2.61 0 .81.33 1.48.98 2 .65.52 1.67.92 3.05 1.2 1.05.22 1.76.45 2.13.68.37.23.55.55.55.97 0 .43-.22.78-.65 1.04-.43.26-1.05.39-1.87.39-.81 0-1.49-.17-2.04-.52-.55-.35-.87-.89-.96-1.63H9.42c.1 1.35.63 2.37 1.6 3.06.97.69 2.27 1.03 3.9 1.03 1.54 0 2.76-.32 3.66-.96.9-.64 1.35-1.54 1.35-2.7z"/>
+            </svg>
+            <span class="text-base sm:text-lg font-display font-extrabold text-white group-hover:text-[#4ADE80] transition-colors">TypeScript</span>
+          </div>
+
+          <!-- 6. JavaScript -->
+          <div class="flex items-center gap-4 px-7 py-4 rounded-2xl bg-white/[0.04] border border-white/10 hover:border-[#FDE68A] hover:bg-[#FDE68A]/10 hover:scale-105 hover:shadow-[0_0_30px_rgba(253,230,138,0.35)] transition-all cursor-pointer backdrop-blur-xl group">
+            <svg class="w-8 h-8 shrink-0 text-[#F7DF1E] group-hover:scale-110 transition-transform" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M0 0h24v24H0V0zm22.034 18.276c-.175-1.095-.888-2.015-3.003-2.873-.736-.345-1.554-.585-1.797-.758-.435-.294-.435-.615-.435-.815 0-.48.345-.885 1.14-.885.645 0 1.155.255 1.545.795.345.48.345.51.9.195l.795-.51c.36-.24.36-.24.165-.585-.585-.945-1.665-1.545-3.375-1.545-2.175 0-3.555 1.215-3.555 2.925 0 1.215.705 2.115 2.25 2.745 1.485.645 1.875.885 2.1.1.24.285.345.69.345 1.005 0 .6-.45.99-1.305.99-.9 0-1.455-.45-1.92-1.125-.345-.48-.345-.48-.84-.18l-.72.45c-.345.24-.24.39.12.915.93 1.35 2.175 1.935 4.305 1.935 2.655 0 4.155-1.29 4.155-3.255 0-.255-.075-1.2-.24-1.665zM12.435 12h-2.145v6.525c0 1.77-.855 2.37-2.145 2.37-1.14 0-1.845-.585-2.265-1.395-.165-.36-.345-.36-.84-.09l-.675.45c-.345.24-.345.24-.09.705.81 1.485 2.145 2.175 4.095 2.175 3.09 0 4.065-1.65 4.065-4.305V12z"/>
+            </svg>
+            <span class="text-base sm:text-lg font-display font-extrabold text-white group-hover:text-[#FDE68A] transition-colors">JavaScript</span>
+          </div>
+
+          <!-- 7. Python -->
+          <div class="flex items-center gap-4 px-7 py-4 rounded-2xl bg-white/[0.04] border border-white/10 hover:border-[#22C55E] hover:bg-[#22C55E]/10 hover:scale-105 hover:shadow-[0_0_30px_rgba(34,197,94,0.35)] transition-all cursor-pointer backdrop-blur-xl group">
+            <svg class="w-8 h-8 shrink-0 text-[#3776AB] group-hover:scale-110 transition-transform" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M11.873 0c-3.1 0-2.91 1.344-2.91 1.344l.006 1.39h2.955v.42H7.766S5.5 2.916 5.5 6.027c0 3.11 1.96 3.01 1.96 3.01h1.17V7.37s-.063-1.96 1.96-1.96h3.385s1.897.02 1.897-1.835V1.835S16.143 0 11.873 0zm-1.6 1.05a.65.65 0 110 1.3.65.65 0 010-1.3zm.86 11.884c3.1 0 2.91-1.344 2.91-1.344l-.006-1.39h-2.955v-.42h4.157s2.266.238 2.266-2.872c0-3.11-1.96-3.01-1.96-3.01h-1.17v1.667s.063 1.96-1.96 1.96h-3.385s-1.897-.02-1.897 1.835v1.667s-.267 1.835 4.004 1.835zm1.6 1.05a.65.65 0 110-1.3.65.65 0 010 1.3z"/>
+            </svg>
+            <span class="text-base sm:text-lg font-display font-extrabold text-white group-hover:text-[#4ADE80] transition-colors">Python</span>
+          </div>
+
+          <!-- 8. Docker -->
+          <div class="flex items-center gap-4 px-7 py-4 rounded-2xl bg-white/[0.04] border border-white/10 hover:border-[#22C55E] hover:bg-[#22C55E]/10 hover:scale-105 hover:shadow-[0_0_30px_rgba(34,197,94,0.35)] transition-all cursor-pointer backdrop-blur-xl group">
+            <svg class="w-8 h-8 shrink-0 text-[#2496ED] group-hover:scale-110 transition-transform" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M13.983 11.078h2.119a.186.186 0 00.186-.185V9.006a.186.186 0 00-.186-.186h-2.119a.185.185 0 00-.185.186v1.887c0 .102.083.185.185.185zm-2.954-5.43h2.118a.185.185 0 00.186-.186V3.574a.185.185 0 00-.186-.185h-2.118a.185.185 0 00-.185.185v1.888c0 .102.082.185.185.185zm0 2.716h2.118a.187.187 0 00.186-.186V6.29a.186.186 0 00-.186-.185h-2.118a.185.185 0 00-.185.185v1.887c0 .103.082.186.185.186zm-2.954 0h2.119a.186.186 0 00.185-.186V6.29a.185.185 0 00-.185-.185H8.075a.185.185 0 00-.185.185v1.887c0 .103.083.186.185.186zm0 2.714h2.119a.186.186 0 00.185-.185V9.006a.185.185 0 00-.185-.186H8.075a.185.185 0 00-.185.186v1.887c0 .102.083.185.185.185zm-2.955 0h2.119a.186.186 0 00.185-.185V9.006a.185.185 0 00-.185-.186H5.12a.185.185 0 00-.185.186v1.887c0 .102.083.185.185.185zm-2.955 0h2.119a.186.186 0 00.185-.185V9.006a.185.185 0 00-.185-.186H2.165a.185.185 0 00-.185.186v1.887c0 .102.083.185.185.185zm8.864 2.715h2.118a.185.185 0 00.186-.185v-1.887a.186.186 0 00-.186-.185h-2.118a.185.185 0 00-.185.185v1.887c0 .102.082.185.185.185zm-2.954 0h2.119a.185.185 0 00.185-.185v-1.887a.186.186 0 00-.185-.185H8.075a.185.185 0 00-.185.185v1.887c0 .102.083.185.185.185zm-2.955 0h2.119a.185.185 0 00.185-.185v-1.887a.186.186 0 00-.185-.185H5.12a.185.185 0 00-.185.185v1.887c0 .102.083.185.185.185zm-2.955 0h2.119a.185.185 0 00.185-.185v-1.887a.186.186 0 00-.185-.185H2.165a.185.185 0 00-.185.185v1.887c0 .102.083.185.185.185zm-2.03 2.016c.367.625.922 1.155 1.637 1.547 2.062 1.134 5.378 1.134 7.44 0 1.833-1.008 2.665-2.613 2.766-3.85h-11.843z"/>
+            </svg>
+            <span class="text-base sm:text-lg font-display font-extrabold text-white group-hover:text-[#4ADE80] transition-colors">Docker</span>
+          </div>
+
+          <!-- 9. Git -->
+          <div class="flex items-center gap-4 px-7 py-4 rounded-2xl bg-white/[0.04] border border-white/10 hover:border-[#22C55E] hover:bg-[#22C55E]/10 hover:scale-105 hover:shadow-[0_0_30px_rgba(34,197,94,0.35)] transition-all cursor-pointer backdrop-blur-xl group">
+            <svg class="w-8 h-8 shrink-0 text-[#F05032] group-hover:scale-110 transition-transform" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M23.546 10.93L13.067.452a1.548 1.548 0 00-2.188 0L8.708 2.627l2.76 2.76a1.838 1.838 0 012.327 2.341l2.658 2.66a1.838 1.838 0 011.9 3.039 1.837 1.837 0 01-2.6 0 1.85 1.85 0 01-.404-1.996L12.86 8.955v6.525c.176.086.342.203.488.348a1.85 1.85 0 010 2.6 1.844 1.844 0 01-2.609 0 1.834 1.834 0 010-2.598c.182-.18.387-.316.605-.406V8.835a1.834 1.834 0 01-.996-2.41L7.636 3.7L.45 10.881c-.6.605-.6 1.584 0 2.189l10.48 10.477a1.545 1.545 0 002.186 0l10.43-10.43a1.544 1.544 0 000-2.187z"/>
+            </svg>
+            <span class="text-base sm:text-lg font-display font-extrabold text-white group-hover:text-[#4ADE80] transition-colors">Git</span>
+          </div>
+
+          <!-- 10. GitHub -->
+          <div class="flex items-center gap-4 px-7 py-4 rounded-2xl bg-white/[0.04] border border-white/10 hover:border-[#22C55E] hover:bg-[#22C55E]/10 hover:scale-105 hover:shadow-[0_0_30px_rgba(34,197,94,0.35)] transition-all cursor-pointer backdrop-blur-xl group">
+            <svg class="w-8 h-8 shrink-0 text-white group-hover:scale-110 transition-transform" viewBox="0 0 24 24" fill="currentColor">
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
+            </svg>
+            <span class="text-base sm:text-lg font-display font-extrabold text-white group-hover:text-[#4ADE80] transition-colors">GitHub</span>
+          </div>
+
+          <!-- 11. MongoDB -->
+          <div class="flex items-center gap-4 px-7 py-4 rounded-2xl bg-white/[0.04] border border-white/10 hover:border-[#22C55E] hover:bg-[#22C55E]/10 hover:scale-105 hover:shadow-[0_0_30px_rgba(34,197,94,0.35)] transition-all cursor-pointer backdrop-blur-xl group">
+            <svg class="w-8 h-8 shrink-0 text-[#47A248] group-hover:scale-110 transition-transform" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M17.193 9.555c-1.637-2.618-4.221-4.757-5.068-8.555-.098.006-.217.065-.26.155-.91 3.798-3.493 5.937-5.13 8.555-1.745 2.793-2.128 5.76-1.053 8.895 1.107 3.23 3.99 5.395 6.444 5.395 2.455 0 5.337-2.165 6.444-5.395 1.075-3.135.692-6.102-1.053-8.895zm-5.193 12.445v-9.5c0-.276.224-.5.5-.5s.5.224.5.5v9.5c0 .276-.224.5-.5.5s-.5-.224-.5-.5z"/>
+            </svg>
+            <span class="text-base sm:text-lg font-display font-extrabold text-white group-hover:text-[#4ADE80] transition-colors">MongoDB</span>
+          </div>
+
+          <!-- 12. PostgreSQL -->
+          <div class="flex items-center gap-4 px-7 py-4 rounded-2xl bg-white/[0.04] border border-white/10 hover:border-[#22C55E] hover:bg-[#22C55E]/10 hover:scale-105 hover:shadow-[0_0_30px_rgba(34,197,94,0.35)] transition-all cursor-pointer backdrop-blur-xl group">
+            <svg class="w-8 h-8 shrink-0 text-[#4169E1] group-hover:scale-110 transition-transform" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 0C5.37 0 0 5.37 0 12s5.37 12 12 12 12-5.37 12-12S18.63 0 12 0zm-1.8 17.4v-4.2H8.4v-1.8h1.8V9.6c0-1.98 1.26-3 3-3h1.8v1.8h-1.2c-.66 0-.9.24-.9.9v2.1h2.1v1.8h-2.1v4.2h-2.7z"/>
+            </svg>
+            <span class="text-base sm:text-lg font-display font-extrabold text-white group-hover:text-[#4ADE80] transition-colors">PostgreSQL</span>
+          </div>
+
+          <!-- 13. AWS -->
+          <div class="flex items-center gap-4 px-7 py-4 rounded-2xl bg-white/[0.04] border border-white/10 hover:border-[#FDE68A] hover:bg-[#FDE68A]/10 hover:scale-105 hover:shadow-[0_0_30px_rgba(253,230,138,0.35)] transition-all cursor-pointer backdrop-blur-xl group">
+            <svg class="w-8 h-8 shrink-0 text-[#FF9900] group-hover:scale-110 transition-transform" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M18.75 11.55c-.27 0-.52.06-.74.17l-3.23-3.23A3.6 3.6 0 0012 4.5a3.6 3.6 0 00-3.6 3.6c0 .32.05.62.13.9L5.3 12.23a2.7 2.7 0 00-.8-.13 2.7 2.7 0 102.7 2.7c0-.28-.05-.55-.13-.81l3.23-3.23c.22.1.47.16.7.16.23 0 .48-.06.7-.16l3.23 3.23c-.08.26-.13.53-.13.81a2.7 2.7 0 102.7-2.7z"/>
+            </svg>
+            <span class="text-base sm:text-lg font-display font-extrabold text-white group-hover:text-[#FDE68A] transition-colors">AWS</span>
+          </div>
+
+          <!-- 14. OpenAI -->
+          <div class="flex items-center gap-4 px-7 py-4 rounded-2xl bg-white/[0.04] border border-white/10 hover:border-[#22C55E] hover:bg-[#22C55E]/10 hover:scale-105 hover:shadow-[0_0_30px_rgba(34,197,94,0.35)] transition-all cursor-pointer backdrop-blur-xl group">
+            <svg class="w-8 h-8 shrink-0 text-[#10A37F] group-hover:scale-110 transition-transform" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M22.28 9.87a6.38 6.38 0 00-.54-5.19 6.46 6.46 0 00-6.73-3.1 6.38 6.38 0 00-4.63-2.07 6.46 6.46 0 00-6.19 4.38 6.38 6.38 0 00-4.1 3.1 6.46 6.46 0 00.54 7.37 6.38 6.38 0 00.54 5.19 6.46 6.46 0 006.73 3.1 6.38 6.38 0 004.63 2.07 6.46 6.46 0 006.19-4.38 6.38 6.38 0 004.1-3.1 6.46 6.46 0 00-.56-7.37zM12 15.5a3.5 3.5 0 110-7 3.5 3.5 0 010 7z"/>
+            </svg>
+            <span class="text-base sm:text-lg font-display font-extrabold text-white group-hover:text-[#4ADE80] transition-colors">OpenAI</span>
+          </div>
+
+          <!-- 15. Claude -->
+          <div class="flex items-center gap-4 px-7 py-4 rounded-2xl bg-white/[0.04] border border-white/10 hover:border-[#22C55E] hover:bg-[#22C55E]/10 hover:scale-105 hover:shadow-[0_0_30px_rgba(34,197,94,0.35)] transition-all cursor-pointer backdrop-blur-xl group">
+            <svg class="w-8 h-8 shrink-0 text-[#D97706] group-hover:scale-110 transition-transform" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2a10 10 0 100 20 10 10 0 000-20zm0 4a6 6 0 110 12 6 6 0 010-12zm0 3a3 3 0 100 6 3 3 0 000-6z"/>
+            </svg>
+            <span class="text-base sm:text-lg font-display font-extrabold text-white group-hover:text-[#4ADE80] transition-colors">Claude</span>
+          </div>
+
+          <!-- 16. N8N -->
+          <div class="flex items-center gap-4 px-7 py-4 rounded-2xl bg-white/[0.04] border border-white/10 hover:border-[#22C55E] hover:bg-[#22C55E]/10 hover:scale-105 hover:shadow-[0_0_30px_rgba(34,197,94,0.35)] transition-all cursor-pointer backdrop-blur-xl group">
+            <svg class="w-8 h-8 shrink-0 text-[#FF6584] group-hover:scale-110 transition-transform" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm-2 16h-2v-4h2v4zm0-6h-2V6h2v4zm6 6h-2V6h2v10z"/>
+            </svg>
+            <span class="text-base sm:text-lg font-display font-extrabold text-white group-hover:text-[#4ADE80] transition-colors">N8N</span>
+          </div>
+
+          <!-- 17. Power BI -->
+          <div class="flex items-center gap-4 px-7 py-4 rounded-2xl bg-white/[0.04] border border-white/10 hover:border-[#22C55E] hover:bg-[#22C55E]/10 hover:scale-105 hover:shadow-[0_0_30px_rgba(34,197,94,0.35)] transition-all cursor-pointer backdrop-blur-xl group">
+            <svg class="w-8 h-8 shrink-0 text-[#F2C811] group-hover:scale-110 transition-transform" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M5 19h3V9H5v10zm5 0h3V5h-3v14zm5 0h3v-7h-3v7z"/>
+            </svg>
+            <span class="text-base sm:text-lg font-display font-extrabold text-white group-hover:text-[#4ADE80] transition-colors">Power BI</span>
+          </div>
+
+          <!-- 18. Figma -->
+          <div class="flex items-center gap-4 px-7 py-4 rounded-2xl bg-white/[0.04] border border-white/10 hover:border-[#FDE68A] hover:bg-[#FDE68A]/10 hover:scale-105 hover:shadow-[0_0_30px_rgba(253,230,138,0.35)] transition-all cursor-pointer backdrop-blur-xl group">
+            <svg class="w-8 h-8 shrink-0 text-[#F24E1E] group-hover:scale-110 transition-transform" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M8 24c2.21 0 4-1.79 4-4v-4H8c-2.21 0-4 1.79-4 4s1.79 4 4 4zm0-24C5.79 0 4 1.79 4 4s1.79 4 4 4h4V0H8zm0 8c-2.21 0-4 1.79-4 4s1.79 4 4 4h4V8H8zm8-4c0-2.21-1.79-4-4-4h-4v8h4c2.21 0 4-1.79 4-4zm0 8c0-2.21-1.79-4-4-4h-4v8h4c2.21 0 4-1.79 4-4z"/>
+            </svg>
+            <span class="text-base sm:text-lg font-display font-extrabold text-white group-hover:text-[#FDE68A] transition-colors">Figma</span>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- QUARTA DOBRA: MUITO ALÉM DO CÓDIGO & ACELERAÇÃO DE CARREIRA (Identidade Flutuante & Transparente 3D) -->
+  <section id="carreira" class="relative z-10 max-w-7xl mx-auto px-6 py-24 overflow-visible">
+    
+    <!-- Protocol HUD System Header Indicator -->
+    <div class="flex items-center justify-between border-b border-white/10 pb-4 mb-16 motion-item">
+      <div class="flex items-center gap-3">
+        <span class="w-2.5 h-2.5 rounded-full bg-[#4ADE80] animate-ping"></span>
+        <span class="font-mono text-xs text-[#4ADE80] tracking-widest uppercase font-bold">SYSTEM /// 03 /// CAREER_ACCELERATION_PROTOCOL</span>
+      </div>
+      <div class="hidden sm:flex items-center gap-4 text-[11px] font-mono text-[#9CA3AF]">
+        <span class="flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-[#22C55E]"></span> RECRUTADORES ATIVOS</span>
+        <span>•</span>
+        <span>MENTORIAS AO VIVO</span>
+      </div>
+    </div>
+
+    <!-- Main Section Header -->
+    <div class="text-center max-w-4xl mx-auto mb-20">
+      <div class="tagline-badge mx-auto mb-4 motion-item">
+        <div class="tagline-pulse-dot"></div>
+        <span>MUITO ALÉM DO CÓDIGO</span>
+      </div>
+      
+      <h2 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-white font-display font-extrabold tracking-tight leading-[1.12] motion-item motion-delay-1">
+        Aqui você aprende tecnologia e <span class="text-gradient">desenvolve uma carreira</span>.
+      </h2>
+      
+      <p class="mt-5 text-lg sm:text-xl font-normal text-[#D1D5DB] leading-relaxed max-w-2xl mx-auto motion-item motion-delay-2">
+        Tudo o que você precisa para conseguir seu primeiro emprego.
+      </p>
+    </div>
+
+    <!-- Grid de 8 Cards Flutuantes com Glassmorfismo e Iluminação Neon -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 relative z-10">
+      
+      <!-- Card 1: Recrutadora Exclusiva -->
+      <div class="bento-card p-7 flex flex-col justify-between group motion-item motion-delay-1 relative overflow-hidden rounded-3xl bg-white/[0.03] border border-white/10 hover:border-[#22C55E] hover:bg-[#22C55E]/10 hover:scale-[1.03] hover:shadow-[0_0_35px_rgba(34,197,94,0.3)] transition-all duration-300 backdrop-blur-xl">
+        <div class="pointer-events-none absolute -right-12 -top-12 w-32 h-32 bg-[#22C55E]/15 rounded-full blur-2xl group-hover:bg-[#22C55E]/30 transition-all"></div>
+        <div>
+          <div class="w-14 h-14 rounded-2xl bg-[#22C55E]/15 border border-[#22C55E]/40 flex items-center justify-center mb-6 text-[#4ADE80] shadow-[0_0_20px_rgba(34,197,94,0.35)] group-hover:scale-110 transition-transform">
+            <i data-lucide="user-check" class="w-7 h-7"></i>
+          </div>
+          <h3 class="text-xl font-display font-bold text-white tracking-tight group-hover:text-[#4ADE80] transition-colors mb-3">Recrutadora Exclusiva</h3>
+          <p class="text-sm text-[#D1D5DB] leading-relaxed">Acompanhamento individual por especialistas em RH tech para otimizar seu currículo, LinkedIn e simular entrevistas técnicas reais.</p>
+        </div>
+        <div class="mt-6 pt-4 border-t border-white/10 flex items-center justify-between text-xs font-mono text-[#9CA3AF]">
+          <span>Preparação 1:1</span>
+          <i data-lucide="arrow-up-right" class="w-4 h-4 text-[#4ADE80] opacity-0 group-hover:opacity-100 transition-opacity"></i>
+        </div>
+      </div>
+
+      <!-- Card 2: Mentorias -->
+      <div class="bento-card p-7 flex flex-col justify-between group motion-item motion-delay-2 relative overflow-hidden rounded-3xl bg-white/[0.03] border border-white/10 hover:border-[#22C55E] hover:bg-[#22C55E]/10 hover:scale-[1.03] hover:shadow-[0_0_35px_rgba(34,197,94,0.3)] transition-all duration-300 backdrop-blur-xl">
+        <div class="pointer-events-none absolute -right-12 -top-12 w-32 h-32 bg-[#22C55E]/15 rounded-full blur-2xl group-hover:bg-[#22C55E]/30 transition-all"></div>
+        <div>
+          <div class="w-14 h-14 rounded-2xl bg-[#22C55E]/15 border border-[#22C55E]/40 flex items-center justify-center mb-6 text-[#4ADE80] shadow-[0_0_20px_rgba(34,197,94,0.35)] group-hover:scale-110 transition-transform">
+            <i data-lucide="sparkles" class="w-7 h-7"></i>
+          </div>
+          <h3 class="text-xl font-display font-bold text-white tracking-tight group-hover:text-[#4ADE80] transition-colors mb-3">Mentorias ao Vivo</h3>
+          <p class="text-sm text-[#D1D5DB] leading-relaxed">Encontros semanais com engenheiros seniores de grandes empresas para tirar dúvidas, fazer code review e acelerar sua evolução.</p>
+        </div>
+        <div class="mt-6 pt-4 border-t border-white/10 flex items-center justify-between text-xs font-mono text-[#9CA3AF]">
+          <span>Semanais & Práticas</span>
+          <i data-lucide="arrow-up-right" class="w-4 h-4 text-[#4ADE80] opacity-0 group-hover:opacity-100 transition-opacity"></i>
+        </div>
+      </div>
+
+      <!-- Card 3: Comunidade -->
+      <div class="bento-card p-7 flex flex-col justify-between group motion-item motion-delay-3 relative overflow-hidden rounded-3xl bg-white/[0.03] border border-white/10 hover:border-[#22C55E] hover:bg-[#22C55E]/10 hover:scale-[1.03] hover:shadow-[0_0_35px_rgba(34,197,94,0.3)] transition-all duration-300 backdrop-blur-xl">
+        <div class="pointer-events-none absolute -right-12 -top-12 w-32 h-32 bg-[#22C55E]/15 rounded-full blur-2xl group-hover:bg-[#22C55E]/30 transition-all"></div>
+        <div>
+          <div class="w-14 h-14 rounded-2xl bg-[#22C55E]/15 border border-[#22C55E]/40 flex items-center justify-center mb-6 text-[#4ADE80] shadow-[0_0_20px_rgba(34,197,94,0.35)] group-hover:scale-110 transition-transform">
+            <i data-lucide="message-square" class="w-7 h-7"></i>
+          </div>
+          <h3 class="text-xl font-display font-bold text-white tracking-tight group-hover:text-[#4ADE80] transition-colors mb-3">Comunidade Ativa 24/7</h3>
+          <p class="text-sm text-[#D1D5DB] leading-relaxed">Conecte-se com milhares de alunos motivados, compartilhe projetos reais, tire dúvidas em tempo real e crie conexões para a vida inteira.</p>
+        </div>
+        <div class="mt-6 pt-4 border-t border-white/10 flex items-center justify-between text-xs font-mono text-[#9CA3AF]">
+          <span>Engajamento Total</span>
+          <i data-lucide="arrow-up-right" class="w-4 h-4 text-[#4ADE80] opacity-0 group-hover:opacity-100 transition-opacity"></i>
+        </div>
+      </div>
+
+      <!-- Card 4: Terapeuta -->
+      <div class="bento-card p-7 flex flex-col justify-between group motion-item motion-delay-4 relative overflow-hidden rounded-3xl bg-white/[0.03] border border-white/10 hover:border-[#FDE68A] hover:bg-[#FDE68A]/10 hover:scale-[1.03] hover:shadow-[0_0_35px_rgba(253,230,138,0.3)] transition-all duration-300 backdrop-blur-xl">
+        <div class="pointer-events-none absolute -right-12 -top-12 w-32 h-32 bg-[#FDE68A]/15 rounded-full blur-2xl group-hover:bg-[#FDE68A]/30 transition-all"></div>
+        <div>
+          <div class="w-14 h-14 rounded-2xl bg-[#FDE68A]/15 border border-[#FDE68A]/40 flex items-center justify-center mb-6 text-[#FDE68A] shadow-[0_0_20px_rgba(253,230,138,0.35)] group-hover:scale-110 transition-transform">
+            <i data-lucide="heart" class="w-7 h-7"></i>
+          </div>
+          <h3 class="text-xl font-display font-bold text-white tracking-tight group-hover:text-[#FDE68A] transition-colors mb-3">Suporte Emocional & Terapeuta</h3>
+          <p class="text-sm text-[#D1D5DB] leading-relaxed">Acompanhamento psicológico especializado para gerenciar ansiedade, síndrome do impostor e manter sua alta performance mental.</p>
+        </div>
+        <div class="mt-6 pt-4 border-t border-white/10 flex items-center justify-between text-xs font-mono text-[#9CA3AF]">
+          <span>Saúde Mental & Foco</span>
+          <i data-lucide="arrow-up-right" class="w-4 h-4 text-[#FDE68A] opacity-0 group-hover:opacity-100 transition-opacity"></i>
+        </div>
+      </div>
+
+      <!-- Card 5: Agentes IA -->
+      <div class="bento-card p-7 flex flex-col justify-between group motion-item motion-delay-5 relative overflow-hidden rounded-3xl bg-white/[0.03] border border-white/10 hover:border-[#22C55E] hover:bg-[#22C55E]/10 hover:scale-[1.03] hover:shadow-[0_0_35px_rgba(34,197,94,0.3)] transition-all duration-300 backdrop-blur-xl">
+        <div class="pointer-events-none absolute -right-12 -top-12 w-32 h-32 bg-[#22C55E]/15 rounded-full blur-2xl group-hover:bg-[#22C55E]/30 transition-all"></div>
+        <div>
+          <div class="w-14 h-14 rounded-2xl bg-[#22C55E]/15 border border-[#22C55E]/40 flex items-center justify-center mb-6 text-[#4ADE80] shadow-[0_0_20px_rgba(34,197,94,0.35)] group-hover:scale-110 transition-transform">
+            <i data-lucide="bot" class="w-7 h-7"></i>
+          </div>
+          <h3 class="text-xl font-display font-bold text-white tracking-tight group-hover:text-[#4ADE80] transition-colors mb-3">Agentes IA Exclusivos</h3>
+          <p class="text-sm text-[#D1D5DB] leading-relaxed">Tutores de Inteligência Artificial treinados na metodologia DevClub para analisar seu código, identificar bugs e explicar conceitos de madrugada.</p>
+        </div>
+        <div class="mt-6 pt-4 border-t border-white/10 flex items-center justify-between text-xs font-mono text-[#9CA3AF]">
+          <span>Feedback Instantâneo</span>
+          <i data-lucide="arrow-up-right" class="w-4 h-4 text-[#4ADE80] opacity-0 group-hover:opacity-100 transition-opacity"></i>
+        </div>
+      </div>
+
+      <!-- Card 6: Suporte Humano -->
+      <div class="bento-card p-7 flex flex-col justify-between group motion-item motion-delay-6 relative overflow-hidden rounded-3xl bg-white/[0.03] border border-white/10 hover:border-[#22C55E] hover:bg-[#22C55E]/10 hover:scale-[1.03] hover:shadow-[0_0_35px_rgba(34,197,94,0.3)] transition-all duration-300 backdrop-blur-xl">
+        <div class="pointer-events-none absolute -right-12 -top-12 w-32 h-32 bg-[#22C55E]/15 rounded-full blur-2xl group-hover:bg-[#22C55E]/30 transition-all"></div>
+        <div>
+          <div class="w-14 h-14 rounded-2xl bg-[#22C55E]/15 border border-[#22C55E]/40 flex items-center justify-center mb-6 text-[#4ADE80] shadow-[0_0_20px_rgba(34,197,94,0.35)] group-hover:scale-110 transition-transform">
+            <i data-lucide="headphones" class="w-7 h-7"></i>
+          </div>
+          <h3 class="text-xl font-display font-bold text-white tracking-tight group-hover:text-[#4ADE80] transition-colors mb-3">Suporte Humano Individual</h3>
+          <p class="text-sm text-[#D1D5DB] leading-relaxed">Time de monitores e devs experientes prontos para entrar em chamada, abrir seu projeto e destravar qualquer gargalo técnico.</p>
+        </div>
+        <div class="mt-6 pt-4 border-t border-white/10 flex items-center justify-between text-xs font-mono text-[#9CA3AF]">
+          <span>Atendimento 1:1</span>
+          <i data-lucide="arrow-up-right" class="w-4 h-4 text-[#4ADE80] opacity-0 group-hover:opacity-100 transition-opacity"></i>
+        </div>
+      </div>
+
+      <!-- Card 7: Vagas Exclusivas -->
+      <div class="bento-card p-7 flex flex-col justify-between group motion-item motion-delay-7 relative overflow-hidden rounded-3xl bg-white/[0.03] border border-white/10 hover:border-[#FDE68A] hover:bg-[#FDE68A]/10 hover:scale-[1.03] hover:shadow-[0_0_35px_rgba(253,230,138,0.3)] transition-all duration-300 backdrop-blur-xl">
+        <div class="pointer-events-none absolute -right-12 -top-12 w-32 h-32 bg-[#FDE68A]/15 rounded-full blur-2xl group-hover:bg-[#FDE68A]/30 transition-all"></div>
+        <div>
+          <div class="w-14 h-14 rounded-2xl bg-[#FDE68A]/15 border border-[#FDE68A]/40 flex items-center justify-center mb-6 text-[#FDE68A] shadow-[0_0_20px_rgba(253,230,138,0.35)] group-hover:scale-110 transition-transform">
+            <i data-lucide="target" class="w-7 h-7"></i>
+          </div>
+          <h3 class="text-xl font-display font-bold text-white tracking-tight group-hover:text-[#FDE68A] transition-colors mb-3">Mural de Vagas Exclusivas</h3>
+          <p class="text-sm text-[#D1D5DB] leading-relaxed">Canal direto de contratação abastecido semanalmente com vagas fechadas em empresas parceiras que priorizam alunos do DevClub.</p>
+        </div>
+        <div class="mt-6 pt-4 border-t border-white/10 flex items-center justify-between text-xs font-mono text-[#9CA3AF]">
+          <span>Contratação Direta</span>
+          <i data-lucide="arrow-up-right" class="w-4 h-4 text-[#FDE68A] opacity-0 group-hover:opacity-100 transition-opacity"></i>
+        </div>
+      </div>
+
+      <!-- Card 8: Networking -->
+      <div class="bento-card p-7 flex flex-col justify-between group motion-item motion-delay-8 relative overflow-hidden rounded-3xl bg-white/[0.03] border border-white/10 hover:border-[#22C55E] hover:bg-[#22C55E]/10 hover:scale-[1.03] hover:shadow-[0_0_35px_rgba(34,197,94,0.3)] transition-all duration-300 backdrop-blur-xl">
+        <div class="pointer-events-none absolute -right-12 -top-12 w-32 h-32 bg-[#22C55E]/15 rounded-full blur-2xl group-hover:bg-[#22C55E]/30 transition-all"></div>
+        <div>
+          <div class="w-14 h-14 rounded-2xl bg-[#22C55E]/15 border border-[#22C55E]/40 flex items-center justify-center mb-6 text-[#4ADE80] shadow-[0_0_20px_rgba(34,197,94,0.35)] group-hover:scale-110 transition-transform">
+            <i data-lucide="network" class="w-7 h-7"></i>
+          </div>
+          <h3 class="text-xl font-display font-bold text-white tracking-tight group-hover:text-[#4ADE80] transition-colors mb-3">Networking de Alto Nível</h3>
+          <p class="text-sm text-[#D1D5DB] leading-relaxed">Eventos presenciais e virtuais, hackathons com premiações e pontes diretas com CTOs, Founders e líderes de engenharia.</p>
+        </div>
+        <div class="mt-6 pt-4 border-t border-white/10 flex items-center justify-between text-xs font-mono text-[#9CA3AF]">
+          <span>Conexões Estratégicas</span>
+          <i data-lucide="arrow-up-right" class="w-4 h-4 text-[#4ADE80] opacity-0 group-hover:opacity-100 transition-opacity"></i>
+        </div>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- QUINTA DOBRA: PLATAFORMA DEV CLUB (Identidade Flutuante & Transparente 3D) -->
+  <section id="plataforma" class="relative z-10 max-w-7xl mx-auto px-6 py-24 overflow-visible">
+    
+    <!-- Protocol HUD System Header Indicator -->
+    <div class="flex items-center justify-between border-b border-white/10 pb-4 mb-16 motion-item">
+      <div class="flex items-center gap-3">
+        <span class="w-2.5 h-2.5 rounded-full bg-[#4ADE80] animate-ping"></span>
+        <span class="font-mono text-xs text-[#4ADE80] tracking-widest uppercase font-bold">SYSTEM /// 04 /// DEVCLUB_PLATFORM_HUD</span>
+      </div>
+      <div class="hidden sm:flex items-center gap-4 text-[11px] font-mono text-[#9CA3AF]">
+        <span class="flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-[#22C55E]"></span> PLAYGROUND ATIVO</span>
+        <span>•</span>
+        <span>AGENTES IA ON</span>
+      </div>
+    </div>
+
+    <!-- Main Section Header -->
+    <div class="text-center max-w-4xl mx-auto mb-16">
+      <div class="tagline-badge mx-auto mb-4 motion-item">
+        <div class="tagline-pulse-dot"></div>
+        <span>PLATAFORMA DEV CLUB</span>
+      </div>
+      
+      <h2 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-white font-display font-extrabold tracking-tight leading-[1.12] motion-item motion-delay-1">
+        Uma plataforma criada para <span class="text-gradient">acelerar seu aprendizado</span>.
+      </h2>
+      
+      <p class="mt-5 text-lg sm:text-xl font-normal text-[#D1D5DB] leading-relaxed max-w-2xl mx-auto motion-item motion-delay-2">
+        Tudo organizado para você estudar sem perder tempo.
+      </p>
+    </div>
+
+
+
+    <!-- Grid de 9 Recursos (Cards Bento Flutuantes com Glassmorfismo e Giro Sutil no Hover) -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 relative z-10">
+      
+      <!-- Recurso 1: Área do Aluno -->
+      <div class="bento-card p-7 flex flex-col justify-between group motion-item motion-delay-1 relative overflow-hidden rounded-3xl bg-white/[0.03] border border-white/10 hover:border-[#22C55E] hover:bg-[#22C55E]/10 transition-all duration-300 backdrop-blur-xl">
+        <div class="pointer-events-none absolute -right-10 -top-10 w-28 h-28 bg-[#22C55E]/15 rounded-full blur-2xl group-hover:bg-[#22C55E]/30 transition-all"></div>
+        <div>
+          <div class="w-13 h-13 rounded-2xl bg-[#22C55E]/15 border border-[#22C55E]/40 flex items-center justify-center mb-5 text-[#4ADE80] shadow-[0_0_20px_rgba(34,197,94,0.35)] group-hover:scale-110 transition-transform">
+            <i data-lucide="layout-dashboard" class="w-6 h-6"></i>
+          </div>
+          <h3 class="text-xl font-display font-bold text-white tracking-tight group-hover:text-[#4ADE80] transition-colors mb-2">Área do Aluno</h3>
+          <p class="text-sm text-[#D1D5DB] leading-relaxed">Sua central de estudos hiper-personalizada com cronograma inteligente, próximas aulas e tarefas diárias organizadas.</p>
+        </div>
+        <div class="mt-6 pt-4 border-t border-white/10 flex items-center justify-between text-xs font-mono text-[#9CA3AF]">
+          <span>Experiência Focada</span>
+          <i data-lucide="arrow-up-right" class="w-4 h-4 text-[#4ADE80] opacity-0 group-hover:opacity-100 transition-opacity"></i>
+        </div>
+      </div>
+
+      <!-- Recurso 2: Dashboard -->
+      <div class="bento-card p-7 flex flex-col justify-between group motion-item motion-delay-2 relative overflow-hidden rounded-3xl bg-white/[0.03] border border-white/10 hover:border-[#22C55E] hover:bg-[#22C55E]/10 transition-all duration-300 backdrop-blur-xl">
+        <div class="pointer-events-none absolute -right-10 -top-10 w-28 h-28 bg-[#22C55E]/15 rounded-full blur-2xl group-hover:bg-[#22C55E]/30 transition-all"></div>
+        <div>
+          <div class="w-13 h-13 rounded-2xl bg-[#22C55E]/15 border border-[#22C55E]/40 flex items-center justify-center mb-5 text-[#4ADE80] shadow-[0_0_20px_rgba(34,197,94,0.35)] group-hover:scale-110 transition-transform">
+            <i data-lucide="bar-chart-3" class="w-6 h-6"></i>
+          </div>
+          <h3 class="text-xl font-display font-bold text-white tracking-tight group-hover:text-[#4ADE80] transition-colors mb-2">Dashboard em Tempo Real</h3>
+          <p class="text-sm text-[#D1D5DB] leading-relaxed">Painel com indicadores em tempo real para monitorar suas horas praticadas, ritmo de estudos e sequência diária de código.</p>
+        </div>
+        <div class="mt-6 pt-4 border-t border-white/10 flex items-center justify-between text-xs font-mono text-[#9CA3AF]">
+          <span>Métricas de Evolução</span>
+          <i data-lucide="arrow-up-right" class="w-4 h-4 text-[#4ADE80] opacity-0 group-hover:opacity-100 transition-opacity"></i>
+        </div>
+      </div>
+
+      <!-- Recurso 3: Cursos -->
+      <div class="bento-card p-7 flex flex-col justify-between group motion-item motion-delay-3 relative overflow-hidden rounded-3xl bg-white/[0.03] border border-white/10 hover:border-[#22C55E] hover:bg-[#22C55E]/10 transition-all duration-300 backdrop-blur-xl">
+        <div class="pointer-events-none absolute -right-10 -top-10 w-28 h-28 bg-[#22C55E]/15 rounded-full blur-2xl group-hover:bg-[#22C55E]/30 transition-all"></div>
+        <div>
+          <div class="w-13 h-13 rounded-2xl bg-[#22C55E]/15 border border-[#22C55E]/40 flex items-center justify-center mb-5 text-[#4ADE80] shadow-[0_0_20px_rgba(34,197,94,0.35)] group-hover:scale-110 transition-transform">
+            <i data-lucide="layers" class="w-6 h-6"></i>
+          </div>
+          <h3 class="text-xl font-display font-bold text-white tracking-tight group-hover:text-[#4ADE80] transition-colors mb-2">Cursos e Trilhas Práticas</h3>
+          <p class="text-sm text-[#D1D5DB] leading-relaxed">Formações estruturadas passo a passo com aulas diretas ao ponto, exercícios desafiadores e criação de projetos reais.</p>
+        </div>
+        <div class="mt-6 pt-4 border-t border-white/10 flex items-center justify-between text-xs font-mono text-[#9CA3AF]">
+          <span>Zero ao Avançado</span>
+          <i data-lucide="arrow-up-right" class="w-4 h-4 text-[#4ADE80] opacity-0 group-hover:opacity-100 transition-opacity"></i>
+        </div>
+      </div>
+
+      <!-- Recurso 4: Comunidade -->
+      <div class="bento-card p-7 flex flex-col justify-between group motion-item motion-delay-4 relative overflow-hidden rounded-3xl bg-white/[0.03] border border-white/10 hover:border-[#22C55E] hover:bg-[#22C55E]/10 transition-all duration-300 backdrop-blur-xl">
+        <div class="pointer-events-none absolute -right-10 -top-10 w-28 h-28 bg-[#22C55E]/15 rounded-full blur-2xl group-hover:bg-[#22C55E]/30 transition-all"></div>
+        <div>
+          <div class="w-13 h-13 rounded-2xl bg-[#22C55E]/15 border border-[#22C55E]/40 flex items-center justify-center mb-5 text-[#4ADE80] shadow-[0_0_20px_rgba(34,197,94,0.35)] group-hover:scale-110 transition-transform">
+            <i data-lucide="users" class="w-6 h-6"></i>
+          </div>
+          <h3 class="text-xl font-display font-bold text-white tracking-tight group-hover:text-[#4ADE80] transition-colors mb-2">Comunidade Integrada</h3>
+          <p class="text-sm text-[#D1D5DB] leading-relaxed">Fórum exclusivo, salas de estudo ao vivo por turma e rede interna para tirar dúvidas com colegas e mentores.</p>
+        </div>
+        <div class="mt-6 pt-4 border-t border-white/10 flex items-center justify-between text-xs font-mono text-[#9CA3AF]">
+          <span>Rede Ativa 24/7</span>
+          <i data-lucide="arrow-up-right" class="w-4 h-4 text-[#4ADE80] opacity-0 group-hover:opacity-100 transition-opacity"></i>
+        </div>
+      </div>
+
+      <!-- Recurso 5: Playground -->
+      <div class="bento-card p-7 flex flex-col justify-between group motion-item motion-delay-5 relative overflow-hidden rounded-3xl bg-white/[0.03] border border-white/10 hover:border-[#22C55E] hover:bg-[#22C55E]/10 transition-all duration-300 backdrop-blur-xl">
+        <div class="pointer-events-none absolute -right-10 -top-10 w-28 h-28 bg-[#22C55E]/15 rounded-full blur-2xl group-hover:bg-[#22C55E]/30 transition-all"></div>
+        <div>
+          <div class="w-13 h-13 rounded-2xl bg-[#22C55E]/15 border border-[#22C55E]/40 flex items-center justify-center mb-5 text-[#4ADE80] shadow-[0_0_20px_rgba(34,197,94,0.35)] group-hover:scale-110 transition-transform">
+            <i data-lucide="code-2" class="w-6 h-6"></i>
+          </div>
+          <h3 class="text-xl font-display font-bold text-white tracking-tight group-hover:text-[#4ADE80] transition-colors mb-2">Playground de Código Cloud</h3>
+          <p class="text-sm text-[#D1D5DB] leading-relaxed">Editor e compilador integrado no navegador para escrever, testar e executar projetos inteiros sem precisar configurar nada na sua máquina.</p>
+        </div>
+        <div class="mt-6 pt-4 border-t border-white/10 flex items-center justify-between text-xs font-mono text-[#9CA3AF]">
+          <span>Zero Instalações</span>
+          <i data-lucide="arrow-up-right" class="w-4 h-4 text-[#4ADE80] opacity-0 group-hover:opacity-100 transition-opacity"></i>
+        </div>
+      </div>
+
+      <!-- Recurso 6: Clube de Agents -->
+      <div class="bento-card p-7 flex flex-col justify-between group motion-item motion-delay-6 relative overflow-hidden rounded-3xl bg-white/[0.03] border border-white/10 hover:border-[#FDE68A] hover:bg-[#FDE68A]/10 transition-all duration-300 backdrop-blur-xl">
+        <div class="pointer-events-none absolute -right-10 -top-10 w-28 h-28 bg-[#FDE68A]/15 rounded-full blur-2xl group-hover:bg-[#FDE68A]/30 transition-all"></div>
+        <div>
+          <div class="w-13 h-13 rounded-2xl bg-[#FDE68A]/15 border border-[#FDE68A]/40 flex items-center justify-center mb-5 text-[#FDE68A] shadow-[0_0_20px_rgba(253,230,138,0.35)] group-hover:scale-110 transition-transform">
+            <i data-lucide="bot" class="w-6 h-6"></i>
+          </div>
+          <h3 class="text-xl font-display font-bold text-white tracking-tight group-hover:text-[#FDE68A] transition-colors mb-2">Clube de Agents IA</h3>
+          <p class="text-sm text-[#D1D5DB] leading-relaxed">Central avançada de Inteligência Artificial com agentes autônomos prontos para revisar seu código, debugar erros e simular testes técnicos.</p>
+        </div>
+        <div class="mt-6 pt-4 border-t border-white/10 flex items-center justify-between text-xs font-mono text-[#9CA3AF]">
+          <span>IA Autônoma 24/7</span>
+          <i data-lucide="arrow-up-right" class="w-4 h-4 text-[#FDE68A] opacity-0 group-hover:opacity-100 transition-opacity"></i>
+        </div>
+      </div>
+
+      <!-- Recurso 7: Ranking -->
+      <div class="bento-card p-7 flex flex-col justify-between group motion-item motion-delay-7 relative overflow-hidden rounded-3xl bg-white/[0.03] border border-white/10 hover:border-[#22C55E] hover:bg-[#22C55E]/10 transition-all duration-300 backdrop-blur-xl">
+        <div class="pointer-events-none absolute -right-10 -top-10 w-28 h-28 bg-[#22C55E]/15 rounded-full blur-2xl group-hover:bg-[#22C55E]/30 transition-all"></div>
+        <div>
+          <div class="w-13 h-13 rounded-2xl bg-[#22C55E]/15 border border-[#22C55E]/40 flex items-center justify-center mb-5 text-[#4ADE80] shadow-[0_0_20px_rgba(34,197,94,0.35)] group-hover:scale-110 transition-transform">
+            <i data-lucide="trophy" class="w-6 h-6"></i>
+          </div>
+          <h3 class="text-xl font-display font-bold text-white tracking-tight group-hover:text-[#4ADE80] transition-colors mb-2">Ranking e Gamificação</h3>
+          <p class="text-sm text-[#D1D5DB] leading-relaxed">Tabela semanal de alunos em destaque, insígnias de conquistas por código escrito e recompensas exclusivas por consistência.</p>
+        </div>
+        <div class="mt-6 pt-4 border-t border-white/10 flex items-center justify-between text-xs font-mono text-[#9CA3AF]">
+          <span>Competição Saudável</span>
+          <i data-lucide="arrow-up-right" class="w-4 h-4 text-[#4ADE80] opacity-0 group-hover:opacity-100 transition-opacity"></i>
+        </div>
+      </div>
+
+      <!-- Recurso 8: Certificados -->
+      <div class="bento-card p-7 flex flex-col justify-between group motion-item motion-delay-8 relative overflow-hidden rounded-3xl bg-white/[0.03] border border-white/10 hover:border-[#FDE68A] hover:bg-[#FDE68A]/10 transition-all duration-300 backdrop-blur-xl">
+        <div class="pointer-events-none absolute -right-10 -top-10 w-28 h-28 bg-[#FDE68A]/15 rounded-full blur-2xl group-hover:bg-[#FDE68A]/30 transition-all"></div>
+        <div>
+          <div class="w-13 h-13 rounded-2xl bg-[#FDE68A]/15 border border-[#FDE68A]/40 flex items-center justify-center mb-5 text-[#FDE68A] shadow-[0_0_20px_rgba(253,230,138,0.35)] group-hover:scale-110 transition-transform">
+            <i data-lucide="shield-check" class="w-6 h-6"></i>
+          </div>
+          <h3 class="text-xl font-display font-bold text-white tracking-tight group-hover:text-[#FDE68A] transition-colors mb-2">Certificados Verificáveis</h3>
+          <p class="text-sm text-[#D1D5DB] leading-relaxed">Certificação oficial emitida com autenticação digital imutável para você compartilhar no LinkedIn e comprovar suas habilidades.</p>
+        </div>
+        <div class="mt-6 pt-4 border-t border-white/10 flex items-center justify-between text-xs font-mono text-[#9CA3AF]">
+          <span>Autenticação Digital</span>
+          <i data-lucide="arrow-up-right" class="w-4 h-4 text-[#FDE68A] opacity-0 group-hover:opacity-100 transition-opacity"></i>
+        </div>
+      </div>
+
+      <!-- Recurso 9: Progresso -->
+      <div class="bento-card p-7 flex flex-col justify-between group motion-item motion-delay-9 relative overflow-hidden rounded-3xl bg-white/[0.03] border border-white/10 hover:border-[#22C55E] hover:bg-[#22C55E]/10 transition-all duration-300 backdrop-blur-xl">
+        <div class="pointer-events-none absolute -right-10 -top-10 w-28 h-28 bg-[#22C55E]/15 rounded-full blur-2xl group-hover:bg-[#22C55E]/30 transition-all"></div>
+        <div>
+          <div class="w-13 h-13 rounded-2xl bg-[#22C55E]/15 border border-[#22C55E]/40 flex items-center justify-center mb-5 text-[#4ADE80] shadow-[0_0_20px_rgba(34,197,94,0.35)] group-hover:scale-110 transition-transform">
+            <i data-lucide="trending-up" class="w-6 h-6"></i>
+          </div>
+          <h3 class="text-xl font-display font-bold text-white tracking-tight group-hover:text-[#4ADE80] transition-colors mb-2">Mapa Visual de Progresso</h3>
+          <p class="text-sm text-[#D1D5DB] leading-relaxed">Acompanhe graficamente a porcentagem de domínio em cada linguagem, framework e ferramenta para saber exatamente onde focar.</p>
+        </div>
+        <div class="mt-6 pt-4 border-t border-white/10 flex items-center justify-between text-xs font-mono text-[#9CA3AF]">
+          <span>Mapeamento 100% Claro</span>
+          <i data-lucide="arrow-up-right" class="w-4 h-4 text-[#4ADE80] opacity-0 group-hover:opacity-100 transition-opacity"></i>
+        </div>
       </div>
 
     </div>
@@ -550,10 +1861,15 @@
       let flashOpacity = 0;
 
       const targetIds = [
-        'hero-target-h1',
-        'hero-target-subtitle',
-        'hero-target-ctas',
-        'hero-target-avatars'
+        'target-h1',
+        'target-subtitle',
+        'target-cta-1',
+        'target-cta-2',
+        'target-avatars',
+        'target-stat-1',
+        'target-stat-2',
+        'target-stat-3',
+        'target-stat-4'
       ];
       let lastTargetIndex = -1;
 
