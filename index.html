@@ -143,17 +143,17 @@
         </div>
 
         <!-- Headline -->
-        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-display font-extrabold tracking-tight leading-[1.15] text-white motion-item motion-delay-3">
+        <h1 id="hero-target-h1" class="relative z-20 text-3xl sm:text-4xl lg:text-5xl font-display font-extrabold tracking-tight leading-[1.15] text-white motion-item motion-delay-3">
           Aprenda Tecnologia, IA e Programação com quem forma os profissionais mais <span class="text-gradient">disputados</span> do mercado.
         </h1>
 
         <!-- Subtítulo -->
-        <p class="text-lg sm:text-xl text-[#D1D5DB] font-normal leading-relaxed max-w-2xl motion-item motion-delay-4">
+        <p id="hero-target-subtitle" class="text-lg sm:text-xl text-[#D1D5DB] font-normal leading-relaxed max-w-2xl motion-item motion-delay-4">
           Mais de <strong class="text-white font-semibold underline decoration-[#22C55E]/50 underline-offset-4">25.000 alunos</strong> já aceleraram suas carreiras conosco e hoje trabalham nas maiores empresas do Brasil e do mundo.
         </p>
 
         <!-- CTA Buttons -->
-        <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-2 motion-item motion-delay-5">
+        <div id="hero-target-ctas" class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-2 motion-item motion-delay-5">
           <!-- CTA Principal -->
           <a href="#inscreva-se" class="btn-primary-glow group">
             <span class="flex items-center gap-3">
@@ -172,7 +172,7 @@
         </div>
 
         <!-- Inline Floating Student Avatars & Social Proof -->
-        <div class="pt-4 flex flex-wrap items-center gap-6 border-t border-white/[0.08] motion-item motion-delay-6">
+        <div id="hero-target-avatars" class="pt-4 flex flex-wrap items-center gap-6 border-t border-white/[0.08] motion-item motion-delay-6">
           <div class="flex items-center -space-x-3">
             <img class="w-10 h-10 rounded-full border-2 border-[#050505] object-cover" src="assets/4618335d5d96ab2c_avatar-1.KTpp4UFb_sg2gE.webp" alt="Aluno 1">
             <img class="w-10 h-10 rounded-full border-2 border-[#050505] object-cover" src="assets/41bc85c4bca30b64_avatar-2.iccIjlt__Z27PNAE.webp" alt="Aluno 2">
@@ -545,28 +545,84 @@
         });
       }
 
-      // Lightning Bolt & Flash System
+      // Ambient & Targeted 10-Second Element Lightning Engine
       let activeBolts = [];
       let flashOpacity = 0;
 
+      const targetIds = [
+        'hero-target-h1',
+        'hero-target-subtitle',
+        'hero-target-ctas',
+        'hero-target-avatars'
+      ];
+      let lastTargetIndex = -1;
+
+      function getSphereCenter() {
+        const visualEl = document.querySelector('.hero-visual-unconstrained');
+        if (visualEl && rainCanvas) {
+          const rect = visualEl.getBoundingClientRect();
+          const parentRect = rainCanvas.getBoundingClientRect();
+          return {
+            x: (rect.left + rect.width / 2) - parentRect.left,
+            y: (rect.top + rect.height / 2) - parentRect.top
+          };
+        }
+        return { x: width * 0.75, y: height * 0.5 };
+      }
+
+      function getTargetCenter(id) {
+        const el = document.getElementById(id);
+        if (el && rainCanvas) {
+          const rect = el.getBoundingClientRect();
+          const parentRect = rainCanvas.getBoundingClientRect();
+          return {
+            element: el,
+            x: (rect.left + rect.width / 2) - parentRect.left,
+            y: (rect.top + rect.height / 2) - parentRect.top
+          };
+        }
+        return null;
+      }
+
       function createLightning() {
-        const startX = Math.random() * width;
-        const startY = 0;
+        const center = getSphereCenter();
+        const startX = center.x + (Math.random() - 0.5) * 50; // Core origin point
+        const startY = center.y + (Math.random() - 0.5) * 50;
+
+        // 65% chance to arc towards the left (text & CTAs), 35% any radial direction
+        let angle;
+        if (Math.random() < 0.65) {
+          angle = Math.PI + (Math.random() - 0.5) * 1.5;
+        } else {
+          angle = Math.random() * Math.PI * 2;
+        }
+
+        const segmentCount = 6 + Math.floor(Math.random() * 4);
+        const totalLength = 220 + Math.random() * 280;
+        const stepLen = totalLength / segmentCount;
+
         const segments = [];
         let currX = startX;
         let currY = startY;
+        let currAngle = angle;
 
-        for (let i = 0; i < 7; i++) {
-          const nextX = currX + (Math.random() - 0.5) * 110;
-          const nextY = currY + (height / 7) + (Math.random() - 0.3) * 25;
+        for (let i = 0; i < segmentCount; i++) {
+          currAngle += (Math.random() - 0.5) * 0.65;
+          const segLen = stepLen * (0.8 + Math.random() * 0.4);
+          const nextX = currX + Math.cos(currAngle) * segLen;
+          const nextY = currY + Math.sin(currAngle) * segLen;
+
           segments.push({ x1: currX, y1: currY, x2: nextX, y2: nextY });
 
-          if (Math.random() < 0.4) {
+          // Secondary branching tendrils
+          if (Math.random() < 0.45) {
+            const branchAngle = currAngle + (Math.random() > 0.5 ? 1 : -1) * (0.4 + Math.random() * 0.6);
+            const branchLen = segLen * (0.7 + Math.random() * 0.7);
             segments.push({
               x1: nextX,
               y1: nextY,
-              x2: nextX + (Math.random() - 0.5) * 70,
-              y2: nextY + 30 + Math.random() * 25,
+              x2: nextX + Math.cos(branchAngle) * branchLen,
+              y2: nextY + Math.sin(branchAngle) * branchLen,
               isBranch: true
             });
           }
@@ -577,33 +633,102 @@
 
         activeBolts.push({
           segments,
+          originX: startX,
+          originY: startY,
           life: 1.0,
-          decay: 0.07 + Math.random() * 0.04
+          decay: 0.055 + Math.random() * 0.035
         });
 
-        flashOpacity = 0.35; // Trigger screen atmospheric flash
+        flashOpacity = 0.45; // Atmospheric screen flash
+      }
+
+      function createTargetedLightning() {
+        // Pick a random target distinct from the previous strike
+        let targetIndex;
+        do {
+          targetIndex = Math.floor(Math.random() * targetIds.length);
+        } while (targetIndex === lastTargetIndex && targetIds.length > 1);
+        lastTargetIndex = targetIndex;
+
+        const targetData = getTargetCenter(targetIds[targetIndex]);
+        if (!targetData) return;
+
+        const center = getSphereCenter();
+        const startX = center.x + (Math.random() - 0.5) * 30;
+        const startY = center.y + (Math.random() - 0.5) * 30;
+        const destX = targetData.x;
+        const destY = targetData.y;
+
+        const segmentCount = 8;
+        const dx = (destX - startX) / segmentCount;
+        const dy = (destY - startY) / segmentCount;
+        const segments = [];
+
+        let currX = startX;
+        let currY = startY;
+
+        for (let i = 0; i < segmentCount; i++) {
+          const isLast = i === segmentCount - 1;
+          const nextX = isLast ? destX : startX + dx * (i + 1) + (Math.random() - 0.5) * 60;
+          const nextY = isLast ? destY : startY + dy * (i + 1) + (Math.random() - 0.5) * 40;
+
+          segments.push({ x1: currX, y1: currY, x2: nextX, y2: nextY });
+
+          if (Math.random() < 0.5 && !isLast) {
+            segments.push({
+              x1: nextX,
+              y1: nextY,
+              x2: nextX + (Math.random() - 0.5) * 75,
+              y2: nextY + (Math.random() - 0.5) * 75,
+              isBranch: true
+            });
+          }
+
+          currX = nextX;
+          currY = nextY;
+        }
+
+        activeBolts.push({
+          segments,
+          originX: startX,
+          originY: startY,
+          life: 1.0,
+          decay: 0.04
+        });
+
+        flashOpacity = 0.5;
+
+        // Trigger highlight aura on the targeted element
+        targetData.element.classList.remove('element-lightning-strike');
+        void targetData.element.offsetWidth; // Force reflow
+        targetData.element.classList.add('element-lightning-strike');
+
+        setTimeout(() => {
+          targetData.element.classList.remove('element-lightning-strike');
+        }, 1400);
       }
 
       function scheduleLightning() {
-        const delay = 3500 + Math.random() * 4500;
+        const delay = 3000 + Math.random() * 4000;
         setTimeout(() => {
           createLightning();
-          if (Math.random() < 0.35) {
-            setTimeout(createLightning, 110);
-          }
           scheduleLightning();
         }, delay);
       }
       scheduleLightning();
+
+      // Schedule Targeted Strike every 10 seconds
+      setInterval(createTargetedLightning, 10000);
+      setTimeout(createTargetedLightning, 2000);
 
       function animateRain() {
         ctx.clearRect(0, 0, width, height);
 
         // Flash Overlay
         if (flashOpacity > 0) {
-          ctx.fillStyle = `rgba(74, 222, 128, ${flashOpacity * 0.12})`;
+          ctx.fillStyle = `rgba(74, 222, 128, ${flashOpacity * 0.14})`;
           ctx.fillRect(0, 0, width, height);
-          flashOpacity -= 0.02;
+          flashOpacity -= 0.025;
         }
 
         // Draw Diagonal Rain (-25deg slope)
@@ -638,11 +763,18 @@
           ctx.stroke();
         }
 
-        // Draw Lightning Bolts
+        // Draw Lightning Bolts Bursting Out of 3D Core Image
         for (let b = activeBolts.length - 1; b >= 0; b--) {
           const bolt = activeBolts[b];
           ctx.save();
-          ctx.shadowBlur = 18;
+
+          // Core Burst Glow Wave inside Sphere
+          ctx.beginPath();
+          ctx.arc(bolt.originX, bolt.originY, (1 - bolt.life) * 60 + 20, 0, Math.PI * 2);
+          ctx.fillStyle = `rgba(74, 222, 128, ${bolt.life * 0.35})`;
+          ctx.fill();
+
+          ctx.shadowBlur = 22;
           ctx.shadowColor = '#4ADE80';
 
           for (let s = 0; s < bolt.segments.length; s++) {
@@ -651,9 +783,9 @@
             ctx.moveTo(seg.x1, seg.y1);
             ctx.lineTo(seg.x2, seg.y2);
             ctx.strokeStyle = seg.isBranch 
-              ? `rgba(74, 222, 128, ${bolt.life * 0.6})` 
+              ? `rgba(74, 222, 128, ${bolt.life * 0.7})` 
               : `rgba(255, 255, 255, ${bolt.life})`;
-            ctx.lineWidth = seg.isBranch ? 1 : 2.5;
+            ctx.lineWidth = seg.isBranch ? 1.2 : 2.8;
             ctx.stroke();
           }
 
