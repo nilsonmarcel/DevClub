@@ -118,7 +118,7 @@
     <canvas id="rain-lightning-canvas" class="rain-lightning-canvas"></canvas>
     
     <!-- Protocol HUD System Header Indicator -->
-    <div class="flex items-center justify-between mb-8 pb-3 border-b border-white/[0.06] text-xs font-mono tracking-widest text-[#9CA3AF]">
+    <div class="flex items-center justify-between mb-8 pb-3 border-b border-white/[0.06] text-xs font-mono tracking-widest text-[#9CA3AF] motion-item motion-delay-1">
       <div class="flex items-center gap-3">
         <span class="text-[#4ADE80]">SYSTEM ///</span>
         <span>INITIALIZE DEV_AI_ACADEMY</span>
@@ -137,23 +137,23 @@
       <div class="lg:col-span-7 space-y-8">
         
         <!-- Tagline Pill Badge -->
-        <div class="tagline-badge">
+        <div class="tagline-badge motion-item motion-delay-2">
           <div class="tagline-pulse-dot"></div>
           <span>A Maior Escola de IA e Programação do Brasil</span>
         </div>
 
         <!-- Headline -->
-        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-display font-extrabold tracking-tight leading-[1.1] text-white">
+        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-display font-extrabold tracking-tight leading-[1.15] text-white motion-item motion-delay-3">
           Aprenda Tecnologia, IA e Programação com quem forma os profissionais mais <span class="text-gradient">disputados</span> do mercado.
         </h1>
 
         <!-- Subtítulo -->
-        <p class="text-lg sm:text-xl text-[#D1D5DB] font-normal leading-relaxed max-w-2xl">
+        <p class="text-lg sm:text-xl text-[#D1D5DB] font-normal leading-relaxed max-w-2xl motion-item motion-delay-4">
           Mais de <strong class="text-white font-semibold underline decoration-[#22C55E]/50 underline-offset-4">25.000 alunos</strong> já aceleraram suas carreiras conosco e hoje trabalham nas maiores empresas do Brasil e do mundo.
         </p>
 
         <!-- CTA Buttons -->
-        <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-2">
+        <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-2 motion-item motion-delay-5">
           <!-- CTA Principal -->
           <a href="#inscreva-se" class="btn-primary-glow group">
             <span class="flex items-center gap-3">
@@ -172,7 +172,7 @@
         </div>
 
         <!-- Inline Floating Student Avatars & Social Proof -->
-        <div class="pt-4 flex flex-wrap items-center gap-6 border-t border-white/[0.08]">
+        <div class="pt-4 flex flex-wrap items-center gap-6 border-t border-white/[0.08] motion-item motion-delay-6">
           <div class="flex items-center -space-x-3">
             <img class="w-10 h-10 rounded-full border-2 border-[#050505] object-cover" src="assets/4618335d5d96ab2c_avatar-1.KTpp4UFb_sg2gE.webp" alt="Aluno 1">
             <img class="w-10 h-10 rounded-full border-2 border-[#050505] object-cover" src="assets/41bc85c4bca30b64_avatar-2.iccIjlt__Z27PNAE.webp" alt="Aluno 2">
@@ -201,7 +201,7 @@
       <div class="lg:col-span-5 relative flex items-center justify-center">
         
         <!-- Free-Floating Unconstrained Visual Wrapper (No Borders, No Card Box) -->
-        <div class="hero-visual-unconstrained group">
+        <div class="hero-visual-unconstrained group motion-item motion-delay-4">
           
           <!-- Radial Ambient Glow Filter Floating Behind Canvas -->
           <div class="hero-visual-glow"></div>
@@ -244,7 +244,7 @@
     <div class="mt-16 sm:mt-24 grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
       
       <!-- Metric 1: 25.000+ Alunos -->
-      <div class="stat-card group">
+      <div class="stat-card group motion-item motion-delay-3">
         <div class="hud-corner hud-corner-tl opacity-0 group-hover:opacity-100 transition-opacity"></div>
         <div class="hud-corner hud-corner-br opacity-0 group-hover:opacity-100 transition-opacity"></div>
         <div class="flex items-center justify-between mb-2">
@@ -258,7 +258,7 @@
       </div>
 
       <!-- Metric 2: 500+ Empresas -->
-      <div class="stat-card group">
+      <div class="stat-card group motion-item motion-delay-4">
         <div class="hud-corner hud-corner-tl opacity-0 group-hover:opacity-100 transition-opacity"></div>
         <div class="hud-corner hud-corner-br opacity-0 group-hover:opacity-100 transition-opacity"></div>
         <div class="flex items-center justify-between mb-2">
@@ -272,7 +272,7 @@
       </div>
 
       <!-- Metric 3: 98% Satisfação -->
-      <div class="stat-card group">
+      <div class="stat-card group motion-item motion-delay-5">
         <div class="hud-corner hud-corner-tl opacity-0 group-hover:opacity-100 transition-opacity"></div>
         <div class="hud-corner hud-corner-br opacity-0 group-hover:opacity-100 transition-opacity"></div>
         <div class="flex items-center justify-between mb-2">
@@ -286,7 +286,7 @@
       </div>
 
       <!-- Metric 4: 100+ Especialistas -->
-      <div class="stat-card group">
+      <div class="stat-card group motion-item motion-delay-6">
         <div class="hud-corner hud-corner-tl opacity-0 group-hover:opacity-100 transition-opacity"></div>
         <div class="hud-corner hud-corner-br opacity-0 group-hover:opacity-100 transition-opacity"></div>
         <div class="flex items-center justify-between mb-2">
@@ -669,6 +669,43 @@
 
       animateRain();
     }
+
+    // -------------------------------------------------------------
+    // Motion Controller: Blur In/Out & Fade In/Out Observer System
+    // -------------------------------------------------------------
+    const motionItems = document.querySelectorAll('.motion-item');
+
+    function updateMotionState() {
+      const windowHeight = window.innerHeight;
+
+      motionItems.forEach(el => {
+        const rect = el.getBoundingClientRect();
+
+        // If element moves above the viewport (scroll exit)
+        if (rect.bottom < 150) {
+          el.classList.remove('in-view');
+          el.classList.add('out-top');
+        } 
+        // If element enters the viewport
+        else if (rect.top < windowHeight - 40) {
+          el.classList.remove('out-top');
+          el.classList.add('in-view');
+        } 
+        // Below viewport initial state
+        else {
+          el.classList.remove('in-view');
+          el.classList.remove('out-top');
+        }
+      });
+    }
+
+    window.addEventListener('scroll', updateMotionState, { passive: true });
+    window.addEventListener('resize', updateMotionState, { passive: true });
+
+    // Initial page load entrance trigger
+    requestAnimationFrame(() => {
+      setTimeout(updateMotionState, 50);
+    });
   </script>
 </body>
 </html>
